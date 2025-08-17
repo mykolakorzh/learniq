@@ -1,4 +1,4 @@
-# artikelo
+# learniq
 
 A new Flutter project.
 
