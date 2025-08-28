@@ -1,0 +1,72 @@
+{
+  "topics.title": "Темы",
+  "topics.empty": "Темы не найдены",
+  "topics.error": "Ошибка загрузки тем",
+  "topics.cards_count": "{count} карточек",
+  "@topics.cards_count": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topics.in_progress": "В процессе",
+  "topics.locked": "Заблокировано",
+  "topics.learned": "Изучено",
+  "topics.not_started": "Не начато",
+  
+  "topic_detail.title": "Детали темы",
+  "topic_detail.not_found": "Тема не найдена",
+  "topic_detail.error": "Ошибка загрузки темы",
+  "topic_detail.cards_count": "{count} карточек",
+  "@topic_detail.cards_count": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topic_detail.accuracy_label": "Точность: {percent}%",
+  "@topic_detail.accuracy_label": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "topic_detail.mistakes": "Ошибки",
+  "topic_detail.locked_message": "Эта тема заблокирована. Разблокируйте её для доступа к обучению.",
+  "topic_detail.unlock": "Разблокировать",
+  "topic_detail.actions": "Действия",
+  "topic_detail.learn": "Изучать",
+  "topic_detail.test": "Тестировать",
+  "topic_detail.retry_mistakes": "Повторить ошибки",
+  "topic_detail.retry_mistakes_coming_soon": "Функция повтора ошибок будет доступна в ближайшее время",
+  
+  "paywall.title": "Премиум",
+  "paywall.coming_soon": "Система покупок",
+  "paywall.description": "Премиум функции будут доступны в ближайшее время. Здесь вы сможете разблокировать дополнительные темы и функции.",
+  "paywall.back_to_topics": "Вернуться к темам",
+  
+  "learn.title": "Изучение",
+  "learn.coming_soon": "Функция изучения будет доступна в ближайшее время",
+  "learn.topic_id": "ID темы: {topicId}",
+  "@learn.topic_id": {
+    "placeholders": {
+      "topicId": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "test.title": "Тестирование",
+  "test.coming_soon": "Функция тестирования будет доступна в ближайшее время",
+  "test.topic_id": "ID темы: {topicId}",
+  "@test.topic_id": {
+    "placeholders": {
+      "topicId": {
+        "type": "String"
+      }
+    }
+  }
+} 

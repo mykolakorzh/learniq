@@ -1,0 +1,38 @@
+[
+  {
+    "id": "wohnung",
+    "title_ru": "Квартира",
+    "title_uk": "Квартира",
+    "is_free": true,
+    "card_count": 32,
+    "icon_asset": "assets/images/wohnung_icon.png",
+    "order": 1
+  },
+  {
+    "id": "animals",
+    "title_ru": "Животные",
+    "title_uk": "Тварини",
+    "is_free": true,
+    "card_count": 2,
+    "icon_asset": "assets/images/animals_icon.png",
+    "order": 2
+  },
+  {
+    "id": "food",
+    "title_ru": "Еда",
+    "title_uk": "Їжа",
+    "is_free": true,
+    "card_count": 2,
+    "icon_asset": "assets/images/food_icon.png",
+    "order": 3
+  },
+  {
+    "id": "colors",
+    "title_ru": "Цвета",
+    "title_uk": "Кольори",
+    "is_free": false,
+    "card_count": 2,
+    "icon_asset": "assets/images/colors_icon.png",
+    "order": 4
+  }
+] 
