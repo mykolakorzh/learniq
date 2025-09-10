@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
 import '../models/card_item.dart';
 import '../services/data_service.dart';
 
@@ -12,476 +12,749 @@ class TestScreen extends StatefulWidget {
   State<TestScreen> createState() => _TestScreenState();
 }
 
-class _TestScreenState extends State<TestScreen>
-    with TickerProviderStateMixin {
-  late AnimationController _imageAnimationController;
-  late AnimationController _shakeAnimationController;
-  late AnimationController _chipAnimationController;
-  
-  late Animation<double> _imageScaleAnimation;
-  late Animation<double> _shakeAnimation;
-  late Animation<double> _chipBounceAnimation;
-  
+class _TestScreenState extends State<TestScreen> {
   late Future<List<CardItem>> _cardsFuture;
-  List<CardItem> _cards = [];
-  int _currentIndex = 0;
+  List<CardItem> _quizCards = [];
+  int _currentQuestionIndex = 0;
+  int _correctAnswers = 0;
+  bool _isQuizComplete = false;
+  List<String> _mistakes = [];
+  List<CardItem> _mistakeCards = [];
+  bool _isLoading = true;
   String? _selectedArticle;
-  bool _isAnimating = false;
-  bool _isImageColored = false;
+  bool _showResult = false;
+  bool _isCorrect = false;
+  bool _isMistakesOnlyMode = false;
+  bool _showConfetti = false;
 
   @override
   void initState() {
     super.initState();
-    
-    _imageAnimationController = AnimationController(
-      duration: const Duration(milliseconds: 800),
-      vsync: this,
-    );
-    
-    _shakeAnimationController = AnimationController(
-      duration: const Duration(milliseconds: 500),
-      vsync: this,
-    );
-    
-    _chipAnimationController = AnimationController(
-      duration: const Duration(milliseconds: 300),
-      vsync: this,
-    );
-    
-    _imageScaleAnimation = Tween<double>(
-      begin: 1.0,
-      end: 1.1,
-    ).animate(CurvedAnimation(
-      parent: _imageAnimationController,
-      curve: Curves.elasticOut,
-    ));
-    
-    _shakeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _shakeAnimationController,
-      curve: Curves.elasticIn,
-    ));
-    
-    _chipBounceAnimation = Tween<double>(
-      begin: 1.0,
-      end: 1.2,
-    ).animate(CurvedAnimation(
-      parent: _chipAnimationController,
-      curve: Curves.bounceOut,
-    ));
-    
-    _cardsFuture = DataService.loadCardsForTopic(widget.topicId);
-    _cardsFuture.then((cards) {
+    _loadData();
+  }
+
+  Future<void> _loadData() async {
+    try {
+      final cards = await DataService.loadCardsForTopic(widget.topicId);
       setState(() {
-        _cards = cards;
+        _quizCards = cards..shuffle();
+        _isLoading = false;
       });
-    });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+    }
   }
 
-  @override
-  void dispose() {
-    _imageAnimationController.dispose();
-    _shakeAnimationController.dispose();
-    _chipAnimationController.dispose();
-    super.dispose();
-  }
-
-  void _handleArticleDrop(String article) {
-    if (_isAnimating || _cards.isEmpty) return;
+  void _onArticleDropped(String article) {
+    if (_showResult) return;
     
     setState(() {
       _selectedArticle = article;
-      _isAnimating = true;
+      _showResult = true;
+      
+      final currentCard = _quizCards[_currentQuestionIndex];
+      _isCorrect = article == currentCard.article;
+      
+      if (_isCorrect) {
+        _correctAnswers++;
+        _showConfetti = true;
+        // Hide confetti after animation
+        Future.delayed(const Duration(seconds: 2), () {
+          if (mounted) {
+            setState(() {
+              _showConfetti = false;
+            });
+          }
+        });
+      } else {
+        _mistakes.add('${currentCard.nounDe} - ${currentCard.article}');
+        _mistakeCards.add(currentCard);
+      }
     });
-    
-    HapticFeedback.mediumImpact();
-    
-    final currentCard = _cards[_currentIndex];
-    if (article.toUpperCase() == currentCard.article.toUpperCase()) {
-      _handleCorrectAnswer();
+
+    // Auto-advance after showing result
+    Future.delayed(const Duration(seconds: 2), () {
+      _nextQuestion();
+    });
+  }
+
+  void _nextQuestion() {
+    if (_currentQuestionIndex < _quizCards.length - 1) {
+      setState(() {
+        _currentQuestionIndex++;
+        _selectedArticle = null;
+        _showResult = false;
+        _isCorrect = false;
+        _showConfetti = false;
+      });
     } else {
-      _handleIncorrectAnswer();
+      setState(() {
+        _isQuizComplete = true;
+      });
     }
   }
 
-  void _handleCorrectAnswer() {
-    _imageAnimationController.forward();
+  void _restartQuiz() {
+    setState(() {
+      _currentQuestionIndex = 0;
+      _correctAnswers = 0;
+      _isQuizComplete = false;
+      _mistakes.clear();
+      _mistakeCards.clear();
+      _selectedArticle = null;
+      _showResult = false;
+      _isCorrect = false;
+      _isMistakesOnlyMode = false;
+      _showConfetti = false;
+      _quizCards.shuffle();
+    });
+  }
+
+  void _retryMistakesOnly() {
+    if (_mistakeCards.isEmpty) return;
     
     setState(() {
-      _isImageColored = true;
-    });
-    
-    Future.delayed(const Duration(milliseconds: 1500), () {
-      _advanceToNextQuestion();
-    });
-  }
-
-  void _handleIncorrectAnswer() {
-    _shakeAnimationController.forward();
-    
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      setState(() {
-        _selectedArticle = _cards[_currentIndex].article.toUpperCase();
-      });
-      
-      Future.delayed(const Duration(milliseconds: 1000), () {
-        _advanceToNextQuestion();
-      });
+      _quizCards = List.from(_mistakeCards)..shuffle();
+      _mistakeCards.clear();
+      _mistakes.clear();
+      _currentQuestionIndex = 0;
+      _correctAnswers = 0;
+      _isQuizComplete = false;
+      _selectedArticle = null;
+      _showResult = false;
+      _isCorrect = false;
+      _isMistakesOnlyMode = true;
+      _showConfetti = false;
     });
   }
 
-  void _advanceToNextQuestion() {
-    if (_currentIndex < _cards.length - 1) {
-      setState(() {
-        _currentIndex++;
-        _selectedArticle = null;
-        _isAnimating = false;
-        _isImageColored = false;
-      });
-      
-      _imageAnimationController.reset();
-      _shakeAnimationController.reset();
-    } else {
-      // Test completed
-      setState(() {
-        _selectedArticle = null;
-        _isAnimating = false;
-        _isImageColored = false;
-      });
-    }
+  String _getGrayImagePath(String originalPath) {
+    // Convert regular image path to gray version
+    final fileName = originalPath.split('/').last;
+    final nameWithoutExt = fileName.split('.').first;
+    final extension = fileName.split('.').last;
+    final directory = originalPath.substring(0, originalPath.lastIndexOf('/'));
+    return '$directory/${nameWithoutExt}_gray.$extension';
   }
 
   Color _getArticleColor(String article) {
-    switch (article.toUpperCase()) {
-      case 'DER':
-        return const Color(0xFF1976D2);
-      case 'DIE':
-        return const Color(0xFFE53935);
-      case 'DAS':
-        return const Color(0xFF43A047);
+    switch (article.toLowerCase()) {
+      case 'der':
+        return const Color(0xFF2196F3); // Blue
+      case 'die':
+        return const Color(0xFFE91E63); // Pink
+      case 'das':
+        return const Color(0xFF4CAF50); // Green
       default:
-        return Colors.grey;
+        return const Color(0xFF9E9E9E); // Grey
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Test Mode'),
-        backgroundColor: Theme.of(context).primaryColor,
-        foregroundColor: Colors.white,
-      ),
-      body: FutureBuilder<List<CardItem>>(
-        future: _cardsFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          
-          if (snapshot.hasError) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.error_outline, size: 64, color: Colors.red),
-                  const SizedBox(height: 16),
-                  Text('Error: ${snapshot.error}'),
-                  const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _cardsFuture = DataService.loadCardsForTopic(widget.topicId);
-                      });
-                    },
-                    child: const Text('Retry'),
-                  ),
-                ],
+    if (_isLoading) {
+      return Scaffold(
+        backgroundColor: const Color(0xFFF8F9FA),
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2196F3)),
               ),
-            );
-          }
-
-          final cards = snapshot.data!;
-          
-          if (cards.isEmpty) {
-            return const Center(
-              child: Text('No cards available for this topic.'),
-            );
-          }
-
-          // Test completed
-          if (_currentIndex >= cards.length) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.celebration, size: 64, color: Colors.green),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'Test Completed!',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'You completed all ${cards.length} questions!',
-                    style: const TextStyle(fontSize: 16),
-                  ),
-                  const SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _currentIndex = 0;
-                        _selectedArticle = null;
-                        _isAnimating = false;
-                        _isImageColored = false;
-                      });
-                    },
-                    child: const Text('Start Over'),
-                  ),
-                ],
+              SizedBox(height: 16),
+              Text(
+                'Loading...',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF666666),
+                ),
               ),
-            );
-          }
+            ],
+          ),
+        ),
+      );
+    }
 
-          final currentCard = cards[_currentIndex];
-          
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
+    if (_quizCards.isEmpty) {
+      return Scaffold(
+        backgroundColor: const Color(0xFFF8F9FA),
+        appBar: AppBar(
+          title: const Text('Test'),
+          backgroundColor: Colors.white,
+          foregroundColor: const Color(0xFF333333),
+          elevation: 0,
+        ),
+        body: const Center(
+          child: Text(
+            'No cards available for this topic.',
+            style: TextStyle(
+              fontSize: 16,
+              color: Color(0xFF666666),
+            ),
+          ),
+        ),
+      );
+    }
+
+    if (_isQuizComplete) {
+      final accuracy = (_correctAnswers / _quizCards.length * 100).round();
+      final hasMistakes = _mistakes.isNotEmpty;
+      
+      return Scaffold(
+        backgroundColor: const Color(0xFFF8F9FA),
+        appBar: AppBar(
+          title: Text(_isMistakesOnlyMode ? 'Review Complete' : 'Test Complete'),
+          backgroundColor: Colors.white,
+          foregroundColor: const Color(0xFF333333),
+          elevation: 0,
+        ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
             child: Column(
               children: [
-                // Progress indicator
-                LinearProgressIndicator(
-                  value: (_currentIndex + 1) / cards.length,
-                  backgroundColor: Colors.grey.shade300,
-                  valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  '${_currentIndex + 1} of ${cards.length}',
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                    fontSize: 14,
-                  ),
-                ),
-                
-                const SizedBox(height: 24),
-                
-                // Grayscale Image
                 Expanded(
-                  flex: 2,
-                  child: AnimatedBuilder(
-                    animation: _imageScaleAnimation,
-                    builder: (context, child) {
-                      return Transform.scale(
-                        scale: _imageScaleAnimation.value,
-                        child: Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: Colors.grey.shade100,
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: ColorFiltered(
-                              colorFilter: _isImageColored
-                                  ? const ColorFilter.matrix([
-                                      1, 0, 0, 0, 0,
-                                      0, 1, 0, 0, 0,
-                                      0, 0, 1, 0, 0,
-                                      0, 0, 0, 1, 0,
-                                    ])
-                                  : const ColorFilter.matrix([
-                                      0.2126, 0.7152, 0.0722, 0, 0,
-                                      0.2126, 0.7152, 0.0722, 0, 0,
-                                      0.2126, 0.7152, 0.0722, 0, 0,
-                                      0, 0, 0, 1, 0,
-                                    ]),
-                              child: Image.asset(
-                                currentCard.imageAsset,
-                                fit: BoxFit.contain,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Container(
-                                    color: Colors.grey.shade200,
-                                    child: const Icon(
-                                      Icons.image_not_supported,
-                                      size: 64,
-                                      color: Colors.grey,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Success icon
+                      Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: accuracy >= 80 
+                              ? const Color(0xFF4CAF50).withOpacity(0.1)
+                              : const Color(0xFFFF9800).withOpacity(0.1),
+                          shape: BoxShape.circle,
                         ),
-                      );
-                    },
-                  ),
-                ),
-                
-                const SizedBox(height: 24),
-                
-                // German Word + Drop Zone
-                Expanded(
-                  flex: 1,
-                  child: AnimatedBuilder(
-                    animation: _shakeAnimation,
-                    builder: (context, child) {
-                      return Transform.translate(
-                        offset: Offset(
-                          _shakeAnimation.value * 10 * (_selectedArticle == currentCard.article.toUpperCase() ? 0 : 1),
-                          0,
+                        child: Icon(
+                          accuracy >= 80 ? Icons.check_circle : Icons.emoji_events,
+                          size: 50,
+                          color: accuracy >= 80 
+                              ? const Color(0xFF4CAF50)
+                              : const Color(0xFFFF9800),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              currentCard.nounDe,
-                              style: const TextStyle(
-                                fontSize: 32,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            DragTarget<String>(
-                              onWillAcceptWithDetails: (details) => true,
-                              onAcceptWithDetails: (details) {
-                                _handleArticleDrop(details.data);
-                              },
-                              builder: (context, candidateData, rejectedData) {
-                                return Container(
-                                  width: double.infinity,
-                                  height: 80,
-                                  decoration: BoxDecoration(
-                                    color: _selectedArticle != null
-                                        ? _getArticleColor(_selectedArticle!)
-                                        : Colors.grey.shade100,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: _selectedArticle != null
-                                          ? _getArticleColor(_selectedArticle!)
-                                          : Colors.grey.shade300,
-                                      width: 2,
-                                      style: BorderStyle.solid,
-                                    ),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      _selectedArticle ?? 'Drop article here',
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: _selectedArticle != null
-                                            ? Colors.white
-                                            : Colors.grey.shade600,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
+                      ),
+                      
+                      const SizedBox(height: 32),
+                      
+                      // Title
+                      Text(
+                        _isMistakesOnlyMode ? 'Review Complete!' : 'Test Complete!',
+                        style: const TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF333333),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      
+                      const SizedBox(height: 16),
+                      
+                      // Score
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.05),
+                              blurRadius: 10,
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
-                      );
-                    },
-                  ),
-                ),
-                
-                const SizedBox(height: 24),
-                
-                // Draggable Article Chips
-                Expanded(
-                  flex: 1,
-                  child: AnimatedBuilder(
-                    animation: _chipBounceAnimation,
-                    builder: (context, child) {
-                      return Transform.scale(
-                        scale: _chipBounceAnimation.value,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: ['DER', 'DIE', 'DAS'].map((article) {
-                            return Draggable<String>(
-                              data: article,
-                              feedback: Material(
-                                elevation: 8,
-                                borderRadius: BorderRadius.circular(12),
-                                child: Container(
-                                  width: 80,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: _getArticleColor(article),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      article,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                        child: Column(
+                          children: [
+                            Text(
+                              '$_correctAnswers / ${_quizCards.length}',
+                              style: const TextStyle(
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF333333),
                               ),
-                              childWhenDragging: Container(
-                                width: 80,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade300,
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    article,
-                                    style: TextStyle(
-                                      color: Colors.grey.shade600,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Accuracy: $accuracy%',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: accuracy >= 80 
+                                    ? const Color(0xFF4CAF50)
+                                    : const Color(0xFFFF9800),
+                                fontWeight: FontWeight.w600,
                               ),
-                              child: GestureDetector(
-                                onTap: () => _handleArticleDrop(article),
-                                child: Container(
-                                  width: 80,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: _getArticleColor(article),
-                                    borderRadius: BorderRadius.circular(12),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black.withValues(alpha: 0.1),
-                                        blurRadius: 4,
-                                        offset: const Offset(0, 2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      article,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }).toList(),
+                            ),
+                          ],
                         ),
-                      );
-                    },
+                      ),
+                    ],
                   ),
                 ),
+                
+                // Action buttons
+                Column(
+                  children: [
+                    if (hasMistakes && !_isMistakesOnlyMode) ...[
+                      SizedBox(
+                        width: double.infinity,
+                        height: 56,
+                        child: ElevatedButton(
+                          onPressed: _retryMistakesOnly,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF2196F3),
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            elevation: 0,
+                          ),
+                          child: Text(
+                            'Practice Mistakes (${_mistakes.length})',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                    
+                    SizedBox(
+                      width: double.infinity,
+                      height: 56,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.of(context).popUntil((route) => route.isFirst);
+                        },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: const Color(0xFF2196F3),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            side: const BorderSide(color: Color(0xFF2196F3), width: 2),
+                          ),
+                        ),
+                        child: const Text(
+                          'Go Home',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                
+                if (_mistakes.isNotEmpty) ...[
+                  const SizedBox(height: 24),
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Mistakes to Review:',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF333333),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        SizedBox(
+                          height: 120,
+                          child: ListView.builder(
+                            itemCount: _mistakes.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.close,
+                                      color: Color(0xFFE91E63),
+                                      size: 20,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Text(
+                                        _mistakes[index],
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          color: Color(0xFF666666),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ],
             ),
-          );
-        },
+          ),
+        ),
+      );
+    }
+
+    final currentCard = _quizCards[_currentQuestionIndex];
+    final grayImagePath = _getGrayImagePath(currentCard.imageAsset);
+    final colorfulImagePath = currentCard.imageAsset;
+
+    return Scaffold(
+      backgroundColor: const Color(0xFFF8F9FA),
+      appBar: AppBar(
+        title: const Text('Test'),
+        backgroundColor: Colors.white,
+        foregroundColor: const Color(0xFF333333),
+        elevation: 0,
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: const Color(0xFF2196F3).withOpacity(0.1),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Text(
+              '${_currentQuestionIndex + 1}/${_quizCards.length}',
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF2196F3),
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: Stack(
+        children: [
+          SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              // Progress bar
+              Container(
+                height: 6,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(3),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.05),
+                      blurRadius: 5,
+                      offset: const Offset(0, 1),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(3),
+                  child: LinearProgressIndicator(
+                    value: (_currentQuestionIndex + 1) / _quizCards.length,
+                    backgroundColor: Colors.transparent,
+                    valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF2196F3)),
+                  ),
+                ),
+              ),
+              
+              const SizedBox(height: 32),
+              
+              // Image
+              Expanded(
+                flex: 3,
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.08),
+                        blurRadius: 20,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Image.asset(
+                        _showResult && _isCorrect ? colorfulImagePath : grayImagePath,
+                        fit: BoxFit.contain,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            color: const Color(0xFFF5F5F5),
+                            child: const Icon(
+                              Icons.image_not_supported,
+                              size: 64,
+                              color: Color(0xFFCCCCCC),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              
+              const SizedBox(height: 32),
+              
+              // Drag and drop area
+              Container(
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.08),
+                      blurRadius: 20,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    const Text(
+                      'Drag the correct article:',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF333333),
+                      ),
+                    ),
+                    
+                    const SizedBox(height: 24),
+                    
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Drop target
+                        DragTarget<String>(
+                          onAccept: (article) => _onArticleDropped(article),
+                          builder: (context, candidateData, rejectedData) {
+                            return Container(
+                              width: 80,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: _selectedArticle != null 
+                                    ? _getArticleColor(_selectedArticle!)
+                                    : const Color(0xFFF5F5F5),
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
+                                  color: candidateData.isNotEmpty 
+                                      ? const Color(0xFF2196F3)
+                                      : const Color(0xFFE0E0E0),
+                                  width: candidateData.isNotEmpty ? 3 : 2,
+                                ),
+                              ),
+                              child: Center(
+                                child: _selectedArticle != null
+                                    ? Text(
+                                        _selectedArticle!.toUpperCase(),
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    : const Text(
+                                        '___',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color: Color(0xFFCCCCCC),
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                              ),
+                            );
+                          },
+                        ),
+                        
+                        const SizedBox(width: 20),
+                        
+                        // German word
+                        Text(
+                          currentCard.nounDe,
+                          style: const TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF333333),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              
+              const SizedBox(height: 32),
+              
+              // Draggable articles
+              Expanded(
+                flex: 2,
+                child: Column(
+                  children: [
+                    const Text(
+                      'Choose from:',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF666666),
+                      ),
+                    ),
+                    
+                    const SizedBox(height: 20),
+                    
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: ['der', 'die', 'das'].map((article) {
+                        final isUsed = _selectedArticle == article;
+                        
+                        return Draggable<String>(
+                          data: article,
+                          feedback: Material(
+                            color: Colors.transparent,
+                            child: Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: _getArticleColor(article),
+                                borderRadius: BorderRadius.circular(16),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.3),
+                                    blurRadius: 15,
+                                    spreadRadius: 2,
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  article.toUpperCase(),
+                                  style: const TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          childWhenDragging: Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF5F5F5),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: const Center(
+                              child: Icon(
+                                Icons.drag_indicator,
+                                color: Color(0xFFCCCCCC),
+                                size: 32,
+                              ),
+                            ),
+                          ),
+                          child: AnimatedOpacity(
+                            duration: const Duration(milliseconds: 300),
+                            opacity: isUsed ? 0.3 : 1.0,
+                            child: Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: _getArticleColor(article),
+                                borderRadius: BorderRadius.circular(16),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: _getArticleColor(article).withOpacity(0.3),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 4),
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  article.toUpperCase(),
+                                  style: const TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                    
+                    if (_showResult) ...[
+                      const SizedBox(height: 24),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: _isCorrect 
+                              ? const Color(0xFF4CAF50).withOpacity(0.1)
+                              : const Color(0xFFE91E63).withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          _isCorrect ? '✓ Correct!' : '✗ Incorrect!',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: _isCorrect 
+                                ? const Color(0xFF4CAF50)
+                                : const Color(0xFFE91E63),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+          ),
+          
+          // Confetti overlay
+          if (_showConfetti)
+            Positioned.fill(
+              child: IgnorePointer(
+                child: Lottie.asset(
+                  'assets/animations/confetti.json',
+                  fit: BoxFit.cover,
+                  repeat: false,
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

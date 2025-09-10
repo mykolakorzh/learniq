@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import '../models/topic.dart';
-import '../models/card_item.dart';
+import '../../../shared/models/topic.dart';
+import '../../../shared/models/card_item.dart';
 
 class TopicsRepository {
   static const String _topicsAssetPath = 'assets/data/topics.json';

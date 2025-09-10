@@ -1,21 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'router.dart';
-import 'theme/theme.dart';
+import "package:flutter/material.dart";
+import "core/theme/app_theme.dart";
+import "core/routing/app_router.dart";
 
-class LearnIQApp extends StatelessWidget {
-  const LearnIQApp({super.key});
+class LearniqApp extends StatelessWidget {
+  const LearniqApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'LearnIQ',
+    return MaterialApp(
+      title: "LearnIQ",
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
       theme: AppTheme.lightTheme,
-      routerConfig: AppRouter.router,
+      onGenerateRoute: AppRouter.generateRoute,
+      initialRoute: "/",
     );
   }
-} 
+}

@@ -13,25 +13,25 @@ class LearnScreen extends StatefulWidget {
 
 class _LearnScreenState extends State<LearnScreen> {
   late Future<List<CardItem>> _cardsFuture;
+  late PageController _pageController;
   int _currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
+    _pageController = PageController();
     _cardsFuture = DataService.loadCardsForTopic(widget.topicId);
   }
 
-  void _nextCard() {
-    setState(() {
-      _currentIndex++;
-    });
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
-  void _previousCard() {
+  void _onPageChanged(int index) {
     setState(() {
-      if (_currentIndex > 0) {
-        _currentIndex--;
-      }
+      _currentIndex = index;
     });
   }
 
@@ -110,135 +110,128 @@ class _LearnScreenState extends State<LearnScreen> {
             );
           }
 
-          final currentCard = cards[_currentIndex];
-          
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                // Progress indicator
-                LinearProgressIndicator(
-                  value: (_currentIndex + 1) / cards.length,
-                  backgroundColor: Colors.grey.shade300,
-                  valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  '${_currentIndex + 1} of ${cards.length}',
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                    fontSize: 14,
-                  ),
-                ),
-                
-                const SizedBox(height: 24),
-                
-                // Card content
-                Expanded(
-                  child: Card(
-                    elevation: 8,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+          return PageView.builder(
+            controller: _pageController,
+            onPageChanged: _onPageChanged,
+            itemCount: cards.length,
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (context, index) {
+              final currentCard = cards[index];
+              
+              return Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    // Progress indicator
+                    LinearProgressIndicator(
+                      value: (index + 1) / cards.length,
+                      backgroundColor: Colors.grey.shade300,
+                      valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-                          // Image
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color: Colors.grey.shade100,
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Image.asset(
-                                  currentCard.imageAsset,
-                                  fit: BoxFit.contain,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Container(
-                                      color: Colors.grey.shade200,
-                                      child: const Icon(
-                                        Icons.image_not_supported,
-                                        size: 64,
-                                        color: Colors.grey,
-                                      ),
-                                    );
-                                  },
+                    const SizedBox(height: 8),
+                    Text(
+                      '${index + 1} of ${cards.length}',
+                      style: TextStyle(
+                        color: Colors.grey.shade600,
+                        fontSize: 14,
+                      ),
+                    ),
+                    
+                    const SizedBox(height: 24),
+                    
+                    // Card content
+                    Expanded(
+                      child: Card(
+                        elevation: 8,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              // Image
+                              Expanded(
+                                flex: 2,
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: Colors.grey.shade100,
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(12),
+                                    child: Image.asset(
+                                      currentCard.imageAsset,
+                                      fit: BoxFit.contain,
+                                      errorBuilder: (context, error, stackTrace) {
+                                        return Container(
+                                          color: Colors.grey.shade200,
+                                          child: const Icon(
+                                            Icons.image_not_supported,
+                                            size: 64,
+                                            color: Colors.grey,
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                          
-                          const SizedBox(height: 24),
-                          
-                          // German word with article
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 12,
-                            ),
-                            decoration: BoxDecoration(
-                              color: _getArticleColor(currentCard.article),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              '${currentCard.article.toUpperCase()} ${currentCard.nounDe}',
-                              style: const TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                              
+                              const SizedBox(height: 24),
+                              
+                              // German word with article
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 12,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: _getArticleColor(currentCard.article),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Text(
+                                  '${currentCard.article.toUpperCase()} ${currentCard.nounDe}',
+                                  style: const TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
-                            ),
+                              
+                              const SizedBox(height: 16),
+                              
+                              // Translation
+                              Text(
+                                currentCard.translation,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
                           ),
-                          
-                          const SizedBox(height: 16),
-                          
-                          // Translation
-                          Text(
-                            currentCard.translation,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                
-                const SizedBox(height: 24),
-                
-                // Navigation buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ElevatedButton.icon(
-                      onPressed: _currentIndex > 0 ? _previousCard : null,
-                      icon: const Icon(Icons.arrow_back),
-                      label: const Text('Previous'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey,
-                        foregroundColor: Colors.white,
-                      ),
-                    ),
-                    ElevatedButton.icon(
-                      onPressed: _currentIndex < cards.length - 1 ? _nextCard : null,
-                      icon: const Icon(Icons.arrow_forward),
-                      label: const Text('Next'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        foregroundColor: Colors.white,
+                    
+                    const SizedBox(height: 24),
+                    
+                    // Swipe instruction
+                    Text(
+                      'Swipe left or right to navigate',
+                      style: TextStyle(
+                        color: Colors.grey.shade600,
+                        fontSize: 14,
+                        fontStyle: FontStyle.italic,
                       ),
                     ),
                   ],
                 ),
-              ],
-            ),
+              );
+            },
           );
         },
       ),

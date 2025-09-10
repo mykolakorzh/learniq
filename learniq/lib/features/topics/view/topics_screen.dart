@@ -1,62 +1,190 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:go_router/go_router.dart';
-import '../controller/topics_controller.dart';
-import '../controller/progress_controller.dart';
-import 'topic_card.dart';
+import '../data/topics_repository.dart';
+import '../../../shared/models/topic.dart';
 
-class TopicsScreen extends ConsumerWidget {
+class TopicsScreen extends StatefulWidget {
   const TopicsScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final topicsAsync = ref.watch(topicsProvider);
+  State<TopicsScreen> createState() => _TopicsScreenState();
+}
 
+class _TopicsScreenState extends State<TopicsScreen> {
+  final _repository = TopicsRepository();
+  
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('topics.title'.tr()),
-        automaticallyImplyLeading: true, // This will show back button if there's a previous route
+        title: const Text('LearnIQ'),
+        centerTitle: true,
       ),
-      body: topicsAsync.when(
-        data: (topics) {
-          if (topics.isEmpty) {
+      body: FutureBuilder<List<Topic>>(
+        future: _repository.getTopics(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          
+          if (snapshot.hasError) {
             return Center(
-              child: Text('topics.empty'.tr()),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.error, size: 64, color: Colors.red.shade300),
+                  const SizedBox(height: 16),
+                  const Text('Failed to load topics'),
+                ],
+              ),
             );
           }
-
-          // Sort: isFree desc, then order asc
-          final sortedTopics = List.from(topics)
-            ..sort((a, b) {
-              if (a.isFree != b.isFree) {
-                return b.isFree ? 1 : -1; // Free topics first (desc)
-              }
-              return a.order.compareTo(b.order); // Then by order asc
-            });
-
-          return GridView.builder(
+          
+          final topics = snapshot.data ?? [];
+          
+          return ListView.builder(
             padding: const EdgeInsets.all(16),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-              childAspectRatio: 0.8,
-            ),
-            itemCount: sortedTopics.length,
+            itemCount: topics.length,
             itemBuilder: (context, index) {
-              final topic = sortedTopics[index];
-              return TopicCard(topic: topic);
+              final topic = topics[index];
+              return _TopicCard(
+                topic: topic,
+                onTap: () => _navigateToTopic(topic.id),
+              );
             },
           );
         },
-        loading: () => const Center(
-          child: CircularProgressIndicator(),
+      ),
+    );
+  }
+  
+  void _navigateToTopic(String topicId) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => _TopicOptionsSheet(topicId: topicId),
+    );
+  }
+}
+
+class _TopicCard extends StatelessWidget {
+  const _TopicCard({
+    required this.topic,
+    required this.onTap,
+  });
+
+  final Topic topic;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        leading: Container(
+          width: 48,
+          height: 48,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(
+            Icons.school,
+            color: Theme.of(context).colorScheme.primary,
+          ),
         ),
-        error: (error, stack) => Center(
-          child: Text('topics.error'.tr()),
+        title: Text(topic.titleRu),
+        subtitle: Text('${topic.cardCount} cards'),
+        trailing: topic.isFree 
+            ? const Chip(label: Text('Free'))
+            : const Icon(Icons.lock_outline),
+        onTap: onTap,
+      ),
+    );
+  }
+}
+
+class _TopicOptionsSheet extends StatelessWidget {
+  const _TopicOptionsSheet({required this.topicId});
+
+  final String topicId;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Text(
+            'Choose Learning Mode',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 24),
+          _OptionButton(
+            icon: Icons.school,
+            title: 'Learn',
+            subtitle: 'Study vocabulary cards',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/learn', arguments: topicId);
+            },
+          ),
+          const SizedBox(height: 16),
+          _OptionButton(
+            icon: Icons.quiz,
+            title: 'Test',
+            subtitle: 'Practice with quiz',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/test', arguments: topicId);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _OptionButton extends StatelessWidget {
+  const _OptionButton({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: Row(
+            children: [
+              Icon(icon, size: 32),
+              const SizedBox(width: 16),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: const TextStyle(fontSize: 16)),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
-} 
+}

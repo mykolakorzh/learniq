@@ -1,0 +1,82 @@
+# Cursor Rules for LearnIQ Flutter Project
+
+## Project Overview
+This is a Flutter application called "LearnIQ" - a language learning app focused on German grammar and vocabulary. The app uses:
+- Flutter with Riverpod for state management
+- Easy Localization for internationalization (Russian and Ukrainian)
+- Go Router for navigation
+- Text-to-Speech service for audio pronunciation
+
+## Key Features
+- Topic-based learning system
+- Card-based vocabulary learning
+- Drag and drop interactions
+- Audio pronunciation
+- Multi-language support (Russian/Ukrainian)
+
+## Architecture
+- `lib/features/` - Feature-based organization
+- `lib/models/` - Data models (CardItem, Topic)
+- `lib/services/` - Business logic and external services
+- `lib/screens/` - UI screens
+- `lib/theme/` - App theming
+
+## Coding Standards
+- Use Riverpod for state management
+- Follow Flutter best practices
+- Use proper localization with Easy Localization
+- Implement proper error handling
+- Use meaningful variable and function names
+- Add comments for complex logic
+
+## Common Patterns
+- Use ConsumerStatefulWidget for screens that need state
+- Use FutureBuilder for async data loading
+- Implement proper disposal of controllers
+- Use context.locale for language-specific content
+
+## Dependencies
+- flutter_riverpod: State management
+- easy_localization: Internationalization
+- go_router: Navigation
+- flutter_tts: Text-to-speech
+
+When helping with this project:
+1. Consider the multi-language nature (Russian/Ukrainian)
+2. Follow the existing architecture patterns
+3. Use Riverpod for state management
+4. Implement proper error handling
+5. Consider the learning app context
+
+## Claude Pro Workflow Instructions
+
+### For Code Generation and Refactoring:
+- Always provide complete, runnable code examples
+- Include proper error handling and edge cases
+- Consider performance implications
+- Add meaningful comments for complex logic
+- Follow Flutter's material design guidelines
+
+### For Debugging and Problem Solving:
+- Analyze the entire context before suggesting solutions
+- Provide step-by-step debugging approaches
+- Consider both UI and business logic issues
+- Suggest logging and debugging strategies
+
+### For Architecture and Design:
+- Suggest improvements while maintaining existing patterns
+- Consider scalability and maintainability
+- Provide alternative approaches when relevant
+- Consider the learning app's specific requirements
+
+### For Testing:
+- Generate comprehensive unit and widget tests
+- Include test cases for edge cases
+- Consider testing for different locales
+- Provide integration test suggestions
+
+### For Performance Optimization:
+- Analyze code for potential bottlenecks
+- Suggest Flutter-specific optimizations
+- Consider memory management and disposal
+- Provide profiling recommendations
