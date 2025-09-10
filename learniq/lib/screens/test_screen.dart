@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../models/card_item.dart';
 import '../services/data_service.dart';
+import '../services/progress_service.dart';
 
 class TestScreen extends StatefulWidget {
   final String topicId;
@@ -70,7 +71,9 @@ class _TestScreenState extends State<TestScreen> {
         });
       } else {
         _mistakes.add('${currentCard.nounDe} - ${currentCard.article}');
-        _mistakeCards.add(currentCard);
+        if (!_mistakeCards.any((c) => c.id == currentCard.id)) {
+          _mistakeCards.add(currentCard);
+        }
       }
     });
 
@@ -80,7 +83,7 @@ class _TestScreenState extends State<TestScreen> {
     });
   }
 
-  void _nextQuestion() {
+  Future<void> _nextQuestion() async {
     if (_currentQuestionIndex < _quizCards.length - 1) {
       setState(() {
         _currentQuestionIndex++;
@@ -90,9 +93,22 @@ class _TestScreenState extends State<TestScreen> {
         _showConfetti = false;
       });
     } else {
-      setState(() {
-        _isQuizComplete = true;
-      });
+      // Persist progress
+      final total = _quizCards.isEmpty ? 1 : _quizCards.length;
+      final accuracy01 = _correctAnswers / total;
+      try {
+        await ProgressService.setAccuracy(widget.topicId, accuracy01);
+        await ProgressService.setMistakes(
+          widget.topicId,
+          _mistakeCards.map((c) => c.id).toList(),
+        );
+      } catch (_) {}
+
+      if (mounted) {
+        setState(() {
+          _isQuizComplete = true;
+        });
+      }
     }
   }
 
@@ -713,28 +729,7 @@ class _TestScreenState extends State<TestScreen> {
                       }).toList(),
                     ),
                     
-                    if (_showResult) ...[
-                      const SizedBox(height: 24),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                        decoration: BoxDecoration(
-                          color: _isCorrect 
-                              ? const Color(0xFF4CAF50).withOpacity(0.1)
-                              : const Color(0xFFE91E63).withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Text(
-                          _isCorrect ? '✓ Correct!' : '✗ Incorrect!',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: _isCorrect 
-                                ? const Color(0xFF4CAF50)
-                                : const Color(0xFFE91E63),
-                          ),
-                        ),
-                      ),
-                    ],
+                    // Result chip moved to overlay to avoid layout overflow
                   ],
                 ),
               ),
@@ -742,6 +737,35 @@ class _TestScreenState extends State<TestScreen> {
           ),
         ),
           ),
+          
+          // Result overlay (avoids bottom overflow in tight layouts)
+          if (_showResult)
+            Positioned(
+              left: 20,
+              right: 20,
+              bottom: 20,
+              child: Center(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  decoration: BoxDecoration(
+                    color: _isCorrect 
+                        ? const Color(0xFF4CAF50).withOpacity(0.1)
+                        : const Color(0xFFE91E63).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    _isCorrect ? '✓ Correct!' : '✗ Incorrect!',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: _isCorrect 
+                          ? const Color(0xFF4CAF50)
+                          : const Color(0xFFE91E63),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           
           // Confetti overlay
           if (_showConfetti)
