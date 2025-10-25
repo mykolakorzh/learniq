@@ -33,15 +33,27 @@ class TopicCard extends ConsumerWidget {
               // Header with icon and badge
               Row(
                 children: [
-                  // Icon placeholder
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(8),
+                  // Topic icon
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      topic.iconAsset,
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        // Fallback to placeholder if image fails to load
+                        return Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Icon(Icons.book, color: Colors.grey),
+                        );
+                      },
                     ),
-                    child: const Icon(Icons.book, color: Colors.grey),
                   ),
                   const Spacer(),
                   // Badge
