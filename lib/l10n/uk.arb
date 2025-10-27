@@ -1,0 +1,178 @@
+{
+  "@@locale": "uk",
+  "appTitle": "Learniq",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "topicsTitle": "Теми",
+  "@topicsTitle": {
+    "description": "Title for the topics screen"
+  },
+  "paywallTitle": "Преміум",
+  "@paywallTitle": {
+    "description": "Title for the paywall screen"
+  },
+  "paywallComingSoon": "Система підписки",
+  "@paywallComingSoon": {
+    "description": "Coming soon message for paywall"
+  },
+  "paywallDescription": "Преміум функції будуть доступні найближчим часом. Тут ви зможете розблокувати додаткові теми та функції.",
+  "@paywallDescription": {
+    "description": "Description for paywall features"
+  },
+  "paywallUnlockPremium": "Розблокувати Преміум",
+  "@paywallUnlockPremium": {
+    "description": "Button to unlock premium features"
+  },
+  "paywallRestorePurchases": "Відновити покупки",
+  "@paywallRestorePurchases": {
+    "description": "Button to restore previous purchases"
+  },
+  "paywallBackToTopics": "Повернутися до тем",
+  "@paywallBackToTopics": {
+    "description": "Button to go back to topics"
+  },
+
+  "settingsTitle": "Налаштування",
+  "settingsAppPreferences": "Налаштування програми",
+  "settingsSoundEffects": "Звукові ефекти",
+  "settingsSoundEffectsSubtitle": "Відтворювати звуки при взаємодії",
+  "settingsHapticFeedback": "Вібрація",
+  "settingsHapticFeedbackSubtitle": "Вібрувати при взаємодії",
+  "settingsTts": "Озвучування тексту",
+  "settingsTtsSubtitle": "Увімкнути аудіо вимову",
+  "settingsLanguage": "Мова",
+  "settingsLanguageEnglish": "English",
+  "settingsLanguageRussian": "Русский",
+  "settingsLanguageUkrainian": "Українська",
+  "settingsLanguageChanged": "Мову змінено",
+  "settingsLanguageChangedRu": "Язык изменен",
+  "settingsLanguageChangedUk": "Мову змінено",
+  "settingsData": "Дані",
+  "settingsClearProgress": "Очистити прогрес",
+  "settingsClearProgressSubtitle": "Скинути весь прогрес навчання",
+  "settingsResetToDefaults": "Скинути налаштування",
+  "settingsResetToDefaultsSubtitle": "Відновити налаштування за замовчуванням",
+  "settingsAbout": "Про програму",
+  "settingsVersion": "Версія",
+  "settingsDeveloper": "Розробник",
+  "settingsDeveloperName": "Микола Корж",
+  "settingsPrivacyPolicy": "Політика конфіденційності",
+  "settingsPrivacyPolicySubtitle": "Переглянути політику конфіденційності",
+  "settingsPrivacyPolicyMessage": "Політика конфіденційності відкриється тут",
+  "settingsLicense": "Ліцензія",
+  "settingsLicenseSubtitle": "Пропрієтарна - Всі права захищені",
+  "settingsClearProgressDialogTitle": "Очистити весь прогрес?",
+  "settingsClearProgressDialogMessage": "Це видалить весь ваш прогрес навчання та статистику. Цю дію не можна скасувати.",
+  "settingsClearProgressDialogConfirm": "Очистити",
+  "settingsClearProgressDialogCancel": "Скасувати",
+  "settingsClearProgressSuccess": "Прогрес очищено",
+  "settingsResetDialogTitle": "Скинути налаштування?",
+  "settingsResetDialogMessage": "Це відновить всі налаштування до значень за замовчуванням.",
+  "settingsResetDialogConfirm": "Скинути",
+  "settingsResetDialogCancel": "Скасувати",
+  "settingsResetSuccess": "Налаштування скинуто",
+
+  "topicsFailedToLoad": "Не вдалося завантажити теми",
+  "topicsCards": "карток",
+  "topicsCardCount": "{count} карток",
+  "@topicsCardCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topicsProgress": "Прогрес",
+  "topicsMistakes": "Помилки",
+  "topicsFree": "Безкоштовно",
+  "topicsFixMistakes": "Виправити помилки",
+  "topicsChooseLearningMode": "Виберіть режим навчання",
+  "topicsYourProgress": "Ваш прогрес",
+  "topicsPracticeMistakes": "Практика помилок",
+  "topicsPracticeMistakesFocus": "Зосередьтеся на слабких словах ({count})",
+  "@topicsPracticeMistakesFocus": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topicsLearn": "Вивчати",
+  "topicsLearnSubtitle": "Вивчати словникові картки",
+  "topicsTest": "Тестувати",
+  "topicsTestSubtitle": "Практика з вікториною",
+
+  "topics.title": "Теми",
+  "topics.empty": "Теми не знайдено",
+  "topics.error": "Помилка завантаження тем",
+  "topics.cards_count": "{count} карток",
+  "@topics.cards_count": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topics.in_progress": "В процесі",
+  "topics.locked": "Заблоковано",
+  "topics.learned": "Вивчено",
+  "topics.not_started": "Не розпочато",
+  
+  "topic_detail.title": "Деталі теми",
+  "topic_detail.not_found": "Тему не знайдено",
+  "topic_detail.error": "Помилка завантаження теми",
+  "topic_detail.cards_count": "{count} карток",
+  "@topic_detail.cards_count": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topic_detail.accuracy_label": "Точність: {percent}%",
+  "@topic_detail.accuracy_label": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "topic_detail.mistakes": "Помилки",
+  "topic_detail.locked_message": "Ця тема заблокована. Розблокуйте її для доступу до навчання.",
+  "topic_detail.unlock": "Розблокувати",
+  "topic_detail.actions": "Дії",
+  "topic_detail.learn": "Вивчати",
+  "topic_detail.test": "Тестувати",
+  "topic_detail.retry_mistakes": "Повторити помилки",
+  "topic_detail.retry_mistakes_coming_soon": "Функція повтора помилок буде доступна найближчим часом",
+  
+  "paywall.title": "Преміум",
+  "paywall.coming_soon": "Система покупок",
+  "paywall.description": "Преміум функції будуть доступні найближчим часом. Тут ви зможете розблокувати додаткові теми та функції.",
+  "paywall.back_to_topics": "Повернутися до тем",
+  "paywall.unlock_premium": "Відкрити Преміум",
+  "paywall.restore_purchases": "Відновити покупки",
+  
+  "learn.title": "Вивчення",
+  "learn.coming_soon": "Функція вивчення буде доступна найближчим часом",
+  "learn.topic_id": "ID теми: {topicId}",
+  "@learn.topic_id": {
+    "placeholders": {
+      "topicId": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "test.title": "Тестування",
+  "test.coming_soon": "Функція тестування буде доступна найближчим часом",
+  "test.topic_id": "ID теми: {topicId}",
+  "@test.topic_id": {
+    "placeholders": {
+      "topicId": {
+        "type": "String"
+      }
+    }
+  }
+} 

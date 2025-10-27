@@ -1,0 +1,106 @@
+{
+  "@@locale": "en",
+  "appTitle": "Learniq",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "topicsTitle": "Topics",
+  "@topicsTitle": {
+    "description": "Title for the topics screen"
+  },
+
+  "settingsTitle": "Settings",
+  "settingsAppPreferences": "App Preferences",
+  "settingsSoundEffects": "Sound Effects",
+  "settingsSoundEffectsSubtitle": "Play sounds for interactions",
+  "settingsHapticFeedback": "Haptic Feedback",
+  "settingsHapticFeedbackSubtitle": "Vibrate on interactions",
+  "settingsTts": "Text-to-Speech",
+  "settingsTtsSubtitle": "Enable pronunciation audio",
+  "settingsLanguage": "Language",
+  "settingsLanguageEnglish": "English",
+  "settingsLanguageRussian": "Русский",
+  "settingsLanguageUkrainian": "Українська",
+  "settingsLanguageChanged": "Language changed",
+  "settingsLanguageChangedRu": "Язык изменен",
+  "settingsLanguageChangedUk": "Мову змінено",
+  "settingsData": "Data",
+  "settingsClearProgress": "Clear Progress",
+  "settingsClearProgressSubtitle": "Reset all learning progress",
+  "settingsResetToDefaults": "Reset to Defaults",
+  "settingsResetToDefaultsSubtitle": "Restore default settings",
+  "settingsAbout": "About",
+  "settingsVersion": "Version",
+  "settingsDeveloper": "Developer",
+  "settingsDeveloperName": "Mykola Korzh",
+  "settingsPrivacyPolicy": "Privacy Policy",
+  "settingsPrivacyPolicySubtitle": "View our privacy policy",
+  "settingsPrivacyPolicyMessage": "Privacy policy will open here",
+  "settingsLicense": "License",
+  "settingsLicenseSubtitle": "Proprietary - All rights reserved",
+  "settingsClearProgressDialogTitle": "Clear All Progress?",
+  "settingsClearProgressDialogMessage": "This will delete all your learning progress and statistics. This action cannot be undone.",
+  "settingsClearProgressDialogConfirm": "Clear",
+  "settingsClearProgressDialogCancel": "Cancel",
+  "settingsClearProgressSuccess": "Progress cleared",
+  "settingsResetDialogTitle": "Reset Settings?",
+  "settingsResetDialogMessage": "This will restore all settings to their default values.",
+  "settingsResetDialogConfirm": "Reset",
+  "settingsResetDialogCancel": "Cancel",
+  "settingsResetSuccess": "Settings reset to defaults",
+
+  "topicsFailedToLoad": "Failed to load topics",
+  "topicsCards": "cards",
+  "topicsCardCount": "{count} cards",
+  "@topicsCardCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topicsProgress": "Progress",
+  "topicsMistakes": "Mistakes",
+  "topicsFree": "Free",
+  "topicsFixMistakes": "Fix mistakes",
+  "topicsChooseLearningMode": "Choose Learning Mode",
+  "topicsYourProgress": "Your progress",
+  "topicsPracticeMistakes": "Practice Mistakes",
+  "topicsPracticeMistakesFocus": "Focus on your weak words ({count})",
+  "@topicsPracticeMistakesFocus": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topicsLearn": "Learn",
+  "topicsLearnSubtitle": "Study vocabulary cards",
+  "topicsTest": "Test",
+  "topicsTestSubtitle": "Practice with quiz",
+
+  "paywallTitle": "Premium",
+  "@paywallTitle": {
+    "description": "Title for the paywall screen"
+  },
+  "paywallComingSoon": "Subscription System",
+  "@paywallComingSoon": {
+    "description": "Coming soon message for paywall"
+  },
+  "paywallDescription": "Premium features will be available soon. Here you'll be able to unlock additional topics and features.",
+  "@paywallDescription": {
+    "description": "Description for paywall features"
+  },
+  "paywallUnlockPremium": "Unlock Premium",
+  "@paywallUnlockPremium": {
+    "description": "Button to unlock premium features"
+  },
+  "paywallRestorePurchases": "Restore Purchases",
+  "@paywallRestorePurchases": {
+    "description": "Button to restore previous purchases"
+  },
+  "paywallBackToTopics": "Back to Topics",
+  "@paywallBackToTopics": {
+    "description": "Button to go back to topics"
+  }
+}
