@@ -191,8 +191,8 @@ class _ModernTabButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedScale(
-      scale: isActive ? 0.95 : 1.0,
+    return CustomAnimatedScale(
+          scaleFactor: isActive ? 0.95 : 1.0,
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -262,11 +262,11 @@ class _ModernTabButton extends StatelessWidget {
 /// Custom page route with modern transitions
 class ModernPageRoute<T> extends PageRouteBuilder<T> {
   final Widget page;
-  final RouteSettings? settings;
+  final RouteSettings settings;
 
   ModernPageRoute({
     required this.page,
-    this.settings,
+    required this.settings,
   }) : super(
           pageBuilder: (context, animation, secondaryAnimation) => page,
           settings: settings,

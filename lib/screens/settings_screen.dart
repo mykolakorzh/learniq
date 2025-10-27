@@ -553,7 +553,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
-      child: AnimatedScale(
+      child: CustomAnimatedScale(
         onTap: () => onChanged(!value),
         child: Container(
           padding: const EdgeInsets.all(16),
@@ -630,7 +630,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
-      child: AnimatedScale(
+      child: CustomAnimatedScale(
         onTap: onTap,
         child: Container(
           padding: const EdgeInsets.all(16),
@@ -699,7 +699,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
-      child: AnimatedScale(
+      child: CustomAnimatedScale(
         onTap: () => onChanged(value),
         child: Container(
           padding: const EdgeInsets.all(16),

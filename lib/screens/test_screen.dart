@@ -235,7 +235,7 @@ class _TestScreenState extends State<TestScreen> {
                   // Header
                   Row(
                     children: [
-                      AnimatedScale(
+                      CustomAnimatedScale(
                         onTap: () => Navigator.of(context).popUntil((route) => route.isFirst),
                         child: Container(
                           padding: const EdgeInsets.all(12),
@@ -439,7 +439,7 @@ class _TestScreenState extends State<TestScreen> {
                 padding: const EdgeInsets.all(20),
                 child: Row(
                   children: [
-                    AnimatedScale(
+                    CustomAnimatedScale(
                       onTap: () => Navigator.pop(context),
                       child: Container(
                         padding: const EdgeInsets.all(12),
@@ -638,7 +638,7 @@ class _TestScreenState extends State<TestScreen> {
                                 ),
                               ),
                               const SizedBox(width: 12),
-                              AnimatedScale(
+                              CustomAnimatedScale(
                                 onTap: () async {
                                   HapticFeedback.selectionClick();
                                   await TTSService.speak(currentCard.nounDe);
@@ -736,8 +736,8 @@ class _TestScreenState extends State<TestScreen> {
                             child: AnimatedOpacity(
                               duration: Animations.fast,
                               opacity: isUsed ? 0.3 : 1.0,
-                              child: AnimatedScale(
-                                scale: isUsed ? 0.9 : 1.0,
+                              child: CustomAnimatedScale(
+                                    scaleFactor: isUsed ? 0.9 : 1.0,
                                 duration: Animations.fast,
                                 child: Container(
                                   width: 80,
@@ -795,7 +795,7 @@ class _TestScreenState extends State<TestScreen> {
                   ),
                 ],
               ),
-              child: AnimatedSlide(
+              child: CustomAnimatedSlide(
                 offset: const Offset(0, 1),
                 show: _showResult,
                 child: Container(

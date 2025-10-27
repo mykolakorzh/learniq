@@ -110,7 +110,7 @@ class _LearnScreenState extends State<LearnScreen> {
                     padding: const EdgeInsets.all(20),
                     child: Row(
                       children: [
-                        AnimatedScale(
+                            CustomAnimatedScale(
                           onTap: () => Navigator.pop(context),
                           child: Container(
                             padding: const EdgeInsets.all(12),
