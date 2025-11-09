@@ -19,7 +19,7 @@ class SettingsService {
 
   static Future<String> getLanguage() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_languageKey) ?? 'en'; // English by default
+    return prefs.getString(_languageKey) ?? 'ru'; // Russian by default
   }
 
   static Future<bool> getTTSEnabled() async {
@@ -52,7 +52,7 @@ class SettingsService {
   static Future<void> resetToDefaults() async {
     await setSoundEffectsEnabled(true);
     await setHapticFeedbackEnabled(true);
-    await setLanguage('en');
+    await setLanguage('ru');
     await setTTSEnabled(true);
   }
 }

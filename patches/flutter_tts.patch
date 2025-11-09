@@ -1,0 +1,11 @@
+--- a/lib/flutter_tts.dart
++++ b/lib/flutter_tts.dart
+@@ -2,7 +2,7 @@ import 'dart:async';
+ import 'dart:io' show Platform;
+
+ import 'package:flutter/services.dart';
+-import 'package:flutter/foundation.dart' show kIsWeb;
++import 'package:flutter/foundation.dart';
+
+ typedef ErrorHandler = void Function(dynamic message);
+ typedef ProgressHandler = void Function(

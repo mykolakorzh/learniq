@@ -8,6 +8,7 @@ import '../services/audio/tts_service.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
 import '../core/theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 class TestScreen extends StatefulWidget {
   final String topicId;
@@ -154,11 +155,17 @@ class _TestScreenState extends State<TestScreen> {
 
   String _getGrayImagePath(String originalPath) {
     // Convert regular image path to gray version
+    // Handle both .jpg and .png extensions as gray versions might differ
     final fileName = originalPath.split('/').last;
     final nameWithoutExt = fileName.split('.').first;
-    final extension = fileName.split('.').last;
     final directory = originalPath.substring(0, originalPath.lastIndexOf('/'));
-    return '$directory/${nameWithoutExt}_gray.$extension';
+
+    // Try .png first (most gray images are PNG), then .jpg
+    final pngPath = '$directory/${nameWithoutExt}_gray.png';
+    final jpgPath = '$directory/${nameWithoutExt}_gray.jpg';
+
+    // Return PNG path by default, Flutter will handle missing files gracefully
+    return pngPath;
   }
 
   Color _getArticleColor(String article) {
@@ -167,6 +174,8 @@ class _TestScreenState extends State<TestScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     if (_isLoading) {
       return Scaffold(
         body: Container(
@@ -180,9 +189,9 @@ class _TestScreenState extends State<TestScreen> {
               ],
             ),
           ),
-          child: const Center(
+          child: Center(
             child: ModernLoadingIndicator(
-              message: 'Loading test cards...',
+              message: l10n.testLoading,
             ),
           ),
         ),
@@ -203,8 +212,8 @@ class _TestScreenState extends State<TestScreen> {
             ),
           ),
           child: ModernErrorWidget(
-            title: 'No Cards Available',
-            message: 'No cards available for this topic.',
+            title: l10n.testNoCardsTitle,
+            message: l10n.testNoCardsMessage,
             icon: Icons.inbox_outlined,
           ),
         ),
@@ -259,7 +268,7 @@ class _TestScreenState extends State<TestScreen> {
                       const SizedBox(width: 16),
                       Expanded(
                         child: Text(
-                          _isMistakesOnlyMode ? 'Review Complete!' : 'Test Complete!',
+                          _isMistakesOnlyMode ? l10n.testReviewComplete : l10n.testTestComplete,
                           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: AppTheme.textPrimary,
@@ -319,10 +328,10 @@ class _TestScreenState extends State<TestScreen> {
                               ),
                               const SizedBox(height: 8),
                               Text(
-                                'Accuracy: $accuracy%',
+                                l10n.testAccuracy(accuracy),
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: accuracy >= 80 
+                                  color: accuracy >= 80
                                       ? AppTheme.accentGreen
                                       : Colors.orange,
                                   fontWeight: FontWeight.w600,
@@ -340,16 +349,16 @@ class _TestScreenState extends State<TestScreen> {
                     children: [
                       if (hasMistakes && !_isMistakesOnlyMode) ...[
                         ModernButton(
-                          text: 'Practice Mistakes (${_mistakes.length})',
+                          text: l10n.testPracticeMistakesCount(_mistakes.length),
                           onPressed: _retryMistakesOnly,
                           icon: Icons.bolt,
                           width: double.infinity,
                         ),
                         const SizedBox(height: 16),
                       ],
-                      
+
                       ModernButton(
-                        text: 'Go Home',
+                        text: l10n.testGoHome,
                         onPressed: () {
                           Navigator.of(context).popUntil((route) => route.isFirst);
                         },
@@ -367,7 +376,7 @@ class _TestScreenState extends State<TestScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Mistakes to Review:',
+                            l10n.testMistakesToReview,
                             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.w600,
                               color: AppTheme.textPrimary,
@@ -420,417 +429,502 @@ class _TestScreenState extends State<TestScreen> {
     final colorfulImagePath = currentCard.imageAsset;
 
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              AppTheme.backgroundLight,
-              AppTheme.surfaceLight,
-            ],
-          ),
-        ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              // Modern header
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Row(
-                  children: [
-                    CustomAnimatedScale(
-                      onTap: () => Navigator.pop(context),
-                      child: Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: AppTheme.surfaceLight,
-                          borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
-                              blurRadius: 10,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                        child: const Icon(
-                          Icons.arrow_back,
-                          color: AppTheme.primaryIndigo,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Test Mode',
-                            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: AppTheme.textPrimary,
-                            ),
-                          ),
-                          Text(
-                            '${_currentQuestionIndex + 1} of ${_quizCards.length} questions',
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: AppTheme.textSecondary,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: AppTheme.primaryIndigo.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Text(
-                        '${((_currentQuestionIndex + 1) / _quizCards.length * 100).round()}%',
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: AppTheme.primaryIndigo,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  AppTheme.backgroundLight,
+                  AppTheme.surfaceLight,
+                ],
               ),
-
-              // Progress bar
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ModernProgressIndicator(
-                  value: (_currentQuestionIndex + 1) / _quizCards.length,
-                  height: 6,
-                  backgroundColor: AppTheme.textSecondary.withOpacity(0.1),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              // Image
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: AppTheme.surfaceLight,
-                      borderRadius: BorderRadius.circular(24),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppTheme.primaryIndigo.withOpacity(0.1),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(24),
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Image.asset(
-                          _showResult && _isCorrect ? colorfulImagePath : grayImagePath,
-                          fit: BoxFit.contain,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                              color: AppTheme.textSecondary.withOpacity(0.1),
-                              child: const Icon(
-                                Icons.image_not_supported,
-                                size: 64,
-                                color: AppTheme.textSecondary,
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              // Drag and drop area
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ModernCard(
-                  child: Column(
-                    children: [
-                      Text(
-                        'Drag the correct article:',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: AppTheme.textPrimary,
-                        ),
-                      ),
-                      
-                      const SizedBox(height: 24),
-                      
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // Drop target
-                          DragTarget<String>(
-                            onAcceptWithDetails: (details) => _onArticleDropped(details.data),
-                            builder: (context, candidateData, rejectedData) {
-                              return AnimatedContainer(
-                                duration: Animations.fast,
-                                width: 80,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: _selectedArticle != null 
-                                      ? ArticleColors.getArticleColor(_selectedArticle!)
-                                      : AppTheme.textSecondary.withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(
-                                    color: candidateData.isNotEmpty 
-                                        ? AppTheme.primaryIndigo
-                                        : AppTheme.textSecondary.withOpacity(0.3),
-                                    width: candidateData.isNotEmpty ? 3 : 2,
-                                  ),
-                                  boxShadow: candidateData.isNotEmpty ? [
-                                    BoxShadow(
-                                      color: AppTheme.primaryIndigo.withOpacity(0.3),
-                                      blurRadius: 10,
-                                      offset: const Offset(0, 5),
-                                    ),
-                                  ] : null,
+            ),
+            child: SafeArea(
+              child: Column(
+                children: [
+                  // Modern header
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      children: [
+                        CustomAnimatedScale(
+                          onTap: () => Navigator.pop(context),
+                          child: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: AppTheme.surfaceLight,
+                              borderRadius: BorderRadius.circular(12),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.05),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 2),
                                 ),
-                                child: Center(
-                                  child: _selectedArticle != null
-                                      ? Text(
-                                          _selectedArticle!.toUpperCase(),
-                                          style: const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      : Text(
-                                          '___',
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            color: AppTheme.textSecondary.withOpacity(0.5),
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                        ),
-                                ),
-                              );
-                            },
+                              ],
+                            ),
+                            child: const Icon(
+                              Icons.arrow_back,
+                              color: AppTheme.primaryIndigo,
+                            ),
                           ),
-                          
-                          const SizedBox(width: 20),
-
-                          // German word with TTS button
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                currentCard.nounDe,
+                                l10n.testModeTitle,
                                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: AppTheme.textPrimary,
                                 ),
                               ),
-                              const SizedBox(width: 12),
-                              CustomAnimatedScale(
-                                onTap: () async {
-                                  HapticFeedback.selectionClick();
-                                  await TTSService.speak(currentCard.nounDe);
+                              Text(
+                                l10n.testQuestionProgress(_currentQuestionIndex + 1, _quizCards.length),
+                                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                  color: AppTheme.textSecondary,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: AppTheme.primaryIndigo.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            '${((_currentQuestionIndex + 1) / _quizCards.length * 100).round()}%',
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: AppTheme.primaryIndigo,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Progress bar
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: ModernProgressIndicator(
+                      value: (_currentQuestionIndex + 1) / _quizCards.length,
+                      height: 6,
+                      backgroundColor: AppTheme.textSecondary.withOpacity(0.1),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  // Image with clean square frame
+                  Expanded(
+                    flex: 3,
+                    child: Center(
+                      child: AnimatedScale(
+                        scale: _showResult && _isCorrect ? 1.02 : 1.0,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeOut,
+                        child: Container(
+                          width: 280,
+                          height: 280,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(
+                              color: _showResult && _isCorrect
+                                  ? AppTheme.accentGreen.withOpacity(0.3)
+                                  : Colors.grey.withOpacity(0.15),
+                              width: _showResult && _isCorrect ? 2 : 1,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: _showResult && _isCorrect
+                                    ? AppTheme.accentGreen.withOpacity(0.15)
+                                    : Colors.black.withOpacity(0.06),
+                                blurRadius: 8,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 500),
+                              switchInCurve: Curves.easeOut,
+                              switchOutCurve: Curves.easeIn,
+                              transitionBuilder: (child, animation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: ScaleTransition(
+                                    scale: Tween<double>(begin: 0.92, end: 1.0).animate(
+                                      CurvedAnimation(parent: animation, curve: Curves.easeOut),
+                                    ),
+                                    child: child,
+                                  ),
+                                );
+                              },
+                              child: Image.asset(
+                                _showResult && _isCorrect ? colorfulImagePath : grayImagePath,
+                                key: ValueKey(_showResult && _isCorrect ? 'color' : 'gray'),
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    color: Colors.grey.withOpacity(0.1),
+                                    child: Icon(
+                                      Icons.image_not_supported,
+                                      size: 64,
+                                      color: Colors.grey.withOpacity(0.4),
+                                    ),
+                                  );
                                 },
-                                child: Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    color: AppTheme.primaryIndigo.withOpacity(0.1),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: const Icon(
-                                    Icons.volume_up_rounded,
-                                    color: AppTheme.primaryIndigo,
-                                    size: 24,
-                                  ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  // Drag and drop area
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: ModernCard(
+                      child: Column(
+                        children: [
+                          Text(
+                            l10n.testDragHint,
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: AppTheme.textPrimary,
+                            ),
+                          ),
+
+                          const SizedBox(height: 24),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // Drop target with animation
+                              DragTarget<String>(
+                                onAcceptWithDetails: (details) => _onArticleDropped(details.data),
+                                builder: (context, candidateData, rejectedData) {
+                                  return AnimatedContainer(
+                                    duration: Animations.fast,
+                                    width: 80,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                      color: _selectedArticle != null
+                                          ? ArticleColors.getArticleColor(_selectedArticle!)
+                                          : AppTheme.textSecondary.withOpacity(0.1),
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color: candidateData.isNotEmpty
+                                            ? AppTheme.primaryIndigo
+                                            : AppTheme.textSecondary.withOpacity(0.3),
+                                        width: candidateData.isNotEmpty ? 3 : 2,
+                                      ),
+                                      boxShadow: candidateData.isNotEmpty ? [
+                                        BoxShadow(
+                                          color: AppTheme.primaryIndigo.withOpacity(0.3),
+                                          blurRadius: 10,
+                                          offset: const Offset(0, 5),
+                                        ),
+                                      ] : null,
+                                    ),
+                                    child: Center(
+                                      child: _selectedArticle != null
+                                          ? Text(
+                                              _selectedArticle!.toUpperCase(),
+                                              style: const TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                            )
+                                          : Text(
+                                              '___',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                color: AppTheme.textSecondary.withOpacity(0.5),
+                                                fontWeight: FontWeight.w300,
+                                              ),
+                                            ),
+                                    ),
+                                  );
+                                },
+                              ),
+
+                              const SizedBox(width: 20),
+
+                              // German word with TTS button
+                              Flexible(
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Flexible(
+                                      child: Text(
+                                        currentCard.nounDe,
+                                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: AppTheme.textPrimary,
+                                        ),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 12),
+                                    CustomAnimatedScale(
+                                      onTap: () async {
+                                        HapticFeedback.selectionClick();
+                                        await TTSService.speak(currentCard.nounDe);
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: BoxDecoration(
+                                          color: AppTheme.primaryIndigo.withOpacity(0.1),
+                                          borderRadius: BorderRadius.circular(12),
+                                        ),
+                                        child: const Icon(
+                                          Icons.volume_up_rounded,
+                                          color: AppTheme.primaryIndigo,
+                                          size: 24,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
 
-              const SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
-              // Draggable articles
-              Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Choose from:',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: AppTheme.textSecondary,
-                        ),
-                      ),
-                      
-                      const SizedBox(height: 20),
-                      
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: ['der', 'die', 'das'].map((article) {
-                          final isUsed = _selectedArticle == article;
-                          
-                          return Draggable<String>(
-                            data: article,
-                            feedback: Material(
-                              color: Colors.transparent,
-                              child: Container(
-                                width: 80,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                  color: ArticleColors.getArticleColor(article),
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.3),
-                                      blurRadius: 15,
-                                      spreadRadius: 2,
-                                    ),
-                                  ],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    article.toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
+                  // Draggable articles
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        children: [
+                          Text(
+                            l10n.testChooseFrom,
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: AppTheme.textSecondary,
+                            ),
+                          ),
+
+                          const SizedBox(height: 20),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: ['der', 'die', 'das'].map((article) {
+                              final isUsed = _selectedArticle == article;
+
+                              return Draggable<String>(
+                                data: article,
+                                feedback: Material(
+                                  color: Colors.transparent,
+                                  child: Transform.scale(
+                                    scale: 1.1,
+                                    child: Container(
+                                      width: 80,
+                                      height: 80,
+                                      decoration: BoxDecoration(
+                                        color: ArticleColors.getArticleColor(article),
+                                        borderRadius: BorderRadius.circular(20),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.3),
+                                            blurRadius: 15,
+                                            spreadRadius: 2,
+                                          ),
+                                        ],
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          article.toUpperCase(),
+                                          style: const TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ),
-                            childWhenDragging: Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: AppTheme.textSecondary.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Center(
-                                child: Icon(
-                                  Icons.drag_indicator,
-                                  color: AppTheme.textSecondary,
-                                  size: 32,
-                                ),
-                              ),
-                            ),
-                            child: AnimatedOpacity(
-                              duration: Animations.fast,
-                              opacity: isUsed ? 0.3 : 1.0,
-                              child: CustomAnimatedScale(
-                                    scaleFactor: isUsed ? 0.9 : 1.0,
-                                duration: Animations.fast,
-                                child: Container(
+                                childWhenDragging: Container(
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: ArticleColors.getArticleColor(article),
+                                    color: AppTheme.textSecondary.withOpacity(0.1),
                                     borderRadius: BorderRadius.circular(20),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: ArticleColors.getArticleColor(article).withOpacity(0.3),
-                                        blurRadius: 10,
-                                        offset: const Offset(0, 4),
-                                      ),
-                                    ],
                                   ),
-                                  child: Center(
-                                    child: Text(
-                                      article.toUpperCase(),
-                                      style: const TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.drag_indicator,
+                                      color: AppTheme.textSecondary,
+                                      size: 32,
+                                    ),
+                                  ),
+                                ),
+                                child: AnimatedOpacity(
+                                  duration: Animations.fast,
+                                  opacity: isUsed ? 0.3 : 1.0,
+                                  child: CustomAnimatedScale(
+                                        scaleFactor: isUsed ? 0.9 : 1.0,
+                                    duration: Animations.fast,
+                                    child: Container(
+                                      width: 80,
+                                      height: 80,
+                                      decoration: BoxDecoration(
+                                        color: ArticleColors.getArticleColor(article),
+                                        borderRadius: BorderRadius.circular(20),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: ArticleColors.getArticleColor(article).withOpacity(0.3),
+                                            blurRadius: 10,
+                                            offset: const Offset(0, 4),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          article.toUpperCase(),
+                                          style: const TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          );
-                        }).toList(),
+                              );
+                            }).toList(),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
 
-              const SizedBox(height: 20),
-            ],
-          ),
-        ),
-      ),
-      // Result overlay
-      bottomSheet: _showResult
-          ? Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: AppTheme.surfaceLight,
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 20,
-                    offset: const Offset(0, -5),
-                  ),
+                  const SizedBox(height: 20),
                 ],
               ),
-              child: CustomAnimatedSlide(
-                offset: const Offset(0, 1),
-                show: _showResult,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                  decoration: BoxDecoration(
-                    color: _isCorrect 
-                        ? AppTheme.accentGreen.withOpacity(0.1)
-                        : AppTheme.dieColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        _isCorrect ? Icons.check_circle : Icons.close,
-                        color: _isCorrect ? AppTheme.accentGreen : AppTheme.dieColor,
-                        size: 24,
+            ),
+          ),
+
+          // Confetti overlay
+          if (_showConfetti)
+            IgnorePointer(
+              child: SizedBox.expand(
+                child: Lottie.asset(
+                  'assets/animations/confetti.json',
+                  fit: BoxFit.cover,
+                  repeat: false,
+                ),
+              ),
+            ),
+
+          // Result overlay at bottom
+          if (_showResult)
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: AppTheme.surfaceLight,
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 20,
+                      offset: const Offset(0, -5),
+                    ),
+                  ],
+                ),
+                child: CustomAnimatedSlide(
+                  offset: const Offset(0, 1),
+                  show: _showResult,
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                    decoration: BoxDecoration(
+                      color: _isCorrect
+                          ? AppTheme.accentGreen.withOpacity(0.1)
+                          : AppTheme.dieColor.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: _isCorrect
+                            ? AppTheme.accentGreen.withOpacity(0.3)
+                            : AppTheme.dieColor.withOpacity(0.3),
+                        width: 2,
                       ),
-                      const SizedBox(width: 8),
-                      Text(
-                        _isCorrect ? 'Correct!' : 'Incorrect!',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: _isCorrect 
-                              ? AppTheme.accentGreen
-                              : AppTheme.dieColor,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AnimatedScale(
+                          scale: _showResult ? 1.0 : 0.0,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.elasticOut,
+                          child: Icon(
+                            _isCorrect ? Icons.check_circle : Icons.cancel,
+                            color: _isCorrect ? AppTheme.accentGreen : AppTheme.dieColor,
+                            size: 32,
+                          ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 12),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              _isCorrect ? l10n.testCorrect : l10n.testIncorrect,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: _isCorrect
+                                    ? AppTheme.accentGreen
+                                    : AppTheme.dieColor,
+                              ),
+                            ),
+                            if (!_isCorrect)
+                              Text(
+                                '${currentCard.article} ${currentCard.nounDe}',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: AppTheme.textSecondary,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            )
-          : null,
+            ),
+        ],
+      ),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import '../l10n/app_localizations.dart';
 import '../services/settings_service.dart';
 import '../services/subscription_service.dart';
+import '../services/progress_service.dart';
 import 'package:package_info_plus/package_info_plus.dart' as pkg_info;
 import '../app.dart';
 import '../widgets/modern_components.dart';
@@ -209,7 +210,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               icon: Icons.shopping_bag,
                               iconColor: Colors.orange,
                               onTap: () {
-                                Navigator.pushNamed(context, '/paywall');
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Premium features coming soon!'),
+                                  ),
+                                );
                               },
                             ),
                           ],
@@ -465,14 +470,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
           TextButton(
             onPressed: () async {
               Navigator.of(context).pop();
-              // TODO: Implement clear progress
-              if (mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(l10n.settingsClearProgressSuccess),
-                    backgroundColor: Colors.red,
-                  ),
-                );
+              // Clear all progress data
+              try {
+                await ProgressService.clearAllProgress();
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(l10n.settingsClearProgressSuccess),
+                      backgroundColor: AppTheme.accentGreen,
+                    ),
+                  );
+                }
+              } catch (e) {
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(l10n.settingsClearProgressError(e.toString())),
+                      backgroundColor: AppTheme.dieColor,
+                    ),
+                  );
+                }
               }
             },
             style: TextButton.styleFrom(foregroundColor: Colors.red),

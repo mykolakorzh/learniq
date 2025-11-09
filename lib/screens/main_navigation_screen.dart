@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../features/topics/view/topics_screen.dart';
+import 'topics_screen.dart';
 import '../widgets/animations.dart';
 import 'statistics_screen.dart';
-import 'account_screen.dart';
 import 'settings_screen.dart';
+import '../l10n/app_localizations.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -20,39 +20,36 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
   late List<AnimationController> _tabAnimationControllers;
   late List<Animation<double>> _tabAnimations;
 
-  final List<NavigationTab> _tabs = [
-    NavigationTab(
-      icon: Icons.school_outlined,
-      activeIcon: Icons.school,
-      label: 'Topics',
-      page: const TopicsScreen(),
-    ),
-    NavigationTab(
-      icon: Icons.analytics_outlined,
-      activeIcon: Icons.analytics,
-      label: 'Statistics',
-      page: const StatisticsScreen(),
-    ),
-    NavigationTab(
-      icon: Icons.person_outline,
-      activeIcon: Icons.person,
-      label: 'Account',
-      page: const AccountScreen(),
-    ),
-    NavigationTab(
-      icon: Icons.settings_outlined,
-      activeIcon: Icons.settings,
-      label: 'Settings',
-      page: const SettingsScreen(),
-    ),
-  ];
+  List<NavigationTab> _getTabs(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return [
+      NavigationTab(
+        icon: Icons.school_outlined,
+        activeIcon: Icons.school,
+        label: l10n.topicsTitle,
+        page: const TopicsScreen(),
+      ),
+      NavigationTab(
+        icon: Icons.analytics_outlined,
+        activeIcon: Icons.analytics,
+        label: l10n.statisticsTitle,
+        page: const StatisticsScreen(),
+      ),
+      NavigationTab(
+        icon: Icons.settings_outlined,
+        activeIcon: Icons.settings,
+        label: l10n.settingsTitle,
+        page: const SettingsScreen(),
+      ),
+    ];
+  }
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
     _tabAnimationControllers = List.generate(
-      _tabs.length,
+      3, // Number of tabs
       (index) => AnimationController(
         duration: Animations.medium,
         vsync: this,
@@ -119,11 +116,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
 
   @override
   Widget build(BuildContext context) {
+    final tabs = _getTabs(context);
+
     return Scaffold(
       body: PageView(
         controller: _pageController,
         onPageChanged: _onPageChanged,
-        children: _tabs.map((tab) => tab.page).toList(),
+        children: tabs.map((tab) => tab.page).toList(),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -141,8 +140,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List.generate(_tabs.length, (index) {
-                final tab = _tabs[index];
+              children: List.generate(tabs.length, (index) {
+                final tab = tabs[index];
                 final isActive = _currentIndex == index;
 
                 return Expanded(

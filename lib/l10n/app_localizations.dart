@@ -112,6 +112,102 @@ abstract class AppLocalizations {
   /// **'Topics'**
   String get topicsTitle;
 
+  /// No description provided for @statisticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get statisticsTitle;
+
+  /// No description provided for @learnModeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn Mode'**
+  String get learnModeTitle;
+
+  /// No description provided for @testModeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Mode'**
+  String get testModeTitle;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get onboardingNext;
+
+  /// No description provided for @onboardingGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get onboardingGetStarted;
+
+  /// No description provided for @onboardingPage1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Master German Articles'**
+  String get onboardingPage1Title;
+
+  /// No description provided for @onboardingPage1Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn der, die, and das through beautiful visual flashcards with images that help you remember.'**
+  String get onboardingPage1Description;
+
+  /// No description provided for @onboardingPage2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive Quizzes'**
+  String get onboardingPage2Title;
+
+  /// No description provided for @onboardingPage2Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Test your knowledge with fun drag-and-drop quizzes. Get instant feedback and track your mistakes.'**
+  String get onboardingPage2Description;
+
+  /// No description provided for @onboardingPage3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Perfect Pronunciation'**
+  String get onboardingPage3Title;
+
+  /// No description provided for @onboardingPage3Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Hear native German pronunciation with text-to-speech. Practice listening and speaking.'**
+  String get onboardingPage3Description;
+
+  /// No description provided for @onboardingPage4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Track Your Progress'**
+  String get onboardingPage4Title;
+
+  /// No description provided for @onboardingPage4Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor your learning journey with detailed statistics and achievement badges.'**
+  String get onboardingPage4Description;
+
+  /// No description provided for @splashAppName.
+  ///
+  /// In en, this message translates to:
+  /// **'LearnIQ'**
+  String get splashAppName;
+
+  /// No description provided for @splashTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Master German Articles'**
+  String get splashTagline;
+
   /// No description provided for @settingsTitle.
   ///
   /// In en, this message translates to:
@@ -346,6 +442,12 @@ abstract class AppLocalizations {
   /// **'Settings reset to defaults'**
   String get settingsResetSuccess;
 
+  /// No description provided for @settingsClearProgressError.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to clear progress: {error}'**
+  String settingsClearProgressError(String error);
+
   /// No description provided for @topicsFailedToLoad.
   ///
   /// In en, this message translates to:
@@ -435,6 +537,360 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Practice with quiz'**
   String get topicsTestSubtitle;
+
+  /// No description provided for @topicsRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get topicsRetry;
+
+  /// No description provided for @topicsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {error}'**
+  String topicsError(String error);
+
+  /// No description provided for @topicsPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get topicsPremium;
+
+  /// No description provided for @topicsAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get topicsAll;
+
+  /// No description provided for @topicsSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search topics...'**
+  String get topicsSearchHint;
+
+  /// No description provided for @topicsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start your learning journey'**
+  String get topicsSubtitle;
+
+  /// No description provided for @topicsNoTopicsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No matching topics'**
+  String get topicsNoTopicsFound;
+
+  /// No description provided for @topicsAdjustFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search term'**
+  String get topicsAdjustFilters;
+
+  /// No description provided for @topicsClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Filters'**
+  String get topicsClearFilters;
+
+  /// No description provided for @topicsPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get topicsPreview;
+
+  /// No description provided for @learnLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading learning cards...'**
+  String get learnLoading;
+
+  /// No description provided for @learnErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to Load Cards'**
+  String get learnErrorTitle;
+
+  /// No description provided for @learnErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'There was a problem loading the learning cards. Please try again.'**
+  String get learnErrorMessage;
+
+  /// No description provided for @learnNoCardsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No Cards Available'**
+  String get learnNoCardsTitle;
+
+  /// No description provided for @learnNoCardsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This topic doesn\'t have any learning cards yet.'**
+  String get learnNoCardsMessage;
+
+  /// No description provided for @learnCongratulations.
+  ///
+  /// In en, this message translates to:
+  /// **'Congratulations!'**
+  String get learnCongratulations;
+
+  /// No description provided for @learnCompletedCards.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve completed all {count} cards!'**
+  String learnCompletedCards(int count);
+
+  /// No description provided for @learnCardProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} of {total} cards'**
+  String learnCardProgress(int current, int total);
+
+  /// No description provided for @learnSwipeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe left or right to navigate'**
+  String get learnSwipeHint;
+
+  /// No description provided for @learnTapToReveal.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to reveal translation'**
+  String get learnTapToReveal;
+
+  /// No description provided for @learnTapToFlipBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to flip back'**
+  String get learnTapToFlipBack;
+
+  /// No description provided for @learnHearPronunciation.
+  ///
+  /// In en, this message translates to:
+  /// **'Hear pronunciation'**
+  String get learnHearPronunciation;
+
+  /// No description provided for @testLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading test cards...'**
+  String get testLoading;
+
+  /// No description provided for @testNoCardsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No Cards Available'**
+  String get testNoCardsTitle;
+
+  /// No description provided for @testNoCardsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'No cards available for this topic.'**
+  String get testNoCardsMessage;
+
+  /// No description provided for @testReviewComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Review Complete!'**
+  String get testReviewComplete;
+
+  /// No description provided for @testTestComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Complete!'**
+  String get testTestComplete;
+
+  /// No description provided for @testQuestionProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} of {total} questions'**
+  String testQuestionProgress(int current, int total);
+
+  /// No description provided for @testAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy: {accuracy}%'**
+  String testAccuracy(int accuracy);
+
+  /// No description provided for @testPracticeMistakesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice Mistakes ({count})'**
+  String testPracticeMistakesCount(int count);
+
+  /// No description provided for @testGoHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Go Home'**
+  String get testGoHome;
+
+  /// No description provided for @testMistakesToReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Mistakes to Review:'**
+  String get testMistakesToReview;
+
+  /// No description provided for @testDragHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the correct article:'**
+  String get testDragHint;
+
+  /// No description provided for @testChooseFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from:'**
+  String get testChooseFrom;
+
+  /// No description provided for @testCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct!'**
+  String get testCorrect;
+
+  /// No description provided for @testIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect!'**
+  String get testIncorrect;
+
+  /// No description provided for @statsYourProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Progress'**
+  String get statsYourProgress;
+
+  /// No description provided for @statsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See how far you\'ve come'**
+  String get statsSubtitle;
+
+  /// No description provided for @statsProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress'**
+  String get statsProgress;
+
+  /// No description provided for @statsNotStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to start'**
+  String get statsNotStarted;
+
+  /// No description provided for @statsErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to Load Statistics'**
+  String get statsErrorTitle;
+
+  /// No description provided for @statsErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'There was a problem loading your progress data. Please check your connection and try again.'**
+  String get statsErrorMessage;
+
+  /// No description provided for @statsGoBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Go Back'**
+  String get statsGoBack;
+
+  /// No description provided for @statsOverall.
+  ///
+  /// In en, this message translates to:
+  /// **'Overall Statistics'**
+  String get statsOverall;
+
+  /// No description provided for @statsTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics'**
+  String get statsTopics;
+
+  /// No description provided for @statsAvgAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg Accuracy'**
+  String get statsAvgAccuracy;
+
+  /// No description provided for @statsCardsTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Cards Total'**
+  String get statsCardsTotal;
+
+  /// No description provided for @statsToReview.
+  ///
+  /// In en, this message translates to:
+  /// **'To Review'**
+  String get statsToReview;
+
+  /// No description provided for @statsMaster.
+  ///
+  /// In en, this message translates to:
+  /// **'Master!'**
+  String get statsMaster;
+
+  /// No description provided for @statsMasterMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent work! You\'re mastering German articles!'**
+  String get statsMasterMessage;
+
+  /// No description provided for @statsGreatProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Great Progress!'**
+  String get statsGreatProgress;
+
+  /// No description provided for @statsGreatProgressMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re doing really well! Keep it up!'**
+  String get statsGreatProgressMessage;
+
+  /// No description provided for @statsGoodStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Good Start!'**
+  String get statsGoodStart;
+
+  /// No description provided for @statsGoodStartMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re making progress! Practice makes perfect.'**
+  String get statsGoodStartMessage;
+
+  /// No description provided for @statsKeepLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep Learning!'**
+  String get statsKeepLearning;
+
+  /// No description provided for @statsKeepLearningMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Every expert was once a beginner. Keep going!'**
+  String get statsKeepLearningMessage;
+
+  /// No description provided for @statsTopicBreakdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic Breakdown'**
+  String get statsTopicBreakdown;
+
+  /// No description provided for @statsAccuracyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy: {percent}%'**
+  String statsAccuracyLabel(int percent);
+
+  /// No description provided for @statsToReviewCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} to review'**
+  String statsToReviewCount(int count);
 
   /// Title for the paywall screen
   ///

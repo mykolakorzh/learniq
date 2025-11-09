@@ -9,6 +9,25 @@
     "description": "Title for the topics screen"
   },
 
+  "statisticsTitle": "Statistics",
+  "learnModeTitle": "Learn Mode",
+  "testModeTitle": "Test Mode",
+
+  "onboardingSkip": "Skip",
+  "onboardingNext": "Next",
+  "onboardingGetStarted": "Get Started",
+  "onboardingPage1Title": "Master German Articles",
+  "onboardingPage1Description": "Learn der, die, and das through beautiful visual flashcards with images that help you remember.",
+  "onboardingPage2Title": "Interactive Quizzes",
+  "onboardingPage2Description": "Test your knowledge with fun drag-and-drop quizzes. Get instant feedback and track your mistakes.",
+  "onboardingPage3Title": "Perfect Pronunciation",
+  "onboardingPage3Description": "Hear native German pronunciation with text-to-speech. Practice listening and speaking.",
+  "onboardingPage4Title": "Track Your Progress",
+  "onboardingPage4Description": "Monitor your learning journey with detailed statistics and achievement badges.",
+
+  "splashAppName": "LearnIQ",
+  "splashTagline": "Master German Articles",
+
   "settingsTitle": "Settings",
   "settingsAppPreferences": "App Preferences",
   "settingsSoundEffects": "Sound Effects",
@@ -48,6 +67,14 @@
   "settingsResetDialogConfirm": "Reset",
   "settingsResetDialogCancel": "Cancel",
   "settingsResetSuccess": "Settings reset to defaults",
+  "settingsClearProgressError": "Failed to clear progress: {error}",
+  "@settingsClearProgressError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
 
   "topicsFailedToLoad": "Failed to load topics",
   "topicsCards": "cards",
@@ -78,6 +105,130 @@
   "topicsLearnSubtitle": "Study vocabulary cards",
   "topicsTest": "Test",
   "topicsTestSubtitle": "Practice with quiz",
+  "topicsRetry": "Retry",
+  "topicsError": "Error: {error}",
+  "@topicsError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "topicsPremium": "Premium",
+  "topicsAll": "All",
+  "topicsSearchHint": "Search topics...",
+  "topicsSubtitle": "Start your learning journey",
+  "topicsNoTopicsFound": "No matching topics",
+  "topicsAdjustFilters": "Try a different search term",
+  "topicsClearFilters": "Clear Filters",
+  "topicsPreview": "Preview",
+
+  "learnLoading": "Loading learning cards...",
+  "learnErrorTitle": "Unable to Load Cards",
+  "learnErrorMessage": "There was a problem loading the learning cards. Please try again.",
+  "learnNoCardsTitle": "No Cards Available",
+  "learnNoCardsMessage": "This topic doesn't have any learning cards yet.",
+  "learnCongratulations": "Congratulations!",
+  "learnCompletedCards": "You've completed all {count} cards!",
+  "@learnCompletedCards": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "learnCardProgress": "{current} of {total} cards",
+  "@learnCardProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "learnSwipeHint": "Swipe left or right to navigate",
+  "learnTapToReveal": "Tap to reveal translation",
+  "learnTapToFlipBack": "Tap to flip back",
+  "learnHearPronunciation": "Hear pronunciation",
+
+  "testLoading": "Loading test cards...",
+  "testNoCardsTitle": "No Cards Available",
+  "testNoCardsMessage": "No cards available for this topic.",
+  "testReviewComplete": "Review Complete!",
+  "testTestComplete": "Test Complete!",
+  "testQuestionProgress": "{current} of {total} questions",
+  "@testQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "testAccuracy": "Accuracy: {accuracy}%",
+  "@testAccuracy": {
+    "placeholders": {
+      "accuracy": {
+        "type": "int"
+      }
+    }
+  },
+  "testPracticeMistakesCount": "Practice Mistakes ({count})",
+  "@testPracticeMistakesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "testGoHome": "Go Home",
+  "testMistakesToReview": "Mistakes to Review:",
+  "testDragHint": "Drag the correct article:",
+  "testChooseFrom": "Choose from:",
+  "testCorrect": "Correct!",
+  "testIncorrect": "Incorrect!",
+
+  "statsYourProgress": "Your Progress",
+  "statsSubtitle": "See how far you've come",
+  "statsProgress": "Progress",
+  "statsNotStarted": "Ready to start",
+  "statsErrorTitle": "Unable to Load Statistics",
+  "statsErrorMessage": "There was a problem loading your progress data. Please check your connection and try again.",
+  "statsGoBack": "Go Back",
+  "statsOverall": "Overall Statistics",
+  "statsTopics": "Topics",
+  "statsAvgAccuracy": "Avg Accuracy",
+  "statsCardsTotal": "Cards Total",
+  "statsToReview": "To Review",
+  "statsMaster": "Master!",
+  "statsMasterMessage": "Excellent work! You're mastering German articles!",
+  "statsGreatProgress": "Great Progress!",
+  "statsGreatProgressMessage": "You're doing really well! Keep it up!",
+  "statsGoodStart": "Good Start!",
+  "statsGoodStartMessage": "You're making progress! Practice makes perfect.",
+  "statsKeepLearning": "Keep Learning!",
+  "statsKeepLearningMessage": "Every expert was once a beginner. Keep going!",
+  "statsTopicBreakdown": "Topic Breakdown",
+  "statsAccuracyLabel": "Accuracy: {percent}%",
+  "@statsAccuracyLabel": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "statsToReviewCount": "{count} to review",
+  "@statsToReviewCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
 
   "paywallTitle": "Premium",
   "@paywallTitle": {

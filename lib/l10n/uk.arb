@@ -8,6 +8,26 @@
   "@topicsTitle": {
     "description": "Title for the topics screen"
   },
+
+  "statisticsTitle": "Статистика",
+  "learnModeTitle": "Режим вивчення",
+  "testModeTitle": "Режим тесту",
+
+  "onboardingSkip": "Пропустити",
+  "onboardingNext": "Далі",
+  "onboardingGetStarted": "Почати",
+  "onboardingPage1Title": "Опануйте німецькі артиклі",
+  "onboardingPage1Description": "Вивчайте der, die та das за допомогою красивих візуальних карток із зображеннями, які допоможуть вам запам'ятати.",
+  "onboardingPage2Title": "Інтерактивні тести",
+  "onboardingPage2Description": "Перевірте свої знання за допомогою веселих тестів з перетягуванням. Отримуйте миттєвий зворотний зв'язок і відстежуйте свої помилки.",
+  "onboardingPage3Title": "Ідеальна вимова",
+  "onboardingPage3Description": "Слухайте природну німецьку вимову за допомогою синтезу мови. Практикуйте аудіювання та говоріння.",
+  "onboardingPage4Title": "Відстежуйте свій прогрес",
+  "onboardingPage4Description": "Стежте за своїм навчанням за допомогою детальної статистики та значків досягнень.",
+
+  "splashAppName": "LearnIQ",
+  "splashTagline": "Опануйте німецькі артиклі",
+
   "paywallTitle": "Преміум",
   "@paywallTitle": {
     "description": "Title for the paywall screen"
@@ -72,6 +92,14 @@
   "settingsResetDialogConfirm": "Скинути",
   "settingsResetDialogCancel": "Скасувати",
   "settingsResetSuccess": "Налаштування скинуто",
+  "settingsClearProgressError": "Не вдалося очистити прогрес: {error}",
+  "@settingsClearProgressError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
 
   "topicsFailedToLoad": "Не вдалося завантажити теми",
   "topicsCards": "карток",
@@ -102,6 +130,130 @@
   "topicsLearnSubtitle": "Вивчати словникові картки",
   "topicsTest": "Тестувати",
   "topicsTestSubtitle": "Практика з вікториною",
+  "topicsRetry": "Повторити",
+  "topicsError": "Помилка: {error}",
+  "@topicsError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "topicsPremium": "Преміум",
+  "topicsAll": "Всі",
+  "topicsSearchHint": "Пошук тем...",
+  "topicsSubtitle": "Почніть своє навчання",
+  "topicsNoTopicsFound": "Теми не знайдено",
+  "topicsAdjustFilters": "Спробуйте інший пошуковий запит",
+  "topicsClearFilters": "Очистити фільтри",
+  "topicsPreview": "Приклади",
+
+  "learnLoading": "Завантаження карток для вивчення...",
+  "learnErrorTitle": "Не вдалося завантажити картки",
+  "learnErrorMessage": "Виникла проблема при завантаженні карток для вивчення. Будь ласка, спробуйте ще раз.",
+  "learnNoCardsTitle": "Немає доступних карток",
+  "learnNoCardsMessage": "У цій темі поки немає карток для вивчення.",
+  "learnCongratulations": "Вітаємо!",
+  "learnCompletedCards": "Ви завершили всі {count} карток!",
+  "@learnCompletedCards": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "learnCardProgress": "{current} з {total} карток",
+  "@learnCardProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "learnSwipeHint": "Змахніть вліво або вправо для навігації",
+  "learnTapToReveal": "Натисніть, щоб побачити переклад",
+  "learnTapToFlipBack": "Натисніть, щоб повернутися",
+  "learnHearPronunciation": "Прослухати вимову",
+
+  "testLoading": "Завантаження карток для тесту...",
+  "testNoCardsTitle": "Немає доступних карток",
+  "testNoCardsMessage": "Немає доступних карток для цієї теми.",
+  "testReviewComplete": "Повтор завершено!",
+  "testTestComplete": "Тест завершено!",
+  "testQuestionProgress": "{current} з {total} питань",
+  "@testQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "testAccuracy": "Точність: {accuracy}%",
+  "@testAccuracy": {
+    "placeholders": {
+      "accuracy": {
+        "type": "int"
+      }
+    }
+  },
+  "testPracticeMistakesCount": "Практика помилок ({count})",
+  "@testPracticeMistakesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "testGoHome": "На головну",
+  "testMistakesToReview": "Помилки для повтору:",
+  "testDragHint": "Перетягніть правильний артикль:",
+  "testChooseFrom": "Виберіть з:",
+  "testCorrect": "Правильно!",
+  "testIncorrect": "Неправильно!",
+
+  "statsYourProgress": "Ваш прогрес",
+  "statsSubtitle": "Дивіться, як далеко ви просунулися",
+  "statsProgress": "Прогрес",
+  "statsNotStarted": "Готовий до старту",
+  "statsErrorTitle": "Не вдалося завантажити статистику",
+  "statsErrorMessage": "Виникла проблема при завантаженні даних про ваш прогрес. Будь ласка, перевірте підключення і спробуйте знову.",
+  "statsGoBack": "Назад",
+  "statsOverall": "Загальна статистика",
+  "statsTopics": "Теми",
+  "statsAvgAccuracy": "Середня точність",
+  "statsCardsTotal": "Всього карток",
+  "statsToReview": "Для повтору",
+  "statsMaster": "Майстер!",
+  "statsMasterMessage": "Чудова робота! Ви опановуєте німецькі артиклі!",
+  "statsGreatProgress": "Чудовий прогрес!",
+  "statsGreatProgressMessage": "Ви дуже добре справляєтесь! Продовжуйте!",
+  "statsGoodStart": "Гарний початок!",
+  "statsGoodStartMessage": "Ви робите успіхи! Практика робить досконалим.",
+  "statsKeepLearning": "Продовжуйте вчитися!",
+  "statsKeepLearningMessage": "Кожен експерт колись був новачком. Продовжуйте!",
+  "statsTopicBreakdown": "Розбивка за темами",
+  "statsAccuracyLabel": "Точність: {percent}%",
+  "@statsAccuracyLabel": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "statsToReviewCount": "{count} для повтору",
+  "@statsToReviewCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
 
   "topics.title": "Теми",
   "topics.empty": "Теми не знайдено",

@@ -7,6 +7,7 @@ import '../widgets/skeleton_loader.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
 import '../core/theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 class LearnScreen extends StatefulWidget {
   final String topicId;
@@ -59,18 +60,20 @@ class _LearnScreenState extends State<LearnScreen> {
           child: FutureBuilder<List<CardItem>>(
             future: _cardsFuture,
             builder: (context, snapshot) {
+              final l10n = AppLocalizations.of(context)!;
+
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
+                return Center(
                   child: ModernLoadingIndicator(
-                    message: 'Loading learning cards...',
+                    message: l10n.learnLoading,
                   ),
                 );
               }
 
               if (snapshot.hasError) {
                 return ModernErrorWidget(
-                  title: 'Unable to Load Cards',
-                  message: 'There was a problem loading the learning cards. Please try again.',
+                  title: l10n.learnErrorTitle,
+                  message: l10n.learnErrorMessage,
                   onRetry: () {
                     setState(() {
                       _cardsFuture = DataService.loadCardsForTopic(widget.topicId);
@@ -83,8 +86,8 @@ class _LearnScreenState extends State<LearnScreen> {
 
               if (cards.isEmpty) {
                 return ModernSuccessWidget(
-                  title: 'No Cards Available',
-                  message: 'This topic doesn\'t have any learning cards yet.',
+                  title: l10n.learnNoCardsTitle,
+                  message: l10n.learnNoCardsMessage,
                   icon: Icons.inbox_outlined,
                   onContinue: () => Navigator.pop(context),
                 );
@@ -92,8 +95,8 @@ class _LearnScreenState extends State<LearnScreen> {
 
               if (_currentIndex >= cards.length) {
                 return ModernSuccessWidget(
-                  title: 'Congratulations!',
-                  message: 'You\'ve completed all ${cards.length} cards!',
+                  title: l10n.learnCongratulations,
+                  message: l10n.learnCompletedCards(cards.length),
                   icon: Icons.check_circle,
                   onContinue: () {
                     setState(() {
@@ -137,14 +140,14 @@ class _LearnScreenState extends State<LearnScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Learn Mode',
+                                l10n.learnModeTitle,
                                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: AppTheme.textPrimary,
                                 ),
                               ),
                               Text(
-                                '${_currentIndex + 1} of ${cards.length} cards',
+                                l10n.learnCardProgress(_currentIndex + 1, cards.length),
                                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                   color: AppTheme.textSecondary,
                                 ),
@@ -232,7 +235,7 @@ class _LearnScreenState extends State<LearnScreen> {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          'Swipe left or right to navigate',
+                          l10n.learnSwipeHint,
                           style: TextStyle(
                             color: AppTheme.textSecondary,
                             fontSize: 14,
@@ -330,6 +333,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
   }
 
   Widget _buildFront() {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
@@ -425,7 +429,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                     icon: const Icon(Icons.volume_up_rounded),
                     color: Colors.white,
                     iconSize: 24,
-                    tooltip: 'Hear pronunciation',
+                    tooltip: l10n.learnHearPronunciation,
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
                   ),
@@ -452,7 +456,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    'Tap to reveal translation',
+                    l10n.learnTapToReveal,
                     style: TextStyle(
                       color: AppTheme.primaryIndigo,
                       fontSize: 14,
@@ -469,6 +473,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
   }
 
   Widget _buildBack() {
+    final l10n = AppLocalizations.of(context)!;
     return Transform(
       alignment: Alignment.center,
       transform: Matrix4.identity()..rotateY(3.14159),
@@ -555,7 +560,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Tap to flip back',
+                      l10n.learnTapToFlipBack,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 14,

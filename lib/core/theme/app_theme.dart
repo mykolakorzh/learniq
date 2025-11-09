@@ -1,31 +1,82 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Modern Color Palette
-  static const Color primaryIndigo = Color(0xFF6366F1);
-  static const Color secondaryPurple = Color(0xFF8B5CF6);
-  static const Color accentGreen = Color(0xFF10B981);
-  static const Color backgroundLight = Color(0xFFF8FAFC);
+  // Brand Color Palette - Based on Learniq Logo German Flag Gradient
+  // German flag colors: Black-Red-Gold reimagined as gradient
+  static const Color brandRed = Color(0xFFDC143C); // Crimson red from flag
+  static const Color brandOrange = Color(0xFFFF6B35); // Gradient middle
+  static const Color brandGold = Color(0xFFFFD700); // Gold from flag
+  static const Color brandDark = Color(0xFF1A1A1A); // Deep black
+
+  // Primary palette derived from brand
+  static const Color primaryIndigo = Color(0xFFDC143C); // Brand red as primary
+  static const Color secondaryPurple = Color(0xFFFF6B35); // Brand orange
+  static const Color accentGreen = Color(0xFF10B981); // Keep for success
+  static const Color backgroundLight = Color(0xFFFFFBF5); // Warm off-white
   static const Color surfaceLight = Color(0xFFFFFFFF);
-  static const Color textPrimary = Color(0xFF1E293B);
-  static const Color textSecondary = Color(0xFF64748B);
-  
-  // Article Colors (softer modern shades)
-  static const Color derColor = Color(0xFF3B82F6); // Soft blue
-  static const Color dieColor = Color(0xFFEC4899); // Soft pink
-  static const Color dasColor = Color(0xFF10B981); // Soft green
-  
-  // Gradient definitions
+  static const Color textPrimary = Color(0xFF1A1A1A);
+  static const Color textSecondary = Color(0xFF6B6B6B);
+
+  // Article Colors - Enhanced with better contrast
+  static const Color derColor = Color(0xFF2563EB); // Vivid blue (masculine)
+  static const Color dieColor = Color(0xFFE91E63); // More red, less pink (feminine)
+  static const Color dasColor = Color(0xFF10B981); // Vivid green (neutral)
+
+  // Semantic Colors
+  static const Color successColor = Color(0xFF10B981);
+  static const Color errorColor = Color(0xFFDC143C); // Use brand red
+  static const Color warningColor = Color(0xFFFFB800);
+  static const Color infoColor = Color(0xFF2196F3);
+
+  // Brand Gradient - German Flag (Schwarz-Rot-Gold)
+  // Primary brand gradient matching logo
+  static const LinearGradient brandGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color(0xFF8B0000), // Dark red/burgundy top
+      Color(0xFFDC143C), // Crimson red
+      Color(0xFFFF6B35), // Orange
+      Color(0xFFFFD700), // Gold bottom
+    ],
+  );
+
+  // Alternative horizontal brand gradient
   static const LinearGradient primaryGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [primaryIndigo, secondaryPurple],
+    colors: [Color(0xFFDC143C), Color(0xFFFF6B35), Color(0xFFFFD700)],
   );
-  
+
   static const LinearGradient successGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [accentGreen, Color(0xFF059669)],
+    colors: [Color(0xFF10B981), Color(0xFF059669)],
+  );
+
+  // Red to Gold gradient (warm version)
+  static const LinearGradient warmGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFFDC143C), Color(0xFFFFD700)],
+  );
+
+  static const LinearGradient derGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFF2563EB), Color(0xFF1E40AF)],
+  );
+
+  static const LinearGradient dieGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFFEC4899), Color(0xFFDB2777)],
+  );
+
+  static const LinearGradient dasGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFF10B981), Color(0xFF059669)],
   );
 
   static ThemeData get lightTheme {

@@ -1,0 +1,1902 @@
+[
+  {
+    "id": "fahrzeug_01",
+    "topic_id": "fahrzeug",
+    "noun_de": "Ampel",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Ampel",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/ampel.png"
+  },
+  {
+    "id": "fahrzeug_02",
+    "topic_id": "fahrzeug",
+    "noun_de": "Auto",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Auto",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/auto.png"
+  },
+  {
+    "id": "fahrzeug_03",
+    "topic_id": "fahrzeug",
+    "noun_de": "Autobahn",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Autobahn",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/autobahn.png"
+  },
+  {
+    "id": "fahrzeug_04",
+    "topic_id": "fahrzeug",
+    "noun_de": "Bahnhof",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Bahnhof",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/bahnhof.png"
+  },
+  {
+    "id": "fahrzeug_05",
+    "topic_id": "fahrzeug",
+    "noun_de": "Boot",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Boot",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/boot.png"
+  },
+  {
+    "id": "fahrzeug_06",
+    "topic_id": "fahrzeug",
+    "noun_de": "Buergersteig",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Buergersteig",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/buergersteig.png"
+  },
+  {
+    "id": "fahrzeug_07",
+    "topic_id": "fahrzeug",
+    "noun_de": "Bus",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Bus",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/bus.png"
+  },
+  {
+    "id": "fahrzeug_08",
+    "topic_id": "fahrzeug",
+    "noun_de": "Fahrkarte",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Fahrkarte",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/fahrkarte.png"
+  },
+  {
+    "id": "fahrzeug_09",
+    "topic_id": "fahrzeug",
+    "noun_de": "Fahrkartenautomat",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Fahrkartenautomat",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/fahrkartenautomat.png"
+  },
+  {
+    "id": "fahrzeug_10",
+    "topic_id": "fahrzeug",
+    "noun_de": "Fahrrad",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Fahrrad",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/fahrrad.png"
+  },
+  {
+    "id": "fahrzeug_11",
+    "topic_id": "fahrzeug",
+    "noun_de": "Flugzeug",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Flugzeug",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/flugzeug.png"
+  },
+  {
+    "id": "fahrzeug_12",
+    "topic_id": "fahrzeug",
+    "noun_de": "Fuehre",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Fuehre",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/fuehre.png"
+  },
+  {
+    "id": "fahrzeug_13",
+    "topic_id": "fahrzeug",
+    "noun_de": "Fusguenger",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Fusguenger",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/fusguenger.png"
+  },
+  {
+    "id": "fahrzeug_14",
+    "topic_id": "fahrzeug",
+    "noun_de": "Gepuek",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Gepuek",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/gepuek.png"
+  },
+  {
+    "id": "fahrzeug_15",
+    "topic_id": "fahrzeug",
+    "noun_de": "Haltestelle",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Haltestelle",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/haltestelle.png"
+  },
+  {
+    "id": "fahrzeug_16",
+    "topic_id": "fahrzeug",
+    "noun_de": "Koffer",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Koffer",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/koffer.png"
+  },
+  {
+    "id": "fahrzeug_17",
+    "topic_id": "fahrzeug",
+    "noun_de": "Kreuzung",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Kreuzung",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/kreuzung.png"
+  },
+  {
+    "id": "fahrzeug_18",
+    "topic_id": "fahrzeug",
+    "noun_de": "Lastwagen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Lastwagen",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/lastwagen.png"
+  },
+  {
+    "id": "fahrzeug_19",
+    "topic_id": "fahrzeug",
+    "noun_de": "Motorrad",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Motorrad",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/motorrad.png"
+  },
+  {
+    "id": "fahrzeug_20",
+    "topic_id": "fahrzeug",
+    "noun_de": "Parkplatz",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Parkplatz",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/parkplatz.png"
+  },
+  {
+    "id": "fahrzeug_21",
+    "topic_id": "fahrzeug",
+    "noun_de": "Schiff",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Schiff",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/schiff.png"
+  },
+  {
+    "id": "fahrzeug_22",
+    "topic_id": "fahrzeug",
+    "noun_de": "Strase",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Strase",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/strase.png"
+  },
+  {
+    "id": "fahrzeug_23",
+    "topic_id": "fahrzeug",
+    "noun_de": "Strasenbahn",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Strasenbahn",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/strasenbahn.png"
+  },
+  {
+    "id": "fahrzeug_24",
+    "topic_id": "fahrzeug",
+    "noun_de": "Taxi",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Taxi",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/taxi.png"
+  },
+  {
+    "id": "fahrzeug_25",
+    "topic_id": "fahrzeug",
+    "noun_de": "Tunnel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Tunnel",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/tunnel.png"
+  },
+  {
+    "id": "fahrzeug_26",
+    "topic_id": "fahrzeug",
+    "noun_de": "U-Bahn",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "U-bahn",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/u-bahn.png"
+  },
+  {
+    "id": "fahrzeug_27",
+    "topic_id": "fahrzeug",
+    "noun_de": "Zug",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Zug",
+    "translation_uk": "",
+    "image_asset": "assets/images/fahrzeug/zug.png"
+  },
+  {
+    "id": "kleidung_28",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidbadeanzug",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidbadeanzug",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidbadeanzug.jpg"
+  },
+  {
+    "id": "kleidung_29",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidbh",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidbh",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidbh.jpg"
+  },
+  {
+    "id": "kleidung_30",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidbrille",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidbrille",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidbrille.jpg"
+  },
+  {
+    "id": "kleidung_31",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidguertel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidguertel",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidguertel.jpg"
+  },
+  {
+    "id": "kleidung_32",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidhandschuhe",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidhandschuhe",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidhandschuhe.jpg"
+  },
+  {
+    "id": "kleidung_33",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidhausschuhe",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidhausschuhe",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidhausschuhe.jpg"
+  },
+  {
+    "id": "kleidung_34",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidhemd",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidhemd",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidhemd.jpg"
+  },
+  {
+    "id": "kleidung_35",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidhose",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidhose",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidhose.jpg"
+  },
+  {
+    "id": "kleidung_36",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidjacke",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidjacke",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidjacke.jpg"
+  },
+  {
+    "id": "kleidung_37",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidjeans",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidjeans",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidjeans.jpg"
+  },
+  {
+    "id": "kleidung_38",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidkleid",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidkleid",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidkleid.jpg"
+  },
+  {
+    "id": "kleidung_39",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidkrawatte",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidkrawatte",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidkrawatte.jpg"
+  },
+  {
+    "id": "kleidung_40",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidmantel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidmantel",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidmantel.jpg"
+  },
+  {
+    "id": "kleidung_41",
+    "topic_id": "kleidung",
+    "noun_de": "KleidmüTze",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidmütze",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidmütze.jpg"
+  },
+  {
+    "id": "kleidung_42",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidpullover",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidpullover",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidpullover.jpg"
+  },
+  {
+    "id": "kleidung_43",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidregenschirm",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidregenschirm",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidregenschirm.jpg"
+  },
+  {
+    "id": "kleidung_44",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidrock",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidrock",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidrock.png"
+  },
+  {
+    "id": "kleidung_45",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidrucksack",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidrucksack",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidrucksack.jpg"
+  },
+  {
+    "id": "kleidung_46",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidschal",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidschal",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidschal.jpg"
+  },
+  {
+    "id": "kleidung_47",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidschlafanzug",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidschlafanzug",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidschlafanzug.jpg"
+  },
+  {
+    "id": "kleidung_48",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidschuhe",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidschuhe",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidschuhe.jpg"
+  },
+  {
+    "id": "kleidung_49",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidshorts",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidshorts",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidshorts.jpg"
+  },
+  {
+    "id": "kleidung_50",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidsocken",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidsocken",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidsocken.jpg"
+  },
+  {
+    "id": "kleidung_51",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidstrumpfhose",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidstrumpfhose",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidstrumpfhose.jpg"
+  },
+  {
+    "id": "kleidung_52",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidtasche",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidtasche",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidtasche.jpg"
+  },
+  {
+    "id": "kleidung_53",
+    "topic_id": "kleidung",
+    "noun_de": "Kleidtshirt",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleidtshirt",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleidtshirt.jpg"
+  },
+  {
+    "id": "kleidung_54",
+    "topic_id": "kleidung",
+    "noun_de": "Kleiduhr",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kleiduhr",
+    "translation_uk": "",
+    "image_asset": "assets/images/kleidung/kleiduhr.jpg"
+  },
+  {
+    "id": "natur_55",
+    "topic_id": "natur",
+    "noun_de": "Naturbach",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturbach",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturbach.jpg"
+  },
+  {
+    "id": "natur_56",
+    "topic_id": "natur",
+    "noun_de": "Naturbeere",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturbeere",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturbeere.jpg"
+  },
+  {
+    "id": "natur_57",
+    "topic_id": "natur",
+    "noun_de": "Natureiszapfen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Natureiszapfen",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/natureiszapfen.jpg"
+  },
+  {
+    "id": "natur_58",
+    "topic_id": "natur",
+    "noun_de": "Naturfelsen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturfelsen",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturfelsen.jpg"
+  },
+  {
+    "id": "natur_59",
+    "topic_id": "natur",
+    "noun_de": "Naturgewitter",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturgewitter",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturgewitter.jpg"
+  },
+  {
+    "id": "natur_60",
+    "topic_id": "natur",
+    "noun_de": "Naturhain",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturhain",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturhain.jpg"
+  },
+  {
+    "id": "natur_61",
+    "topic_id": "natur",
+    "noun_de": "Naturkoralle",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturkoralle",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturkoralle.jpg"
+  },
+  {
+    "id": "natur_62",
+    "topic_id": "natur",
+    "noun_de": "Naturlichtung",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Naturlichtung",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturlichtung.jpg"
+  },
+  {
+    "id": "natur_63",
+    "topic_id": "natur",
+    "noun_de": "Naturmoor",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturmoor",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturmoor.jpg"
+  },
+  {
+    "id": "natur_64",
+    "topic_id": "natur",
+    "noun_de": "Naturmoos",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturmoos",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturmoos.jpg"
+  },
+  {
+    "id": "natur_65",
+    "topic_id": "natur",
+    "noun_de": "Naturnaturschutzgebiet",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturnaturschutzgebiet",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturnaturschutzgebiet.jpg"
+  },
+  {
+    "id": "natur_66",
+    "topic_id": "natur",
+    "noun_de": "Naturnebel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturnebel",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturnebel.jpg"
+  },
+  {
+    "id": "natur_67",
+    "topic_id": "natur",
+    "noun_de": "Naturorkan",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturorkan",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturorkan.jpg"
+  },
+  {
+    "id": "natur_68",
+    "topic_id": "natur",
+    "noun_de": "Naturpfad",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturpfad",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturpfad.jpg"
+  },
+  {
+    "id": "natur_69",
+    "topic_id": "natur",
+    "noun_de": "Naturpilz",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturpilz",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturpilz.jpg"
+  },
+  {
+    "id": "natur_70",
+    "topic_id": "natur",
+    "noun_de": "Naturplatzregen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturplatzregen",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturplatzregen.jpg"
+  },
+  {
+    "id": "natur_71",
+    "topic_id": "natur",
+    "noun_de": "Naturrebe",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturrebe",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturrebe.jpg"
+  },
+  {
+    "id": "natur_72",
+    "topic_id": "natur",
+    "noun_de": "Naturregenbogen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturregenbogen",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturregenbogen.png"
+  },
+  {
+    "id": "natur_73",
+    "topic_id": "natur",
+    "noun_de": "Naturreif",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturreif",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturreif.jpg"
+  },
+  {
+    "id": "natur_74",
+    "topic_id": "natur",
+    "noun_de": "Naturriff",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturriff",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturriff.jpg"
+  },
+  {
+    "id": "natur_75",
+    "topic_id": "natur",
+    "noun_de": "Naturrinde",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturrinde",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturrinde.jpg"
+  },
+  {
+    "id": "natur_76",
+    "topic_id": "natur",
+    "noun_de": "Natursavanne",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Natursavanne",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/natursavanne.jpg"
+  },
+  {
+    "id": "natur_77",
+    "topic_id": "natur",
+    "noun_de": "Naturschneeflocke",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturschneeflocke",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturschneeflocke.jpg"
+  },
+  {
+    "id": "natur_78",
+    "topic_id": "natur",
+    "noun_de": "Naturstein",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturstein",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturstein.jpg"
+  },
+  {
+    "id": "natur_79",
+    "topic_id": "natur",
+    "noun_de": "Natursturm",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Natursturm",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/natursturm.jpg"
+  },
+  {
+    "id": "natur_80",
+    "topic_id": "natur",
+    "noun_de": "Naturwald",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturwald",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturwald.jpg"
+  },
+  {
+    "id": "natur_81",
+    "topic_id": "natur",
+    "noun_de": "Naturwetter",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturwetter",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturwetter.jpg"
+  },
+  {
+    "id": "natur_82",
+    "topic_id": "natur",
+    "noun_de": "Naturwurzel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturwurzel",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturwurzel.jpg"
+  },
+  {
+    "id": "natur_83",
+    "topic_id": "natur",
+    "noun_de": "Naturzapfen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Naturzapfen",
+    "translation_uk": "",
+    "image_asset": "assets/images/natur/naturzapfen.jpg"
+  },
+  {
+    "id": "stadt_84",
+    "topic_id": "stadt",
+    "noun_de": "Apotheke",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Apotheke",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/apotheke.png"
+  },
+  {
+    "id": "stadt_85",
+    "topic_id": "stadt",
+    "noun_de": "Bahnhof",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Bahnhof",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/bahnhof.png"
+  },
+  {
+    "id": "stadt_86",
+    "topic_id": "stadt",
+    "noun_de": "Bank",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Bank",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/bank.png"
+  },
+  {
+    "id": "stadt_87",
+    "topic_id": "stadt",
+    "noun_de": "Bibliothek",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Bibliothek",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/bibliothek.png"
+  },
+  {
+    "id": "stadt_88",
+    "topic_id": "stadt",
+    "noun_de": "Bruecke",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Bruecke",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/bruecke.png"
+  },
+  {
+    "id": "stadt_89",
+    "topic_id": "stadt",
+    "noun_de": "Brunnen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Brunnen",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/brunnen.png"
+  },
+  {
+    "id": "stadt_90",
+    "topic_id": "stadt",
+    "noun_de": "Cafe",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Cafe",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/cafe.png"
+  },
+  {
+    "id": "stadt_91",
+    "topic_id": "stadt",
+    "noun_de": "Denkmal",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Denkmal",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/denkmal.png"
+  },
+  {
+    "id": "stadt_92",
+    "topic_id": "stadt",
+    "noun_de": "Gebueude",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Gebueude",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/gebueude.png"
+  },
+  {
+    "id": "stadt_93",
+    "topic_id": "stadt",
+    "noun_de": "Geschueft",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Geschueft",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/geschueft.png"
+  },
+  {
+    "id": "stadt_94",
+    "topic_id": "stadt",
+    "noun_de": "Haus",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Haus",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/haus.png"
+  },
+  {
+    "id": "stadt_95",
+    "topic_id": "stadt",
+    "noun_de": "Hotel",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Hotel",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/hotel.png"
+  },
+  {
+    "id": "stadt_96",
+    "topic_id": "stadt",
+    "noun_de": "Kino",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Kino",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/kino.png"
+  },
+  {
+    "id": "stadt_97",
+    "topic_id": "stadt",
+    "noun_de": "Kirche",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Kirche",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/kirche.png"
+  },
+  {
+    "id": "stadt_98",
+    "topic_id": "stadt",
+    "noun_de": "Krankenhaus",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Krankenhaus",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/krankenhaus.png"
+  },
+  {
+    "id": "stadt_99",
+    "topic_id": "stadt",
+    "noun_de": "Krankenhaus Grau",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Krankenhaus_grau",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/krankenhaus_grau.png"
+  },
+  {
+    "id": "stadt_100",
+    "topic_id": "stadt",
+    "noun_de": "Markt",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Markt",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/markt.png"
+  },
+  {
+    "id": "stadt_101",
+    "topic_id": "stadt",
+    "noun_de": "Museum",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Museum",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/museum.png"
+  },
+  {
+    "id": "stadt_102",
+    "topic_id": "stadt",
+    "noun_de": "Park",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Park",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/park.png"
+  },
+  {
+    "id": "stadt_103",
+    "topic_id": "stadt",
+    "noun_de": "Platz",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Platz",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/platz.png"
+  },
+  {
+    "id": "stadt_104",
+    "topic_id": "stadt",
+    "noun_de": "Post",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Post",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/post.png"
+  },
+  {
+    "id": "stadt_105",
+    "topic_id": "stadt",
+    "noun_de": "Restaurant",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Restaurant",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/restaurant.png"
+  },
+  {
+    "id": "stadt_106",
+    "topic_id": "stadt",
+    "noun_de": "Schloss",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Schloss",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/schloss.png"
+  },
+  {
+    "id": "stadt_107",
+    "topic_id": "stadt",
+    "noun_de": "Schule",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Schule",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/schule.png"
+  },
+  {
+    "id": "stadt_108",
+    "topic_id": "stadt",
+    "noun_de": "Stadt",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Stadt",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/stadt.png"
+  },
+  {
+    "id": "stadt_109",
+    "topic_id": "stadt",
+    "noun_de": "Strase",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Strase",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/strase.png"
+  },
+  {
+    "id": "stadt_110",
+    "topic_id": "stadt",
+    "noun_de": "Supermarkt",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Supermarkt",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/supermarkt.png"
+  },
+  {
+    "id": "stadt_111",
+    "topic_id": "stadt",
+    "noun_de": "Theater",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Theater",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/theater.png"
+  },
+  {
+    "id": "stadt_112",
+    "topic_id": "stadt",
+    "noun_de": "Turm",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Turm",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/turm.png"
+  },
+  {
+    "id": "stadt_113",
+    "topic_id": "stadt",
+    "noun_de": "Zentrum",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Zentrum",
+    "translation_uk": "",
+    "image_asset": "assets/images/stadt/zentrum.png"
+  },
+  {
+    "id": "tiere_114",
+    "topic_id": "tiere",
+    "noun_de": "Affe",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Affe",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/affe.png"
+  },
+  {
+    "id": "tiere_115",
+    "topic_id": "tiere",
+    "noun_de": "Buer",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Buer",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/buer.png"
+  },
+  {
+    "id": "tiere_116",
+    "topic_id": "tiere",
+    "noun_de": "Delfin",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Delfin",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/delfin.png"
+  },
+  {
+    "id": "tiere_117",
+    "topic_id": "tiere",
+    "noun_de": "Eichheurnchen",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Eichheurnchen",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/eichheurnchen.png"
+  },
+  {
+    "id": "tiere_118",
+    "topic_id": "tiere",
+    "noun_de": "Elefant",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Elefant",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/elefant.png"
+  },
+  {
+    "id": "tiere_119",
+    "topic_id": "tiere",
+    "noun_de": "Ente",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Ente",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/ente.png"
+  },
+  {
+    "id": "tiere_120",
+    "topic_id": "tiere",
+    "noun_de": "Gans",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Gans",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/gans.png"
+  },
+  {
+    "id": "tiere_121",
+    "topic_id": "tiere",
+    "noun_de": "Giraffe",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Giraffe",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/giraffe.png"
+  },
+  {
+    "id": "tiere_122",
+    "topic_id": "tiere",
+    "noun_de": "Hahn",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Hahn",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/hahn.png"
+  },
+  {
+    "id": "tiere_123",
+    "topic_id": "tiere",
+    "noun_de": "Hase",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Hase",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/hase.png"
+  },
+  {
+    "id": "tiere_124",
+    "topic_id": "tiere",
+    "noun_de": "Huhn",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Huhn",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/huhn.png"
+  },
+  {
+    "id": "tiere_125",
+    "topic_id": "tiere",
+    "noun_de": "Hund",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Hund",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/hund.png"
+  },
+  {
+    "id": "tiere_126",
+    "topic_id": "tiere",
+    "noun_de": "Igel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Igel",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/igel.png"
+  },
+  {
+    "id": "tiere_127",
+    "topic_id": "tiere",
+    "noun_de": "Kamel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kamel",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/kamel.png"
+  },
+  {
+    "id": "tiere_128",
+    "topic_id": "tiere",
+    "noun_de": "Kaninchen",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "Kaninchen",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/kaninchen.png"
+  },
+  {
+    "id": "tiere_129",
+    "topic_id": "tiere",
+    "noun_de": "Katze",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "Katze",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/katze.png"
+  },
+  {
+    "id": "tiere_130",
+    "topic_id": "tiere",
+    "noun_de": "Kuenguru",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Kuenguru",
+    "translation_uk": "",
+    "image_asset": "assets/images/tiere/kuenguru.png"
+  },
+  {
+    "id": "korper_131",
+    "topic_id": "korper",
+    "noun_de": "Arm",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "рука",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/arm.jpg"
+  },
+  {
+    "id": "korper_132",
+    "topic_id": "korper",
+    "noun_de": "Auge",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "глаз",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/auge.png"
+  },
+  {
+    "id": "korper_133",
+    "topic_id": "korper",
+    "noun_de": "Augenbraue",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "бровь",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/augenbraue.jpg"
+  },
+  {
+    "id": "korper_134",
+    "topic_id": "korper",
+    "noun_de": "Bein",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "нога",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/bein.jpg"
+  },
+  {
+    "id": "korper_135",
+    "topic_id": "korper",
+    "noun_de": "Ellbogen",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "локоть",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/ellbogen.jpg"
+  },
+  {
+    "id": "korper_136",
+    "topic_id": "korper",
+    "noun_de": "Ferse",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "пятка",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/ferse.jpg"
+  },
+  {
+    "id": "korper_137",
+    "topic_id": "korper",
+    "noun_de": "Finger",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "палец",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/finger.jpg"
+  },
+  {
+    "id": "korper_138",
+    "topic_id": "korper",
+    "noun_de": "Gesicht",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "лицо",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/gesicht.png"
+  },
+  {
+    "id": "korper_139",
+    "topic_id": "korper",
+    "noun_de": "Haare",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "волосы",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/haare.png"
+  },
+  {
+    "id": "korper_140",
+    "topic_id": "korper",
+    "noun_de": "Kinn",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "подбородок",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/kinn.jpg"
+  },
+  {
+    "id": "korper_141",
+    "topic_id": "korper",
+    "noun_de": "Knie",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "колено",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/knie.jpg"
+  },
+  {
+    "id": "korper_142",
+    "topic_id": "korper",
+    "noun_de": "Kopf",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "голова",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/kopf.png"
+  },
+  {
+    "id": "korper_143",
+    "topic_id": "korper",
+    "noun_de": "Mund",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "рот",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/mund.png"
+  },
+  {
+    "id": "korper_144",
+    "topic_id": "korper",
+    "noun_de": "Nase",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "нос",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/nase.png"
+  },
+  {
+    "id": "korper_145",
+    "topic_id": "korper",
+    "noun_de": "Oberschenkel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "бедро",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/oberschenkel.jpg"
+  },
+  {
+    "id": "korper_146",
+    "topic_id": "korper",
+    "noun_de": "Ohr",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "ухо",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/ohr.png"
+  },
+  {
+    "id": "korper_147",
+    "topic_id": "korper",
+    "noun_de": "Ruecken",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "спина",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/ruecken.jpg"
+  },
+  {
+    "id": "korper_148",
+    "topic_id": "korper",
+    "noun_de": "Schulter",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "плечо",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/schulter.jpg"
+  },
+  {
+    "id": "korper_149",
+    "topic_id": "korper",
+    "noun_de": "Stirn",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "лоб",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/stirn.jpg"
+  },
+  {
+    "id": "korper_150",
+    "topic_id": "korper",
+    "noun_de": "Zahn",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "зуб",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/zahn.png"
+  },
+  {
+    "id": "korper_151",
+    "topic_id": "korper",
+    "noun_de": "Живот",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Живот",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/живот.jpg"
+  },
+  {
+    "id": "korper_152",
+    "topic_id": "korper",
+    "noun_de": "Кожа",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Кожа",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/кожа.jpg"
+  },
+  {
+    "id": "korper_153",
+    "topic_id": "korper",
+    "noun_de": "Кость",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Кость",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/кость.jpg"
+  },
+  {
+    "id": "korper_154",
+    "topic_id": "korper",
+    "noun_de": "Мышца",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Мышца",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/мышца.jpg"
+  },
+  {
+    "id": "korper_155",
+    "topic_id": "korper",
+    "noun_de": "Сердце",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Сердце",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/сердце.jpg"
+  },
+  {
+    "id": "korper_156",
+    "topic_id": "korper",
+    "noun_de": "Ступня",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Ступня",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/ступня.jpg"
+  },
+  {
+    "id": "korper_157",
+    "topic_id": "korper",
+    "noun_de": "Шея",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Шея",
+    "translation_uk": "",
+    "image_asset": "assets/images/korper/шея.jpg"
+  },
+  {
+    "id": "wohnung_158",
+    "topic_id": "wohnung",
+    "noun_de": "Aufzug",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "лифт",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/aufzug.png"
+  },
+  {
+    "id": "wohnung_159",
+    "topic_id": "wohnung",
+    "noun_de": "Badewanne",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "ванна",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/badewanne.png"
+  },
+  {
+    "id": "wohnung_160",
+    "topic_id": "wohnung",
+    "noun_de": "Badewanneя Комната",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Badewanneя_комната",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/badewanneя_комната.png"
+  },
+  {
+    "id": "wohnung_161",
+    "topic_id": "wohnung",
+    "noun_de": "Balkon",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "балкон",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/balkon.png"
+  },
+  {
+    "id": "wohnung_162",
+    "topic_id": "wohnung",
+    "noun_de": "Bett",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "кровать",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/bett.png"
+  },
+  {
+    "id": "wohnung_163",
+    "topic_id": "wohnung",
+    "noun_de": "Boden",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "пол",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/boden.png"
+  },
+  {
+    "id": "wohnung_164",
+    "topic_id": "wohnung",
+    "noun_de": "Dachboden",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "чердак",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/dachboden.png"
+  },
+  {
+    "id": "wohnung_165",
+    "topic_id": "wohnung",
+    "noun_de": "Decke",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "потолок",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/decke.png"
+  },
+  {
+    "id": "wohnung_166",
+    "topic_id": "wohnung",
+    "noun_de": "Dusche",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "душ",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/dusche.png"
+  },
+  {
+    "id": "wohnung_167",
+    "topic_id": "wohnung",
+    "noun_de": "Fenster",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "окно",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/fenster.png"
+  },
+  {
+    "id": "wohnung_168",
+    "topic_id": "wohnung",
+    "noun_de": "Fernseher",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "телевизор",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/fernseher.png"
+  },
+  {
+    "id": "wohnung_169",
+    "topic_id": "wohnung",
+    "noun_de": "Flur",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "коридор",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/flur.png"
+  },
+  {
+    "id": "wohnung_170",
+    "topic_id": "wohnung",
+    "noun_de": "Keller",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "подвал",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/keller.png"
+  },
+  {
+    "id": "wohnung_171",
+    "topic_id": "wohnung",
+    "noun_de": "Kueche",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "кухня",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/kueche.png"
+  },
+  {
+    "id": "wohnung_172",
+    "topic_id": "wohnung",
+    "noun_de": "Kuehlschrank",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "холодильник",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/kuehlschrank.png"
+  },
+  {
+    "id": "wohnung_173",
+    "topic_id": "wohnung",
+    "noun_de": "Schlafzimmer",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "спальня",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/schlafzimmer.png"
+  },
+  {
+    "id": "wohnung_174",
+    "topic_id": "wohnung",
+    "noun_de": "Schrank",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "шкаф",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/schrank.png"
+  },
+  {
+    "id": "wohnung_175",
+    "topic_id": "wohnung",
+    "noun_de": "Sessel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "кресло",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/sessel.png"
+  },
+  {
+    "id": "wohnung_176",
+    "topic_id": "wohnung",
+    "noun_de": "Sofa",
+    "article": "das",
+    "phonetic": "",
+    "translation_ru": "диван",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/sofa.png"
+  },
+  {
+    "id": "wohnung_177",
+    "topic_id": "wohnung",
+    "noun_de": "Spiegel",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "зеркало",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/spiegel.png"
+  },
+  {
+    "id": "wohnung_178",
+    "topic_id": "wohnung",
+    "noun_de": "Steckdose",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "розетка",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/steckdose.png"
+  },
+  {
+    "id": "wohnung_179",
+    "topic_id": "wohnung",
+    "noun_de": "Stuhl",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "стул",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/stuhl.png"
+  },
+  {
+    "id": "wohnung_180",
+    "topic_id": "wohnung",
+    "noun_de": "Tisch",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "стол",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/tisch.png"
+  },
+  {
+    "id": "wohnung_181",
+    "topic_id": "wohnung",
+    "noun_de": "Toiletteт",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Toiletteт",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/toiletteт.png"
+  },
+  {
+    "id": "wohnung_182",
+    "topic_id": "wohnung",
+    "noun_de": "Treppe",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "лестница",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/treppe.png"
+  },
+  {
+    "id": "wohnung_183",
+    "topic_id": "wohnung",
+    "noun_de": "Tuer",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "дверь",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/tuer.png"
+  },
+  {
+    "id": "wohnung_184",
+    "topic_id": "wohnung",
+    "noun_de": "Wand",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "стена",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/wand.png"
+  },
+  {
+    "id": "wohnung_185",
+    "topic_id": "wohnung",
+    "noun_de": "Wohnung",
+    "article": "die",
+    "phonetic": "",
+    "translation_ru": "квартира",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/wohnung.png"
+  },
+  {
+    "id": "wohnung_186",
+    "topic_id": "wohnung",
+    "noun_de": "Гостинная",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Гостинная",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/гостинная.png"
+  },
+  {
+    "id": "wohnung_187",
+    "topic_id": "wohnung",
+    "noun_de": "Ковер",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Ковер",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/ковер.png"
+  },
+  {
+    "id": "wohnung_188",
+    "topic_id": "wohnung",
+    "noun_de": "Отопление",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Отопление",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/отопление.png"
+  },
+  {
+    "id": "wohnung_189",
+    "topic_id": "wohnung",
+    "noun_de": "Плита",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Плита",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/плита.png"
+  },
+  {
+    "id": "wohnung_190",
+    "topic_id": "wohnung",
+    "noun_de": "Штора",
+    "article": "der",
+    "phonetic": "",
+    "translation_ru": "Штора",
+    "translation_uk": "",
+    "image_asset": "assets/images/wohnung/штора.png"
+  }
+]

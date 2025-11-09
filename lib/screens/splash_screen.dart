@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/onboarding_service.dart';
+import '../l10n/app_localizations.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -36,39 +37,37 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // App icon placeholder - you can replace this with your logo
-            Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: const Icon(
-                Icons.school,
-                size: 64,
-                color: Color(0xFF1976D2),
+            // Learniq Logo
+            ClipRRect(
+              borderRadius: BorderRadius.circular(24),
+              child: Image.asset(
+                'assets/Learniq_logo_short.png',
+                width: 120,
+                height: 120,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
-              'LearnIQ',
-              style: TextStyle(
+            Text(
+              l10n.splashAppName,
+              style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Master German Articles',
-              style: TextStyle(
+            Text(
+              l10n.splashTagline,
+              style: const TextStyle(
                 fontSize: 16,
                 color: Colors.white70,
               ),

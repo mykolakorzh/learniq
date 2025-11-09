@@ -34,6 +34,19 @@ class ProgressService {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_mistakesKey(topicId));
   }
+
+  /// Clear all progress data for all topics
+  static Future<void> clearAllProgress() async {
+    final prefs = await SharedPreferences.getInstance();
+    final keys = prefs.getKeys();
+
+    // Remove all keys that start with 'progress_'
+    for (final key in keys) {
+      if (key.startsWith('progress_')) {
+        await prefs.remove(key);
+      }
+    }
+  }
 }
 
 

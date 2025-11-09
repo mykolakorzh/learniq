@@ -22,7 +22,7 @@ class LearniqApp extends StatefulWidget {
 }
 
 class _LearniqAppState extends State<LearniqApp> {
-  Locale _locale = const Locale('en', '');
+  Locale _locale = const Locale('ru', '');
 
   @override
   void initState() {

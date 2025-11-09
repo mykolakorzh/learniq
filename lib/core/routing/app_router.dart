@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../features/topics/view/topics_screen.dart';
+import '../../screens/topics_screen.dart';
 import '../../screens/learn_screen.dart';
 import '../../screens/test_screen.dart';
 import '../../screens/onboarding_screen.dart';
@@ -8,7 +8,6 @@ import '../../screens/statistics_screen.dart';
 import '../../screens/settings_screen.dart';
 import '../../screens/account_screen.dart';
 import '../../screens/main_navigation_screen.dart';
-import '../../features/paywall/paywall_screen.dart';
 import '../../widgets/animations.dart';
 
 class AppRouter {
@@ -26,8 +25,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
       case '/account':
         return MaterialPageRoute(builder: (_) => const AccountScreen());
-      case '/paywall':
-        return MaterialPageRoute(builder: (_) => const PaywallScreen());
       case '/learn':
         final topicId = settings.arguments as String;
         return PageTransitions.slideFromRight(

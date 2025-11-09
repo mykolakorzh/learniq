@@ -8,6 +8,26 @@
   "@topicsTitle": {
     "description": "Title for the topics screen"
   },
+
+  "statisticsTitle": "Статистика",
+  "learnModeTitle": "Режим изучения",
+  "testModeTitle": "Режим теста",
+
+  "onboardingSkip": "Пропустить",
+  "onboardingNext": "Далее",
+  "onboardingGetStarted": "Начать",
+  "onboardingPage1Title": "Освойте немецкие артикли",
+  "onboardingPage1Description": "Изучайте der, die и das с помощью красивых визуальных карточек с изображениями, которые помогут вам запомнить.",
+  "onboardingPage2Title": "Интерактивные тесты",
+  "onboardingPage2Description": "Проверьте свои знания с помощью забавных тестов с перетаскиванием. Получайте мгновенную обратную связь и отслеживайте свои ошибки.",
+  "onboardingPage3Title": "Идеальное произношение",
+  "onboardingPage3Description": "Слушайте native немецкое произношение с помощью синтеза речи. Практикуйте аудирование и говорение.",
+  "onboardingPage4Title": "Отслеживайте свой прогресс",
+  "onboardingPage4Description": "Следите за своим обучением с помощью подробной статистики и значков достижений.",
+
+  "splashAppName": "LearnIQ",
+  "splashTagline": "Освойте немецкие артикли",
+
   "paywallTitle": "Премиум",
   "@paywallTitle": {
     "description": "Title for the paywall screen"
@@ -72,6 +92,14 @@
   "settingsResetDialogConfirm": "Сбросить",
   "settingsResetDialogCancel": "Отмена",
   "settingsResetSuccess": "Настройки сброшены",
+  "settingsClearProgressError": "Не удалось очистить прогресс: {error}",
+  "@settingsClearProgressError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
 
   "topicsFailedToLoad": "Не удалось загрузить темы",
   "topicsCards": "карточек",
@@ -102,6 +130,130 @@
   "topicsLearnSubtitle": "Изучать словарные карточки",
   "topicsTest": "Тестировать",
   "topicsTestSubtitle": "Практика с викториной",
+  "topicsRetry": "Повторить",
+  "topicsError": "Ошибка: {error}",
+  "@topicsError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "topicsPremium": "Премиум",
+  "topicsAll": "Все",
+  "topicsSearchHint": "Поиск тем...",
+  "topicsSubtitle": "Начните свое обучение",
+  "topicsNoTopicsFound": "Темы не найдены",
+  "topicsAdjustFilters": "Попробуйте другой поисковый запрос",
+  "topicsClearFilters": "Очистить фильтры",
+  "topicsPreview": "Примеры",
+
+  "learnLoading": "Загрузка карточек для изучения...",
+  "learnErrorTitle": "Не удалось загрузить карточки",
+  "learnErrorMessage": "Произошла проблема при загрузке карточек для изучения. Пожалуйста, попробуйте снова.",
+  "learnNoCardsTitle": "Нет доступных карточек",
+  "learnNoCardsMessage": "В этой теме пока нет карточек для изучения.",
+  "learnCongratulations": "Поздравляем!",
+  "learnCompletedCards": "Вы завершили все {count} карточек!",
+  "@learnCompletedCards": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "learnCardProgress": "{current} из {total} карточек",
+  "@learnCardProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "learnSwipeHint": "Смахните влево или вправо для навигации",
+  "learnTapToReveal": "Нажмите, чтобы увидеть перевод",
+  "learnTapToFlipBack": "Нажмите, чтобы вернуться",
+  "learnHearPronunciation": "Прослушать произношение",
+
+  "testLoading": "Загрузка карточек для теста...",
+  "testNoCardsTitle": "Нет доступных карточек",
+  "testNoCardsMessage": "Нет доступных карточек для этой темы.",
+  "testReviewComplete": "Повтор завершен!",
+  "testTestComplete": "Тест завершен!",
+  "testQuestionProgress": "{current} из {total} вопросов",
+  "@testQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "testAccuracy": "Точность: {accuracy}%",
+  "@testAccuracy": {
+    "placeholders": {
+      "accuracy": {
+        "type": "int"
+      }
+    }
+  },
+  "testPracticeMistakesCount": "Практика ошибок ({count})",
+  "@testPracticeMistakesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "testGoHome": "На главную",
+  "testMistakesToReview": "Ошибки для повтора:",
+  "testDragHint": "Перетащите правильный артикль:",
+  "testChooseFrom": "Выберите из:",
+  "testCorrect": "Правильно!",
+  "testIncorrect": "Неправильно!",
+
+  "statsYourProgress": "Ваш прогресс",
+  "statsSubtitle": "Смотрите, как далеко вы продвинулись",
+  "statsProgress": "Прогресс",
+  "statsNotStarted": "Готов к старту",
+  "statsErrorTitle": "Не удалось загрузить статистику",
+  "statsErrorMessage": "Произошла проблема при загрузке данных о вашем прогрессе. Пожалуйста, проверьте подключение и попробуйте снова.",
+  "statsGoBack": "Назад",
+  "statsOverall": "Общая статистика",
+  "statsTopics": "Темы",
+  "statsAvgAccuracy": "Средняя точность",
+  "statsCardsTotal": "Всего карточек",
+  "statsToReview": "Для повтора",
+  "statsMaster": "Мастер!",
+  "statsMasterMessage": "Отличная работа! Вы осваиваете немецкие артикли!",
+  "statsGreatProgress": "Отличный прогресс!",
+  "statsGreatProgressMessage": "Вы очень хорошо справляетесь! Продолжайте!",
+  "statsGoodStart": "Хорошее начало!",
+  "statsGoodStartMessage": "Вы делаете успехи! Практика делает совершенным.",
+  "statsKeepLearning": "Продолжайте учиться!",
+  "statsKeepLearningMessage": "Каждый эксперт когда-то был новичком. Продолжайте!",
+  "statsTopicBreakdown": "Разбивка по темам",
+  "statsAccuracyLabel": "Точность: {percent}%",
+  "@statsAccuracyLabel": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "statsToReviewCount": "{count} для повтора",
+  "@statsToReviewCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
 
   "topics.title": "Темы",
   "topics.empty": "Темы не найдены",
