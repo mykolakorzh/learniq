@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
@@ -34,10 +35,22 @@ class _TestScreenState extends State<TestScreen> {
   bool _isMistakesOnlyMode = false;
   bool _showConfetti = false;
 
+  // Timers for delayed operations (to prevent memory leaks)
+  Timer? _confettiTimer;
+  Timer? _nextQuestionTimer;
+
   @override
   void initState() {
     super.initState();
     _loadData();
+  }
+
+  @override
+  void dispose() {
+    // Cancel all pending timers to prevent memory leaks
+    _confettiTimer?.cancel();
+    _nextQuestionTimer?.cancel();
+    super.dispose();
   }
 
   Future<void> _loadData() async {
@@ -82,7 +95,8 @@ class _TestScreenState extends State<TestScreen> {
         // Success haptic feedback
         HapticFeedback.mediumImpact();
         // Hide confetti after animation
-        Future.delayed(const Duration(seconds: 2), () {
+        _confettiTimer?.cancel();
+        _confettiTimer = Timer(const Duration(seconds: 2), () {
           if (mounted) {
             setState(() {
               _showConfetti = false;
@@ -100,8 +114,11 @@ class _TestScreenState extends State<TestScreen> {
     });
 
     // Auto-advance after showing result
-    Future.delayed(const Duration(seconds: 2), () {
-      _nextQuestion();
+    _nextQuestionTimer?.cancel();
+    _nextQuestionTimer = Timer(const Duration(seconds: 2), () {
+      if (mounted) {
+        _nextQuestion();
+      }
     });
   }
 
