@@ -90,7 +90,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
                                   borderRadius: BorderRadius.circular(12),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.05),
+                                      color: Colors.black.withValues(alpha: 0.05),
                                       blurRadius: 10,
                                       offset: const Offset(0, 2),
                                     ),
@@ -127,8 +127,8 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               decoration: BoxDecoration(
                                 color: widget.topic.isFree
-                                    ? AppTheme.accentGreen.withOpacity(0.1)
-                                    : Colors.orange.withOpacity(0.1),
+                                    ? AppTheme.accentGreen.withValues(alpha: 0.1)
+                                    : Colors.orange.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
@@ -324,7 +324,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -361,7 +361,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 5),
           ),
@@ -378,7 +378,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
-                  color: AppTheme.textSecondary.withOpacity(0.1),
+                  color: AppTheme.textSecondary.withValues(alpha: 0.1),
                   child: const Icon(
                     Icons.image_not_supported,
                     size: 32,
@@ -399,7 +399,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
                     end: Alignment.bottomCenter,
                     colors: [
                       Colors.transparent,
-                      Colors.black.withOpacity(0.7),
+                      Colors.black.withValues(alpha: 0.7),
                     ],
                   ),
                 ),
@@ -431,10 +431,10 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: color.withOpacity(0.3),
+          color: color.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -443,7 +443,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.2),
+              color: color.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(icon, color: color, size: 24),

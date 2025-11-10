@@ -91,7 +91,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               borderRadius: BorderRadius.circular(16),
                               boxShadow: [
                                 BoxShadow(
-                                  color: AppTheme.primaryIndigo.withOpacity(0.3),
+                                  color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
                                   blurRadius: 20,
                                   offset: const Offset(0, 10),
                                 ),
@@ -576,13 +576,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: value 
-                ? AppTheme.primaryIndigo.withOpacity(0.1)
-                : AppTheme.textSecondary.withOpacity(0.05),
+                ? AppTheme.primaryIndigo.withValues(alpha: 0.1)
+                : AppTheme.textSecondary.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: value 
-                  ? AppTheme.primaryIndigo.withOpacity(0.3)
-                  : AppTheme.textSecondary.withOpacity(0.1),
+                  ? AppTheme.primaryIndigo.withValues(alpha: 0.3)
+                  : AppTheme.textSecondary.withValues(alpha: 0.1),
               width: 1,
             ),
           ),
@@ -592,8 +592,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: value 
-                      ? AppTheme.primaryIndigo.withOpacity(0.2)
-                      : AppTheme.textSecondary.withOpacity(0.1),
+                      ? AppTheme.primaryIndigo.withValues(alpha: 0.2)
+                      : AppTheme.textSecondary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -628,8 +628,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Switch(
                 value: value,
                 onChanged: onChanged,
-                activeColor: AppTheme.primaryIndigo,
-                activeTrackColor: AppTheme.primaryIndigo.withOpacity(0.3),
+                thumbColor: WidgetStateProperty.resolveWith((states) {
+                  if (states.contains(WidgetState.selected)) {
+                    return AppTheme.primaryIndigo;
+                  }
+                  return null;
+                }),
+                trackColor: WidgetStateProperty.resolveWith((states) {
+                  if (states.contains(WidgetState.selected)) {
+                    return AppTheme.primaryIndigo.withValues(alpha: 0.3);
+                  }
+                  return null;
+                }),
               ),
             ],
           ),
@@ -652,10 +662,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: AppTheme.textSecondary.withOpacity(0.05),
+            color: AppTheme.textSecondary.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: AppTheme.textSecondary.withOpacity(0.1),
+              color: AppTheme.textSecondary.withValues(alpha: 0.1),
               width: 1,
             ),
           ),
@@ -664,7 +674,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: iconColor.withOpacity(0.1),
+                  color: iconColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -722,13 +732,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: value == groupValue 
-                ? AppTheme.primaryIndigo.withOpacity(0.1)
-                : AppTheme.textSecondary.withOpacity(0.05),
+                ? AppTheme.primaryIndigo.withValues(alpha: 0.1)
+                : AppTheme.textSecondary.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: value == groupValue 
-                  ? AppTheme.primaryIndigo.withOpacity(0.3)
-                  : AppTheme.textSecondary.withOpacity(0.1),
+                  ? AppTheme.primaryIndigo.withValues(alpha: 0.3)
+                  : AppTheme.textSecondary.withValues(alpha: 0.1),
               width: 1,
             ),
           ),
@@ -768,10 +778,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: AppTheme.textSecondary.withOpacity(0.05),
+          color: AppTheme.textSecondary.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: AppTheme.textSecondary.withOpacity(0.1),
+            color: AppTheme.textSecondary.withValues(alpha: 0.1),
             width: 1,
           ),
         ),
@@ -780,7 +790,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: AppTheme.textSecondary.withOpacity(0.1),
+                color: AppTheme.textSecondary.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
@@ -828,15 +838,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ? AppTheme.successGradient
               : LinearGradient(
                   colors: [
-                    AppTheme.textSecondary.withOpacity(0.1),
-                    AppTheme.textSecondary.withOpacity(0.05),
+                    AppTheme.textSecondary.withValues(alpha: 0.1),
+                    AppTheme.textSecondary.withValues(alpha: 0.05),
                   ],
                 ),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: _hasPremium 
-                ? AppTheme.accentGreen.withOpacity(0.3)
-                : AppTheme.textSecondary.withOpacity(0.2),
+                ? AppTheme.accentGreen.withValues(alpha: 0.3)
+                : AppTheme.textSecondary.withValues(alpha: 0.2),
             width: 1,
           ),
         ),
@@ -845,7 +855,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -874,7 +884,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         : 'Only 1 free topic available',
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                     ),
                   ),
                 ],
@@ -884,7 +894,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(

@@ -138,7 +138,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withValues(alpha: 0.05),
                             blurRadius: 10,
                             offset: const Offset(0, 2),
                           ),
@@ -194,7 +194,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.primaryIndigo.withOpacity(0.3),
+                      color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
                       blurRadius: 20,
                       offset: const Offset(0, 10),
                     ),
@@ -262,7 +262,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppTheme.primaryIndigo.withOpacity(0.3),
+                        color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
                         blurRadius: 30,
                         offset: const Offset(0, 15),
                       ),
@@ -352,11 +352,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
       height: 8,
       decoration: BoxDecoration(
         gradient: isActive ? pages[_currentPage].gradient : null,
-        color: isActive ? null : AppTheme.textSecondary.withOpacity(0.3),
+        color: isActive ? null : AppTheme.textSecondary.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(4),
         boxShadow: isActive ? [
           BoxShadow(
-            color: AppTheme.primaryIndigo.withOpacity(0.3),
+            color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),

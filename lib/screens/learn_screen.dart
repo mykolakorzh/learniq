@@ -122,7 +122,7 @@ class _LearnScreenState extends State<LearnScreen> {
                               borderRadius: BorderRadius.circular(12),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.05),
+                                  color: Colors.black.withValues(alpha: 0.05),
                                   blurRadius: 10,
                                   offset: const Offset(0, 2),
                                 ),
@@ -158,7 +158,7 @@ class _LearnScreenState extends State<LearnScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                           decoration: BoxDecoration(
-                            color: AppTheme.primaryIndigo.withOpacity(0.1),
+                            color: AppTheme.primaryIndigo.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
@@ -180,7 +180,7 @@ class _LearnScreenState extends State<LearnScreen> {
                     child: ModernProgressIndicator(
                       value: (_currentIndex + 1) / cards.length,
                       height: 6,
-                      backgroundColor: AppTheme.textSecondary.withOpacity(0.1),
+                      backgroundColor: AppTheme.textSecondary.withValues(alpha: 0.1),
                     ),
                   ),
 
@@ -219,7 +219,7 @@ class _LearnScreenState extends State<LearnScreen> {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 2),
                         ),
@@ -347,7 +347,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
         ),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primaryIndigo.withOpacity(0.2),
+            color: AppTheme.primaryIndigo.withValues(alpha: 0.2),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -366,7 +366,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 10,
                       offset: const Offset(0, 5),
                     ),
@@ -379,7 +379,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
-                        color: AppTheme.textSecondary.withOpacity(0.1),
+                        color: AppTheme.textSecondary.withValues(alpha: 0.1),
                         child: const Icon(
                           Icons.image_not_supported,
                           size: 64,
@@ -402,7 +402,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: ArticleColors.getArticleColor(widget.card.article).withOpacity(0.3),
+                    color: ArticleColors.getArticleColor(widget.card.article).withValues(alpha: 0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 5),
                   ),
@@ -443,7 +443,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: AppTheme.primaryIndigo.withOpacity(0.1),
+                color: AppTheme.primaryIndigo.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -491,7 +491,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
           ),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.primaryIndigo.withOpacity(0.3),
+              color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
               blurRadius: 20,
               offset: const Offset(0, 10),
             ),
@@ -519,7 +519,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -548,7 +548,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(

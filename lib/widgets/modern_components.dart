@@ -99,7 +99,7 @@ class _ModernButtonState extends State<ModernButton>
                 boxShadow: widget.isPrimary
                     ? [
                         BoxShadow(
-                          color: AppTheme.primaryIndigo.withOpacity(0.3),
+                          color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
                           blurRadius: 20,
                           offset: const Offset(0, 10),
                         ),
@@ -233,7 +233,7 @@ class ModernCard extends StatelessWidget {
         color: color ?? AppTheme.surfaceLight,
         borderRadius: borderRadius ?? BorderRadius.circular(20),
         elevation: elevation ?? 8,
-        shadowColor: AppTheme.primaryIndigo.withOpacity(0.1),
+        shadowColor: AppTheme.primaryIndigo.withValues(alpha: 0.1),
         child: InkWell(
           onTap: onTap,
           borderRadius: borderRadius ?? BorderRadius.circular(20),
@@ -282,7 +282,7 @@ class ModernProgressIndicator extends StatelessWidget {
         Container(
           height: height,
           decoration: BoxDecoration(
-            color: backgroundColor ?? AppTheme.textSecondary.withOpacity(0.1),
+            color: backgroundColor ?? AppTheme.textSecondary.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(height / 2),
           ),
           child: ClipRRect(
@@ -525,7 +525,7 @@ class ModernErrorWidget extends StatelessWidget {
               width: 80,
               height: 80,
               decoration: BoxDecoration(
-                color: Colors.red.withOpacity(0.1),
+                color: Colors.red.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -593,7 +593,7 @@ class ModernSuccessWidget extends StatelessWidget {
               width: 80,
               height: 80,
               decoration: BoxDecoration(
-                color: AppTheme.accentGreen.withOpacity(0.1),
+                color: AppTheme.accentGreen.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(

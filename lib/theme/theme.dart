@@ -36,11 +36,9 @@ class AppTheme {
       primary: primaryIndigo,
       secondary: secondaryPurple,
       surface: surfaceLight,
-      background: backgroundLight,
       onPrimary: Colors.white,
       onSecondary: Colors.white,
       onSurface: textPrimary,
-      onBackground: textPrimary,
     ),
     scaffoldBackgroundColor: backgroundLight,
     appBarTheme: const AppBarTheme(
@@ -57,7 +55,7 @@ class AppTheme {
     ),
     cardTheme: CardThemeData(
       elevation: 8,
-      shadowColor: primaryIndigo.withOpacity(0.1),
+      shadowColor: primaryIndigo.withValues(alpha: 0.1),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -72,7 +70,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(12),
         ),
         elevation: 8,
-        shadowColor: primaryIndigo.withOpacity(0.3),
+        shadowColor: primaryIndigo.withValues(alpha: 0.3),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
@@ -95,17 +93,17 @@ class AppTheme {
       ),
     ),
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      thumbColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return primaryIndigo;
         }
         return Colors.grey;
       }),
-      trackColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
-          return primaryIndigo.withOpacity(0.3);
+      trackColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return primaryIndigo.withValues(alpha: 0.3);
         }
-        return Colors.grey.withOpacity(0.3);
+        return Colors.grey.withValues(alpha: 0.3);
       }),
     ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(

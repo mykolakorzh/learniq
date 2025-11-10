@@ -168,7 +168,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: AppTheme.brandRed.withOpacity(0.15),
+                  color: AppTheme.brandRed.withValues(alpha: 0.15),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -217,7 +217,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withValues(alpha: 0.04),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -309,13 +309,13 @@ class _TopicsScreenState extends State<TopicsScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
           color: isSelected
-              ? (color ?? AppTheme.primaryIndigo).withOpacity(0.1)
+              ? (color ?? AppTheme.primaryIndigo).withValues(alpha: 0.1)
               : AppTheme.surfaceLight,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected
-                ? (color ?? AppTheme.primaryIndigo).withOpacity(0.3)
-                : AppTheme.textSecondary.withOpacity(0.1),
+                ? (color ?? AppTheme.primaryIndigo).withValues(alpha: 0.3)
+                : AppTheme.textSecondary.withValues(alpha: 0.1),
             width: 1,
           ),
         ),
@@ -366,7 +366,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withValues(alpha: 0.04),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -397,8 +397,8 @@ class _TopicsScreenState extends State<TopicsScreen> {
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
                             color: topic.isFree
-                                ? AppTheme.accentGreen.withOpacity(0.1)
-                                : Colors.orange.withOpacity(0.1),
+                                ? AppTheme.accentGreen.withValues(alpha: 0.1)
+                                : Colors.orange.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Row(
@@ -467,7 +467,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: AppTheme.textSecondary.withOpacity(0.1),
+                color: AppTheme.textSecondary.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(

@@ -49,7 +49,7 @@ class StatisticsScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 10,
                               offset: const Offset(0, 2),
                             ),
@@ -89,7 +89,7 @@ class StatisticsScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                            color: AppTheme.primaryIndigo.withOpacity(0.3),
+                            color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                           ),
@@ -233,7 +233,7 @@ class StatisticsScreen extends StatelessWidget {
                       return CircularProgressIndicator(
                         value: value,
                         strokeWidth: 12,
-                        backgroundColor: AppTheme.textSecondary.withOpacity(0.1),
+                        backgroundColor: AppTheme.textSecondary.withValues(alpha: 0.1),
                         valueColor: AlwaysStoppedAnimation(
                           _getAccuracyColor(accuracyProgress),
                         ),
@@ -333,10 +333,10 @@ class StatisticsScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: color.withOpacity(0.3),
+          color: color.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -408,7 +408,7 @@ class StatisticsScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primaryIndigo.withOpacity(0.15),
+            color: AppTheme.primaryIndigo.withValues(alpha: 0.15),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -421,7 +421,7 @@ class StatisticsScreen extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Icon(icon, size: 48, color: Colors.white),
@@ -445,7 +445,7 @@ class StatisticsScreen extends StatelessWidget {
                   message,
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.white.withOpacity(0.9),
+                    color: Colors.white.withValues(alpha: 0.9),
                   ),
                 ),
               ],
@@ -485,10 +485,10 @@ class StatisticsScreen extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 12),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: _getAccuracyColor(accuracy).withOpacity(0.05),
+                  color: _getAccuracyColor(accuracy).withValues(alpha: 0.05),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: _getAccuracyColor(accuracy).withOpacity(0.2),
+                    color: _getAccuracyColor(accuracy).withValues(alpha: 0.2),
                     width: 1,
                   ),
                 ),
@@ -500,7 +500,7 @@ class StatisticsScreen extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: _getAccuracyColor(accuracy).withOpacity(0.2),
+                            color: _getAccuracyColor(accuracy).withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Icon(
@@ -558,7 +558,7 @@ class StatisticsScreen extends StatelessWidget {
                               vertical: 6,
                             ),
                             decoration: BoxDecoration(
-                              color: AppTheme.textSecondary.withOpacity(0.2),
+                              color: AppTheme.textSecondary.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Text(
@@ -583,7 +583,7 @@ class StatisticsScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             child: LinearProgressIndicator(
                               value: value,
-                              backgroundColor: AppTheme.textSecondary.withOpacity(0.1),
+                              backgroundColor: AppTheme.textSecondary.withValues(alpha: 0.1),
                               valueColor: AlwaysStoppedAnimation(
                                 _getAccuracyColor(accuracy),
                               ),

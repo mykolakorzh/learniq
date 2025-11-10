@@ -270,7 +270,7 @@ class _TestScreenState extends State<TestScreen> {
                             borderRadius: BorderRadius.circular(12),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.05),
+                                color: Colors.black.withValues(alpha: 0.05),
                                 blurRadius: 10,
                                 offset: const Offset(0, 2),
                               ),
@@ -315,7 +315,7 @@ class _TestScreenState extends State<TestScreen> {
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: (accuracy >= 80 ? AppTheme.accentGreen : Colors.orange).withOpacity(0.3),
+                                  color: (accuracy >= 80 ? AppTheme.accentGreen : Colors.orange).withValues(alpha: 0.3),
                                   blurRadius: 20,
                                   offset: const Offset(0, 10),
                                 ),
@@ -476,7 +476,7 @@ class _TestScreenState extends State<TestScreen> {
                               borderRadius: BorderRadius.circular(12),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.05),
+                                  color: Colors.black.withValues(alpha: 0.05),
                                   blurRadius: 10,
                                   offset: const Offset(0, 2),
                                 ),
@@ -512,7 +512,7 @@ class _TestScreenState extends State<TestScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                           decoration: BoxDecoration(
-                            color: AppTheme.primaryIndigo.withOpacity(0.1),
+                            color: AppTheme.primaryIndigo.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
@@ -534,7 +534,7 @@ class _TestScreenState extends State<TestScreen> {
                     child: ModernProgressIndicator(
                       value: (_currentQuestionIndex + 1) / _quizCards.length,
                       height: 6,
-                      backgroundColor: AppTheme.textSecondary.withOpacity(0.1),
+                      backgroundColor: AppTheme.textSecondary.withValues(alpha: 0.1),
                     ),
                   ),
 
@@ -556,15 +556,15 @@ class _TestScreenState extends State<TestScreen> {
                             borderRadius: BorderRadius.circular(16),
                             border: Border.all(
                               color: _showResult && _isCorrect
-                                  ? AppTheme.accentGreen.withOpacity(0.3)
-                                  : Colors.grey.withOpacity(0.15),
+                                  ? AppTheme.accentGreen.withValues(alpha: 0.3)
+                                  : Colors.grey.withValues(alpha: 0.15),
                               width: _showResult && _isCorrect ? 2 : 1,
                             ),
                             boxShadow: [
                               BoxShadow(
                                 color: _showResult && _isCorrect
-                                    ? AppTheme.accentGreen.withOpacity(0.15)
-                                    : Colors.black.withOpacity(0.06),
+                                    ? AppTheme.accentGreen.withValues(alpha: 0.15)
+                                    : Colors.black.withValues(alpha: 0.06),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
                               ),
@@ -593,11 +593,11 @@ class _TestScreenState extends State<TestScreen> {
                                 fit: BoxFit.cover,
                                 errorBuilder: (context, error, stackTrace) {
                                   return Container(
-                                    color: Colors.grey.withOpacity(0.1),
+                                    color: Colors.grey.withValues(alpha: 0.1),
                                     child: Icon(
                                       Icons.image_not_supported,
                                       size: 64,
-                                      color: Colors.grey.withOpacity(0.4),
+                                      color: Colors.grey.withValues(alpha: 0.4),
                                     ),
                                   );
                                 },
@@ -641,17 +641,17 @@ class _TestScreenState extends State<TestScreen> {
                                     decoration: BoxDecoration(
                                       color: _selectedArticle != null
                                           ? ArticleColors.getArticleColor(_selectedArticle!)
-                                          : AppTheme.textSecondary.withOpacity(0.1),
+                                          : AppTheme.textSecondary.withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(16),
                                       border: Border.all(
                                         color: candidateData.isNotEmpty
                                             ? AppTheme.primaryIndigo
-                                            : AppTheme.textSecondary.withOpacity(0.3),
+                                            : AppTheme.textSecondary.withValues(alpha: 0.3),
                                         width: candidateData.isNotEmpty ? 3 : 2,
                                       ),
                                       boxShadow: candidateData.isNotEmpty ? [
                                         BoxShadow(
-                                          color: AppTheme.primaryIndigo.withOpacity(0.3),
+                                          color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
                                           blurRadius: 10,
                                           offset: const Offset(0, 5),
                                         ),
@@ -671,7 +671,7 @@ class _TestScreenState extends State<TestScreen> {
                                               '___',
                                               style: TextStyle(
                                                 fontSize: 20,
-                                                color: AppTheme.textSecondary.withOpacity(0.5),
+                                                color: AppTheme.textSecondary.withValues(alpha: 0.5),
                                                 fontWeight: FontWeight.w300,
                                               ),
                                             ),
@@ -707,7 +707,7 @@ class _TestScreenState extends State<TestScreen> {
                                       child: Container(
                                         padding: const EdgeInsets.all(8),
                                         decoration: BoxDecoration(
-                                          color: AppTheme.primaryIndigo.withOpacity(0.1),
+                                          color: AppTheme.primaryIndigo.withValues(alpha: 0.1),
                                           borderRadius: BorderRadius.circular(12),
                                         ),
                                         child: const Icon(
@@ -764,7 +764,7 @@ class _TestScreenState extends State<TestScreen> {
                                         borderRadius: BorderRadius.circular(20),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.black.withOpacity(0.3),
+                                            color: Colors.black.withValues(alpha: 0.3),
                                             blurRadius: 15,
                                             spreadRadius: 2,
                                           ),
@@ -787,7 +787,7 @@ class _TestScreenState extends State<TestScreen> {
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: AppTheme.textSecondary.withOpacity(0.1),
+                                    color: AppTheme.textSecondary.withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: const Center(
@@ -812,7 +812,7 @@ class _TestScreenState extends State<TestScreen> {
                                         borderRadius: BorderRadius.circular(20),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: ArticleColors.getArticleColor(article).withOpacity(0.3),
+                                            color: ArticleColors.getArticleColor(article).withValues(alpha: 0.3),
                                             blurRadius: 10,
                                             offset: const Offset(0, 4),
                                           ),
@@ -871,7 +871,7 @@ class _TestScreenState extends State<TestScreen> {
                   borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 20,
                       offset: const Offset(0, -5),
                     ),
@@ -885,13 +885,13 @@ class _TestScreenState extends State<TestScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                     decoration: BoxDecoration(
                       color: _isCorrect
-                          ? AppTheme.accentGreen.withOpacity(0.1)
-                          : AppTheme.dieColor.withOpacity(0.1),
+                          ? AppTheme.accentGreen.withValues(alpha: 0.1)
+                          : AppTheme.dieColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
                         color: _isCorrect
-                            ? AppTheme.accentGreen.withOpacity(0.3)
-                            : AppTheme.dieColor.withOpacity(0.3),
+                            ? AppTheme.accentGreen.withValues(alpha: 0.3)
+                            : AppTheme.dieColor.withValues(alpha: 0.3),
                         width: 2,
                       ),
                     ),
