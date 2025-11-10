@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/topic.dart';
 import '../services/data_service.dart';
 import '../services/spaced_repetition_service.dart';
+import '../services/streak_service.dart';
 import '../widgets/skeleton_loader.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
@@ -24,12 +25,14 @@ class _TopicsScreenState extends State<TopicsScreen> {
   TopicFilter _selectedFilter = TopicFilter.all;
   final TextEditingController _searchController = TextEditingController();
   Map<String, int> _dueCardsCount = {};
+  StreakStatus? _streakStatus;
 
   @override
   void initState() {
     super.initState();
     _topicsFuture = DataService.loadTopics();
     _loadDueCardsCount();
+    _loadStreakStatus();
   }
 
   Future<void> _loadDueCardsCount() async {
@@ -44,6 +47,15 @@ class _TopicsScreenState extends State<TopicsScreen> {
     if (mounted) {
       setState(() {
         _dueCardsCount = counts;
+      });
+    }
+  }
+
+  Future<void> _loadStreakStatus() async {
+    final status = await StreakService.getStreakStatus();
+    if (mounted) {
+      setState(() {
+        _streakStatus = status;
       });
     }
   }
@@ -147,6 +159,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
               return Column(
                 children: [
                   _buildHeader(l10n),
+                  if (_streakStatus != null) _buildStreakWidget(_streakStatus!),
                   if (showFilters) _buildFilterChips(l10n),
                   Expanded(
                     child: filteredTopics.isEmpty
@@ -556,6 +569,153 @@ class _TopicsScreenState extends State<TopicsScreen> {
               isPrimary: false,
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStreakWidget(StreakStatus status) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              AppTheme.primaryIndigo,
+              AppTheme.secondaryPurple,
+            ],
+          ),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: AppTheme.primaryIndigo.withValues(alpha: 0.3),
+              blurRadius: 12,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              // Streak and Goal Row
+              Row(
+                children: [
+                  // Streak
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Icon(
+                            status.currentStreak > 0 ? Icons.local_fire_department : Icons.play_circle,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                status.streakMessage,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              if (status.longestStreak > status.currentStreak)
+                                Text(
+                                  'Best: ${status.longestStreak}',
+                                  style: TextStyle(
+                                    color: Colors.white.withValues(alpha: 0.8),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Goal
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          '${status.cardsReviewedToday}',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          ' / ${status.dailyGoal}',
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.8),
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              // Progress Bar
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        status.motivationalMessage,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.9),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        '${(status.goalProgress * 100).toInt()}%',
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.9),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: LinearProgressIndicator(
+                      value: status.goalProgress,
+                      backgroundColor: Colors.white.withValues(alpha: 0.2),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        status.goalMet ? AppTheme.accentGreen : Colors.white,
+                      ),
+                      minHeight: 8,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

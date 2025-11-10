@@ -6,6 +6,7 @@ import '../models/card_item.dart';
 import '../services/data_service.dart';
 import '../services/progress_service.dart';
 import '../services/spaced_repetition_service.dart';
+import '../services/streak_service.dart';
 import '../services/audio/tts_service.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
@@ -122,6 +123,9 @@ class _TestScreenState extends State<TestScreen> {
       topicId: widget.topicId,
       quality: quality,
     );
+
+    // Record review for streak tracking
+    await StreakService.recordReview();
 
     // Auto-advance after showing result
     _nextQuestionTimer?.cancel();
