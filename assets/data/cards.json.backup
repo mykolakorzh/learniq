@@ -6,7 +6,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Ampel",
-    "translation_uk": "Ampel",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/ampel.png"
   },
   {
@@ -16,7 +16,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Auto",
-    "translation_uk": "Auto",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/auto.png"
   },
   {
@@ -26,7 +26,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Autobahn",
-    "translation_uk": "Autobahn",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/autobahn.png"
   },
   {
@@ -36,7 +36,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Bahnhof",
-    "translation_uk": "Bahnhof",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/bahnhof.png"
   },
   {
@@ -46,7 +46,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Boot",
-    "translation_uk": "Boot",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/boot.png"
   },
   {
@@ -56,7 +56,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Buergersteig",
-    "translation_uk": "Buergersteig",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/buergersteig.png"
   },
   {
@@ -66,7 +66,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Bus",
-    "translation_uk": "Bus",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/bus.png"
   },
   {
@@ -76,7 +76,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Fahrkarte",
-    "translation_uk": "Fahrkarte",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/fahrkarte.png"
   },
   {
@@ -86,7 +86,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Fahrkartenautomat",
-    "translation_uk": "Fahrkartenautomat",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/fahrkartenautomat.png"
   },
   {
@@ -96,7 +96,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Fahrrad",
-    "translation_uk": "Fahrrad",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/fahrrad.png"
   },
   {
@@ -106,7 +106,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Flugzeug",
-    "translation_uk": "Flugzeug",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/flugzeug.png"
   },
   {
@@ -116,7 +116,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Fuehre",
-    "translation_uk": "Fuehre",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/fuehre.png"
   },
   {
@@ -126,7 +126,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Fusguenger",
-    "translation_uk": "Fusguenger",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/fusguenger.png"
   },
   {
@@ -136,7 +136,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Gepuek",
-    "translation_uk": "Gepuek",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/gepuek.png"
   },
   {
@@ -146,7 +146,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Haltestelle",
-    "translation_uk": "Haltestelle",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/haltestelle.png"
   },
   {
@@ -156,7 +156,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Koffer",
-    "translation_uk": "Koffer",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/koffer.png"
   },
   {
@@ -166,7 +166,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Kreuzung",
-    "translation_uk": "Kreuzung",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/kreuzung.png"
   },
   {
@@ -176,7 +176,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Lastwagen",
-    "translation_uk": "Lastwagen",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/lastwagen.png"
   },
   {
@@ -186,7 +186,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Motorrad",
-    "translation_uk": "Motorrad",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/motorrad.png"
   },
   {
@@ -196,7 +196,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Parkplatz",
-    "translation_uk": "Parkplatz",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/parkplatz.png"
   },
   {
@@ -206,7 +206,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Schiff",
-    "translation_uk": "Schiff",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/schiff.png"
   },
   {
@@ -216,7 +216,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Strase",
-    "translation_uk": "Strase",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/strase.png"
   },
   {
@@ -226,7 +226,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Strasenbahn",
-    "translation_uk": "Strasenbahn",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/strasenbahn.png"
   },
   {
@@ -236,7 +236,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Taxi",
-    "translation_uk": "Taxi",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/taxi.png"
   },
   {
@@ -246,7 +246,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Tunnel",
-    "translation_uk": "Tunnel",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/tunnel.png"
   },
   {
@@ -256,7 +256,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "U-bahn",
-    "translation_uk": "U-bahn",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/u-bahn.png"
   },
   {
@@ -266,7 +266,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Zug",
-    "translation_uk": "Zug",
+    "translation_uk": "",
     "image_asset": "assets/images/fahrzeug/zug.png"
   },
   {
@@ -276,7 +276,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidbadeanzug",
-    "translation_uk": "Kleidbadeanzug",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidbadeanzug.jpg"
   },
   {
@@ -286,7 +286,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidbh",
-    "translation_uk": "Kleidbh",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidbh.jpg"
   },
   {
@@ -296,7 +296,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidbrille",
-    "translation_uk": "Kleidbrille",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidbrille.jpg"
   },
   {
@@ -306,7 +306,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidguertel",
-    "translation_uk": "Kleidguertel",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidguertel.jpg"
   },
   {
@@ -316,7 +316,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidhandschuhe",
-    "translation_uk": "Kleidhandschuhe",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidhandschuhe.jpg"
   },
   {
@@ -326,7 +326,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidhausschuhe",
-    "translation_uk": "Kleidhausschuhe",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidhausschuhe.jpg"
   },
   {
@@ -336,7 +336,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidhemd",
-    "translation_uk": "Kleidhemd",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidhemd.jpg"
   },
   {
@@ -346,7 +346,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidhose",
-    "translation_uk": "Kleidhose",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidhose.jpg"
   },
   {
@@ -356,7 +356,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidjacke",
-    "translation_uk": "Kleidjacke",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidjacke.jpg"
   },
   {
@@ -366,7 +366,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidjeans",
-    "translation_uk": "Kleidjeans",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidjeans.jpg"
   },
   {
@@ -376,7 +376,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidkleid",
-    "translation_uk": "Kleidkleid",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidkleid.jpg"
   },
   {
@@ -386,7 +386,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidkrawatte",
-    "translation_uk": "Kleidkrawatte",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidkrawatte.jpg"
   },
   {
@@ -396,7 +396,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidmantel",
-    "translation_uk": "Kleidmantel",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidmantel.jpg"
   },
   {
@@ -406,7 +406,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidmütze",
-    "translation_uk": "Kleidmütze",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidmütze.jpg"
   },
   {
@@ -416,7 +416,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidpullover",
-    "translation_uk": "Kleidpullover",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidpullover.jpg"
   },
   {
@@ -426,7 +426,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidregenschirm",
-    "translation_uk": "Kleidregenschirm",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidregenschirm.jpg"
   },
   {
@@ -436,7 +436,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidrock",
-    "translation_uk": "Kleidrock",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidrock.png"
   },
   {
@@ -446,7 +446,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidrucksack",
-    "translation_uk": "Kleidrucksack",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidrucksack.jpg"
   },
   {
@@ -456,7 +456,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidschal",
-    "translation_uk": "Kleidschal",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidschal.jpg"
   },
   {
@@ -466,7 +466,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidschlafanzug",
-    "translation_uk": "Kleidschlafanzug",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidschlafanzug.jpg"
   },
   {
@@ -476,7 +476,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidschuhe",
-    "translation_uk": "Kleidschuhe",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidschuhe.jpg"
   },
   {
@@ -486,7 +486,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidshorts",
-    "translation_uk": "Kleidshorts",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidshorts.jpg"
   },
   {
@@ -496,7 +496,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidsocken",
-    "translation_uk": "Kleidsocken",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidsocken.jpg"
   },
   {
@@ -506,7 +506,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidstrumpfhose",
-    "translation_uk": "Kleidstrumpfhose",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidstrumpfhose.jpg"
   },
   {
@@ -516,7 +516,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidtasche",
-    "translation_uk": "Kleidtasche",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidtasche.jpg"
   },
   {
@@ -526,7 +526,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleidtshirt",
-    "translation_uk": "Kleidtshirt",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleidtshirt.jpg"
   },
   {
@@ -536,7 +536,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kleiduhr",
-    "translation_uk": "Kleiduhr",
+    "translation_uk": "",
     "image_asset": "assets/images/kleidung/kleiduhr.jpg"
   },
   {
@@ -546,7 +546,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturbach",
-    "translation_uk": "Naturbach",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturbach.jpg"
   },
   {
@@ -556,7 +556,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturbeere",
-    "translation_uk": "Naturbeere",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturbeere.jpg"
   },
   {
@@ -566,7 +566,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Natureiszapfen",
-    "translation_uk": "Natureiszapfen",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/natureiszapfen.jpg"
   },
   {
@@ -576,7 +576,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturfelsen",
-    "translation_uk": "Naturfelsen",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturfelsen.jpg"
   },
   {
@@ -586,7 +586,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturgewitter",
-    "translation_uk": "Naturgewitter",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturgewitter.jpg"
   },
   {
@@ -596,7 +596,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturhain",
-    "translation_uk": "Naturhain",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturhain.jpg"
   },
   {
@@ -606,7 +606,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturkoralle",
-    "translation_uk": "Naturkoralle",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturkoralle.jpg"
   },
   {
@@ -616,7 +616,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Naturlichtung",
-    "translation_uk": "Naturlichtung",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturlichtung.jpg"
   },
   {
@@ -626,7 +626,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturmoor",
-    "translation_uk": "Naturmoor",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturmoor.jpg"
   },
   {
@@ -636,7 +636,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturmoos",
-    "translation_uk": "Naturmoos",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturmoos.jpg"
   },
   {
@@ -646,7 +646,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturnaturschutzgebiet",
-    "translation_uk": "Naturnaturschutzgebiet",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturnaturschutzgebiet.jpg"
   },
   {
@@ -656,7 +656,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturnebel",
-    "translation_uk": "Naturnebel",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturnebel.jpg"
   },
   {
@@ -666,7 +666,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturorkan",
-    "translation_uk": "Naturorkan",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturorkan.jpg"
   },
   {
@@ -676,7 +676,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturpfad",
-    "translation_uk": "Naturpfad",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturpfad.jpg"
   },
   {
@@ -686,7 +686,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturpilz",
-    "translation_uk": "Naturpilz",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturpilz.jpg"
   },
   {
@@ -696,7 +696,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturplatzregen",
-    "translation_uk": "Naturplatzregen",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturplatzregen.jpg"
   },
   {
@@ -706,7 +706,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturrebe",
-    "translation_uk": "Naturrebe",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturrebe.jpg"
   },
   {
@@ -716,7 +716,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturregenbogen",
-    "translation_uk": "Naturregenbogen",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturregenbogen.png"
   },
   {
@@ -726,7 +726,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturreif",
-    "translation_uk": "Naturreif",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturreif.jpg"
   },
   {
@@ -736,7 +736,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturriff",
-    "translation_uk": "Naturriff",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturriff.jpg"
   },
   {
@@ -746,7 +746,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturrinde",
-    "translation_uk": "Naturrinde",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturrinde.jpg"
   },
   {
@@ -756,7 +756,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Natursavanne",
-    "translation_uk": "Natursavanne",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/natursavanne.jpg"
   },
   {
@@ -766,7 +766,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturschneeflocke",
-    "translation_uk": "Naturschneeflocke",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturschneeflocke.jpg"
   },
   {
@@ -776,7 +776,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturstein",
-    "translation_uk": "Naturstein",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturstein.jpg"
   },
   {
@@ -786,7 +786,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Natursturm",
-    "translation_uk": "Natursturm",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/natursturm.jpg"
   },
   {
@@ -796,7 +796,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturwald",
-    "translation_uk": "Naturwald",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturwald.jpg"
   },
   {
@@ -806,7 +806,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturwetter",
-    "translation_uk": "Naturwetter",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturwetter.jpg"
   },
   {
@@ -816,7 +816,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturwurzel",
-    "translation_uk": "Naturwurzel",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturwurzel.jpg"
   },
   {
@@ -826,7 +826,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Naturzapfen",
-    "translation_uk": "Naturzapfen",
+    "translation_uk": "",
     "image_asset": "assets/images/natur/naturzapfen.jpg"
   },
   {
@@ -836,7 +836,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Apotheke",
-    "translation_uk": "Apotheke",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/apotheke.png"
   },
   {
@@ -846,7 +846,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Bahnhof",
-    "translation_uk": "Bahnhof",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/bahnhof.png"
   },
   {
@@ -856,7 +856,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Bank",
-    "translation_uk": "Bank",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/bank.png"
   },
   {
@@ -866,7 +866,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Bibliothek",
-    "translation_uk": "Bibliothek",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/bibliothek.png"
   },
   {
@@ -876,7 +876,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Bruecke",
-    "translation_uk": "Bruecke",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/bruecke.png"
   },
   {
@@ -886,7 +886,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Brunnen",
-    "translation_uk": "Brunnen",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/brunnen.png"
   },
   {
@@ -896,7 +896,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Cafe",
-    "translation_uk": "Cafe",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/cafe.png"
   },
   {
@@ -906,7 +906,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Denkmal",
-    "translation_uk": "Denkmal",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/denkmal.png"
   },
   {
@@ -916,7 +916,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Gebueude",
-    "translation_uk": "Gebueude",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/gebueude.png"
   },
   {
@@ -926,7 +926,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Geschueft",
-    "translation_uk": "Geschueft",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/geschueft.png"
   },
   {
@@ -936,7 +936,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Haus",
-    "translation_uk": "Haus",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/haus.png"
   },
   {
@@ -946,7 +946,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Hotel",
-    "translation_uk": "Hotel",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/hotel.png"
   },
   {
@@ -956,7 +956,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Kino",
-    "translation_uk": "Kino",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/kino.png"
   },
   {
@@ -966,7 +966,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Kirche",
-    "translation_uk": "Kirche",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/kirche.png"
   },
   {
@@ -976,7 +976,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Krankenhaus",
-    "translation_uk": "Krankenhaus",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/krankenhaus.png"
   },
   {
@@ -986,7 +986,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Krankenhaus_grau",
-    "translation_uk": "Krankenhaus_grau",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/krankenhaus_grau.png"
   },
   {
@@ -996,7 +996,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Markt",
-    "translation_uk": "Markt",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/markt.png"
   },
   {
@@ -1006,7 +1006,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Museum",
-    "translation_uk": "Museum",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/museum.png"
   },
   {
@@ -1016,7 +1016,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Park",
-    "translation_uk": "Park",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/park.png"
   },
   {
@@ -1026,7 +1026,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Platz",
-    "translation_uk": "Platz",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/platz.png"
   },
   {
@@ -1036,7 +1036,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Post",
-    "translation_uk": "Post",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/post.png"
   },
   {
@@ -1046,7 +1046,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Restaurant",
-    "translation_uk": "Restaurant",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/restaurant.png"
   },
   {
@@ -1056,7 +1056,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Schloss",
-    "translation_uk": "Schloss",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/schloss.png"
   },
   {
@@ -1066,7 +1066,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Schule",
-    "translation_uk": "Schule",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/schule.png"
   },
   {
@@ -1076,7 +1076,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Stadt",
-    "translation_uk": "Stadt",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/stadt.png"
   },
   {
@@ -1086,7 +1086,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Strase",
-    "translation_uk": "Strase",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/strase.png"
   },
   {
@@ -1096,7 +1096,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Supermarkt",
-    "translation_uk": "Supermarkt",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/supermarkt.png"
   },
   {
@@ -1106,7 +1106,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Theater",
-    "translation_uk": "Theater",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/theater.png"
   },
   {
@@ -1116,7 +1116,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Turm",
-    "translation_uk": "Turm",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/turm.png"
   },
   {
@@ -1126,7 +1126,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Zentrum",
-    "translation_uk": "Zentrum",
+    "translation_uk": "",
     "image_asset": "assets/images/stadt/zentrum.png"
   },
   {
@@ -1136,7 +1136,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Affe",
-    "translation_uk": "Affe",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/affe.png"
   },
   {
@@ -1146,7 +1146,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Buer",
-    "translation_uk": "Buer",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/buer.png"
   },
   {
@@ -1156,7 +1156,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Delfin",
-    "translation_uk": "Delfin",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/delfin.png"
   },
   {
@@ -1166,7 +1166,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Eichheurnchen",
-    "translation_uk": "Eichheurnchen",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/eichheurnchen.png"
   },
   {
@@ -1176,7 +1176,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Elefant",
-    "translation_uk": "Elefant",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/elefant.png"
   },
   {
@@ -1186,7 +1186,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Ente",
-    "translation_uk": "Ente",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/ente.png"
   },
   {
@@ -1196,7 +1196,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Gans",
-    "translation_uk": "Gans",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/gans.png"
   },
   {
@@ -1206,7 +1206,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Giraffe",
-    "translation_uk": "Giraffe",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/giraffe.png"
   },
   {
@@ -1216,7 +1216,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Hahn",
-    "translation_uk": "Hahn",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/hahn.png"
   },
   {
@@ -1226,7 +1226,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Hase",
-    "translation_uk": "Hase",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/hase.png"
   },
   {
@@ -1236,7 +1236,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Huhn",
-    "translation_uk": "Huhn",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/huhn.png"
   },
   {
@@ -1246,7 +1246,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Hund",
-    "translation_uk": "Hund",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/hund.png"
   },
   {
@@ -1256,7 +1256,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Igel",
-    "translation_uk": "Igel",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/igel.png"
   },
   {
@@ -1266,7 +1266,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kamel",
-    "translation_uk": "Kamel",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/kamel.png"
   },
   {
@@ -1276,7 +1276,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "Kaninchen",
-    "translation_uk": "Kaninchen",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/kaninchen.png"
   },
   {
@@ -1286,7 +1286,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "Katze",
-    "translation_uk": "Katze",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/katze.png"
   },
   {
@@ -1296,7 +1296,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Kuenguru",
-    "translation_uk": "Kuenguru",
+    "translation_uk": "",
     "image_asset": "assets/images/tiere/kuenguru.png"
   },
   {
@@ -1306,7 +1306,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "рука",
-    "translation_uk": "рука",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/arm.jpg"
   },
   {
@@ -1316,7 +1316,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "глаз",
-    "translation_uk": "глаз",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/auge.png"
   },
   {
@@ -1326,7 +1326,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "бровь",
-    "translation_uk": "бровь",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/augenbraue.jpg"
   },
   {
@@ -1336,7 +1336,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "нога",
-    "translation_uk": "нога",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/bein.jpg"
   },
   {
@@ -1346,7 +1346,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "локоть",
-    "translation_uk": "локоть",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/ellbogen.jpg"
   },
   {
@@ -1356,7 +1356,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "пятка",
-    "translation_uk": "пятка",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/ferse.jpg"
   },
   {
@@ -1366,7 +1366,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "палец",
-    "translation_uk": "палец",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/finger.jpg"
   },
   {
@@ -1376,7 +1376,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "лицо",
-    "translation_uk": "лицо",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/gesicht.png"
   },
   {
@@ -1386,7 +1386,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "волосы",
-    "translation_uk": "волосы",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/haare.png"
   },
   {
@@ -1396,7 +1396,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "подбородок",
-    "translation_uk": "подбородок",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/kinn.jpg"
   },
   {
@@ -1406,7 +1406,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "колено",
-    "translation_uk": "колено",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/knie.jpg"
   },
   {
@@ -1416,7 +1416,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "голова",
-    "translation_uk": "голова",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/kopf.png"
   },
   {
@@ -1426,7 +1426,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "рот",
-    "translation_uk": "рот",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/mund.png"
   },
   {
@@ -1436,7 +1436,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "нос",
-    "translation_uk": "нос",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/nase.png"
   },
   {
@@ -1446,7 +1446,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "бедро",
-    "translation_uk": "бедро",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/oberschenkel.jpg"
   },
   {
@@ -1456,7 +1456,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "ухо",
-    "translation_uk": "ухо",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/ohr.png"
   },
   {
@@ -1466,7 +1466,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "спина",
-    "translation_uk": "спина",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/ruecken.jpg"
   },
   {
@@ -1476,7 +1476,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "плечо",
-    "translation_uk": "плечо",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/schulter.jpg"
   },
   {
@@ -1486,7 +1486,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "лоб",
-    "translation_uk": "лоб",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/stirn.jpg"
   },
   {
@@ -1496,7 +1496,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "зуб",
-    "translation_uk": "зуб",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/zahn.png"
   },
   {
@@ -1506,7 +1506,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Живот",
-    "translation_uk": "Живот",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/живот.jpg"
   },
   {
@@ -1516,7 +1516,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Кожа",
-    "translation_uk": "Кожа",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/кожа.jpg"
   },
   {
@@ -1526,7 +1526,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Кость",
-    "translation_uk": "Кость",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/кость.jpg"
   },
   {
@@ -1536,7 +1536,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Мышца",
-    "translation_uk": "Мышца",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/мышца.jpg"
   },
   {
@@ -1546,7 +1546,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Сердце",
-    "translation_uk": "Сердце",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/сердце.jpg"
   },
   {
@@ -1556,7 +1556,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Ступня",
-    "translation_uk": "Ступня",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/ступня.jpg"
   },
   {
@@ -1566,7 +1566,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Шея",
-    "translation_uk": "Шея",
+    "translation_uk": "",
     "image_asset": "assets/images/korper/шея.jpg"
   },
   {
@@ -1576,7 +1576,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "лифт",
-    "translation_uk": "лифт",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/aufzug.png"
   },
   {
@@ -1586,7 +1586,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "ванна",
-    "translation_uk": "ванна",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/badewanne.png"
   },
   {
@@ -1596,7 +1596,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Badewanneя_комната",
-    "translation_uk": "Badewanneя_комната",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/badewanneя_комната.png"
   },
   {
@@ -1606,7 +1606,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "балкон",
-    "translation_uk": "балкон",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/balkon.png"
   },
   {
@@ -1616,7 +1616,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "кровать",
-    "translation_uk": "кровать",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/bett.png"
   },
   {
@@ -1626,7 +1626,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "пол",
-    "translation_uk": "пол",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/boden.png"
   },
   {
@@ -1636,7 +1636,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "чердак",
-    "translation_uk": "чердак",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/dachboden.png"
   },
   {
@@ -1646,7 +1646,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "потолок",
-    "translation_uk": "потолок",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/decke.png"
   },
   {
@@ -1656,7 +1656,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "душ",
-    "translation_uk": "душ",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/dusche.png"
   },
   {
@@ -1666,7 +1666,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "окно",
-    "translation_uk": "окно",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/fenster.png"
   },
   {
@@ -1676,7 +1676,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "телевизор",
-    "translation_uk": "телевизор",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/fernseher.png"
   },
   {
@@ -1686,7 +1686,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "коридор",
-    "translation_uk": "коридор",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/flur.png"
   },
   {
@@ -1696,7 +1696,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "подвал",
-    "translation_uk": "подвал",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/keller.png"
   },
   {
@@ -1706,7 +1706,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "кухня",
-    "translation_uk": "кухня",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/kueche.png"
   },
   {
@@ -1716,7 +1716,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "холодильник",
-    "translation_uk": "холодильник",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/kuehlschrank.png"
   },
   {
@@ -1726,7 +1726,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "спальня",
-    "translation_uk": "спальня",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/schlafzimmer.png"
   },
   {
@@ -1736,7 +1736,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "шкаф",
-    "translation_uk": "шкаф",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/schrank.png"
   },
   {
@@ -1746,7 +1746,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "кресло",
-    "translation_uk": "кресло",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/sessel.png"
   },
   {
@@ -1756,7 +1756,7 @@
     "article": "das",
     "phonetic": "",
     "translation_ru": "диван",
-    "translation_uk": "диван",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/sofa.png"
   },
   {
@@ -1766,7 +1766,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "зеркало",
-    "translation_uk": "зеркало",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/spiegel.png"
   },
   {
@@ -1776,7 +1776,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "розетка",
-    "translation_uk": "розетка",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/steckdose.png"
   },
   {
@@ -1786,7 +1786,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "стул",
-    "translation_uk": "стул",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/stuhl.png"
   },
   {
@@ -1796,7 +1796,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "стол",
-    "translation_uk": "стол",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/tisch.png"
   },
   {
@@ -1806,7 +1806,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Toiletteт",
-    "translation_uk": "Toiletteт",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/toiletteт.png"
   },
   {
@@ -1816,7 +1816,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "лестница",
-    "translation_uk": "лестница",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/treppe.png"
   },
   {
@@ -1826,7 +1826,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "дверь",
-    "translation_uk": "дверь",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/tuer.png"
   },
   {
@@ -1836,7 +1836,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "стена",
-    "translation_uk": "стена",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/wand.png"
   },
   {
@@ -1846,7 +1846,7 @@
     "article": "die",
     "phonetic": "",
     "translation_ru": "квартира",
-    "translation_uk": "квартира",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/wohnung.png"
   },
   {
@@ -1856,7 +1856,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Гостинная",
-    "translation_uk": "Гостинна",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/гостинная.png"
   },
   {
@@ -1866,7 +1866,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Ковер",
-    "translation_uk": "Ковер",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/ковер.png"
   },
   {
@@ -1876,7 +1876,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Отопление",
-    "translation_uk": "Отопление",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/отопление.png"
   },
   {
@@ -1886,7 +1886,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Плита",
-    "translation_uk": "Плита",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/плита.png"
   },
   {
@@ -1896,7 +1896,7 @@
     "article": "der",
     "phonetic": "",
     "translation_ru": "Штора",
-    "translation_uk": "Штора",
+    "translation_uk": "",
     "image_asset": "assets/images/wohnung/штора.png"
   }
 ]
