@@ -184,7 +184,7 @@ class StatisticsScreen extends StatelessWidget {
                     // Topic Breakdown
                     StaggeredAnimationItem(
                       index: 2,
-                      child: _buildTopicBreakdown(topics, progressMap, l10n),
+                      child: _buildTopicBreakdown(context, topics, progressMap, l10n),
                     ),
 
                     const SizedBox(height: 20),
@@ -457,10 +457,12 @@ class StatisticsScreen extends StatelessWidget {
   }
 
   Widget _buildTopicBreakdown(
+    BuildContext context,
     List<Topic> topics,
     Map<String, TopicProgress> progressMap,
     AppLocalizations l10n,
   ) {
+    final locale = Localizations.localeOf(context).languageCode;
     return ModernCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -513,7 +515,7 @@ class StatisticsScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                topic.title,
+                                topic.getTitle(locale),
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,

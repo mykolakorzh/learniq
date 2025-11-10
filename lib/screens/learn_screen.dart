@@ -474,6 +474,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
 
   Widget _buildBack() {
     final l10n = AppLocalizations.of(context)!;
+    final locale = Localizations.localeOf(context).languageCode;
     return Transform(
       alignment: Alignment.center,
       transform: Matrix4.identity()..rotateY(3.14159),
@@ -503,7 +504,7 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
             children: [
               // Translation
               Text(
-                widget.card.translation,
+                widget.card.getTranslation(locale),
                 style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,

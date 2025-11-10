@@ -35,13 +35,14 @@ class _TopicsScreenState extends State<TopicsScreen> {
     super.dispose();
   }
 
-  List<Topic> _filterTopics(List<Topic> topics) {
+  List<Topic> _filterTopics(BuildContext context, List<Topic> topics) {
+    final locale = Localizations.localeOf(context).languageCode;
     var filtered = topics;
 
     // Apply search filter
     if (_searchQuery.isNotEmpty) {
       filtered = filtered.where((topic) {
-        return topic.title.toLowerCase().contains(_searchQuery.toLowerCase()) ||
+        return topic.getTitle(locale).toLowerCase().contains(_searchQuery.toLowerCase()) ||
             topic.titleRu.toLowerCase().contains(_searchQuery.toLowerCase());
       }).toList();
     }
@@ -119,7 +120,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
               }
 
               final allTopics = snapshot.data!;
-              final filteredTopics = _filterTopics(allTopics);
+              final filteredTopics = _filterTopics(context, allTopics);
 
               // Hide filter chips - not useful with current topic distribution
               final showFilters = false;
@@ -348,6 +349,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
   }
 
   Widget _buildTopicCard(Topic topic, AppLocalizations l10n) {
+    final locale = Localizations.localeOf(context).languageCode;
     return CustomAnimatedScale(
       onTap: () {
         Navigator.push(
@@ -383,7 +385,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
                       children: [
                         Expanded(
                           child: Text(
-                            topic.title,
+                            topic.getTitle(locale),
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
