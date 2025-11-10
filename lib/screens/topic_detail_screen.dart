@@ -4,6 +4,7 @@ import '../models/topic.dart';
 import '../models/card_item.dart';
 import '../services/data_service.dart';
 import '../services/progress_service.dart';
+import '../services/spaced_repetition_service.dart';
 import 'learn_screen.dart';
 import 'test_screen.dart';
 import '../l10n/app_localizations.dart';
@@ -24,6 +25,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
   bool _isLoading = true;
   List<CardItem> _previewCards = [];
   TopicProgress? _progress;
+  int _dueCardsCount = 0;
 
   @override
   void initState() {
@@ -35,10 +37,12 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
     try {
       final cards = await DataService.loadCardsForTopic(widget.topic.id);
       final progress = await ProgressService.getProgress(widget.topic.id);
+      final dueCount = await SpacedRepetitionService.getDueCardsCount(widget.topic.id);
 
       setState(() {
         _previewCards = cards.take(3).toList(); // Show first 3 cards as preview
         _progress = progress;
+        _dueCardsCount = dueCount;
         _isLoading = false;
       });
     } catch (e) {
@@ -114,11 +118,44 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
                                       color: AppTheme.textPrimary,
                                     ),
                                   ),
-                                  Text(
-                                    l10n.topicsCardCount(widget.topic.cardCount),
-                                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                      color: AppTheme.textSecondary,
-                                    ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        l10n.topicsCardCount(widget.topic.cardCount),
+                                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                          color: AppTheme.textSecondary,
+                                        ),
+                                      ),
+                                      if (_dueCardsCount > 0) ...[
+                                        const SizedBox(width: 8),
+                                        Container(
+                                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                          decoration: BoxDecoration(
+                                            color: AppTheme.primaryIndigo,
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Icons.schedule,
+                                                size: 12,
+                                                color: Colors.white,
+                                              ),
+                                              const SizedBox(width: 4),
+                                              Text(
+                                                '$_dueCardsCount due',
+                                                style: TextStyle(
+                                                  fontSize: 11,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ],
                                   ),
                                 ],
                               ),

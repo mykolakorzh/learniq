@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/topic.dart';
 import '../services/data_service.dart';
+import '../services/spaced_repetition_service.dart';
 import '../widgets/skeleton_loader.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
@@ -22,11 +23,29 @@ class _TopicsScreenState extends State<TopicsScreen> {
   String _searchQuery = '';
   TopicFilter _selectedFilter = TopicFilter.all;
   final TextEditingController _searchController = TextEditingController();
+  Map<String, int> _dueCardsCount = {};
 
   @override
   void initState() {
     super.initState();
     _topicsFuture = DataService.loadTopics();
+    _loadDueCardsCount();
+  }
+
+  Future<void> _loadDueCardsCount() async {
+    final topics = await _topicsFuture;
+    final counts = <String, int>{};
+
+    for (final topic in topics) {
+      final count = await SpacedRepetitionService.getDueCardsCount(topic.id);
+      counts[topic.id] = count;
+    }
+
+    if (mounted) {
+      setState(() {
+        _dueCardsCount = counts;
+      });
+    }
   }
 
   @override
@@ -439,6 +458,35 @@ class _TopicsScreenState extends State<TopicsScreen> {
                             color: AppTheme.textSecondary,
                           ),
                         ),
+                        if (_dueCardsCount[topic.id] != null && _dueCardsCount[topic.id]! > 0) ...[
+                          const SizedBox(width: 12),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: AppTheme.primaryIndigo,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.schedule,
+                                  size: 14,
+                                  color: Colors.white,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '${_dueCardsCount[topic.id]} due',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ],
                     ),
                   ],

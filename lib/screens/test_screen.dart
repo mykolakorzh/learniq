@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 import '../models/card_item.dart';
 import '../services/data_service.dart';
 import '../services/progress_service.dart';
+import '../services/spaced_repetition_service.dart';
 import '../services/audio/tts_service.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
@@ -79,7 +80,7 @@ class _TestScreenState extends State<TestScreen> {
     }
   }
 
-  void _onArticleDropped(String article) {
+  void _onArticleDropped(String article) async {
     if (_showResult) return;
 
     setState(() {
@@ -112,6 +113,15 @@ class _TestScreenState extends State<TestScreen> {
         HapticFeedback.vibrate();
       }
     });
+
+    // Record review for spaced repetition
+    final currentCard = _quizCards[_currentQuestionIndex];
+    final quality = _isCorrect ? 4 : 1; // 4 = correct after hesitation, 1 = incorrect
+    await SpacedRepetitionService.recordReview(
+      cardId: currentCard.id,
+      topicId: widget.topicId,
+      quality: quality,
+    );
 
     // Auto-advance after showing result
     _nextQuestionTimer?.cancel();
