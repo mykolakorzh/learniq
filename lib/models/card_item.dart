@@ -32,5 +32,21 @@ class CardItem {
     );
   }
 
-  String get translation => translationRu; // Default to Russian for now
+  /// Returns translation based on locale code ('uk', 'ru', or 'en')
+  /// Defaults to Russian if locale not recognized
+  String getTranslation(String locale) {
+    switch (locale.toLowerCase()) {
+      case 'uk':
+        return translationUk.isNotEmpty ? translationUk : translationRu;
+      case 'ru':
+      case 'en': // English users see Russian (transliteration)
+      default:
+        return translationRu;
+    }
+  }
+
+  /// Deprecated: Use getTranslation(locale) instead
+  /// This maintains backward compatibility but always returns Russian
+  @Deprecated('Use getTranslation(locale) to get locale-aware translation')
+  String get translation => translationRu;
 }

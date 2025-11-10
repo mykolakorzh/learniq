@@ -29,5 +29,21 @@ class Topic {
     );
   }
 
-  String get title => titleRu; // Default to Russian for now
+  /// Returns title based on locale code ('uk', 'ru', or 'en')
+  /// Defaults to Russian if locale not recognized
+  String getTitle(String locale) {
+    switch (locale.toLowerCase()) {
+      case 'uk':
+        return titleUk;
+      case 'ru':
+      case 'en': // English users see Russian (transliteration)
+      default:
+        return titleRu;
+    }
+  }
+
+  /// Deprecated: Use getTitle(locale) instead
+  /// This maintains backward compatibility but always returns Russian
+  @Deprecated('Use getTitle(locale) to get locale-aware title')
+  String get title => titleRu;
 }
