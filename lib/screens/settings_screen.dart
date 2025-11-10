@@ -4,6 +4,7 @@ import '../l10n/app_localizations.dart';
 import '../services/settings_service.dart';
 import '../services/subscription_service.dart';
 import '../services/progress_service.dart';
+import '../services/notification_service.dart';
 import 'package:package_info_plus/package_info_plus.dart' as pkg_info;
 import '../app.dart';
 import '../widgets/modern_components.dart';
@@ -25,6 +26,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _isLoading = true;
   bool _hasPremium = false;
   DateTime? _subscriptionDate;
+  bool _notificationsEnabled = false;
+  String _notificationTime = '19:00';
 
   @override
   void initState() {
@@ -43,6 +46,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final hasPremium = await subscriptionService.hasActiveSubscription();
     final subscriptionDate = await subscriptionService.getSubscriptionDate();
 
+    // Load notification settings
+    final notificationsEnabled = await NotificationService.areNotificationsEnabled();
+    final notificationTime = await NotificationService.getNotificationTime();
+
     setState(() {
       _soundEffects = soundEffects;
       _hapticFeedback = hapticFeedback;
@@ -50,6 +57,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _ttsEnabled = ttsEnabled;
       _hasPremium = hasPremium;
       _subscriptionDate = subscriptionDate;
+      _notificationsEnabled = notificationsEnabled;
+      _notificationTime = notificationTime;
       _isLoading = false;
     });
   }
@@ -166,6 +175,63 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 HapticFeedback.lightImpact();
                                 await SettingsService.setTTSEnabled(value);
                                 setState(() => _ttsEnabled = value);
+                              },
+                            ),
+                          ],
+                        ),
+
+                        _buildModernSection(
+                          title: 'Notifications',
+                          icon: Icons.notifications_active,
+                          children: [
+                            _buildModernSwitchTile(
+                              title: 'Daily Reminders',
+                              subtitle: 'Get reminded to practice German every day',
+                              icon: Icons.alarm,
+                              value: _notificationsEnabled,
+                              onChanged: (value) async {
+                                HapticFeedback.lightImpact();
+                                await NotificationService.setNotificationsEnabled(value);
+                                setState(() => _notificationsEnabled = value);
+
+                                if (mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        value
+                                            ? 'Daily reminders enabled!'
+                                            : 'Daily reminders disabled',
+                                      ),
+                                      backgroundColor: value ? AppTheme.accentGreen : Colors.grey,
+                                    ),
+                                  );
+                                }
+                              },
+                            ),
+                            if (_notificationsEnabled)
+                              _buildModernActionTile(
+                                title: 'Reminder Time',
+                                subtitle: _notificationTime,
+                                icon: Icons.access_time,
+                                iconColor: AppTheme.primaryIndigo,
+                                onTap: () => _showTimePicker(),
+                              ),
+                            _buildModernActionTile(
+                              title: 'Test Notification',
+                              subtitle: 'Send a test notification now',
+                              icon: Icons.notifications,
+                              iconColor: Colors.orange,
+                              onTap: () async {
+                                HapticFeedback.lightImpact();
+                                await NotificationService.showTestNotification();
+                                if (mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Test notification sent!'),
+                                      backgroundColor: AppTheme.accentGreen,
+                                    ),
+                                  );
+                                }
                               },
                             ),
                           ],
@@ -834,7 +900,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          gradient: _hasPremium 
+          gradient: _hasPremium
               ? AppTheme.successGradient
               : LinearGradient(
                   colors: [
@@ -844,7 +910,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: _hasPremium 
+            color: _hasPremium
                 ? AppTheme.accentGreen.withValues(alpha: 0.3)
                 : AppTheme.textSecondary.withValues(alpha: 0.2),
             width: 1,
@@ -910,5 +976,47 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> _showTimePicker() async {
+    final parts = _notificationTime.split(':');
+    final initialTime = TimeOfDay(
+      hour: int.parse(parts[0]),
+      minute: int.parse(parts[1]),
+    );
+
+    final picked = await showTimePicker(
+      context: context,
+      initialTime: initialTime,
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: AppTheme.primaryIndigo,
+              onPrimary: Colors.white,
+              surface: Colors.white,
+              onSurface: AppTheme.textPrimary,
+            ),
+          ),
+          child: child!,
+        );
+      },
+    );
+
+    if (picked != null) {
+      final newTime = '${picked.hour.toString().padLeft(2, '0')}:${picked.minute.toString().padLeft(2, '0')}';
+      await NotificationService.setNotificationTime(newTime);
+      setState(() => _notificationTime = newTime);
+
+      if (mounted) {
+        HapticFeedback.lightImpact();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Reminder time updated to $newTime'),
+            backgroundColor: AppTheme.accentGreen,
+          ),
+        );
+      }
+    }
   }
 }
