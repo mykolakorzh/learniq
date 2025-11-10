@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import '../models/card_item.dart';
+import '../models/learning_session.dart';
 import '../services/data_service.dart';
 import '../services/progress_service.dart';
 import '../services/spaced_repetition_service.dart';
@@ -155,6 +156,15 @@ class _TestScreenState extends State<TestScreen> {
           widget.topicId,
           _mistakeCards.map((c) => c.id).toList(),
         );
+
+        // Record learning session
+        final session = LearningSession.create(
+          topicId: widget.topicId,
+          cardsReviewed: total,
+          correctAnswers: _correctAnswers,
+          averageResponseTime: 3.0, // Approximate 3 seconds per card
+        );
+        await ProgressService.recordSession(session);
       } catch (_) {}
 
       if (mounted) {
