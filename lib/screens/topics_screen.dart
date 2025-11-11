@@ -3,11 +3,13 @@ import '../models/topic.dart';
 import '../services/data_service.dart';
 import '../services/spaced_repetition_service.dart';
 import '../services/streak_service.dart';
+import '../services/subscription_service.dart';
 import '../widgets/skeleton_loader.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
 import '../core/theme/app_theme.dart';
 import 'topic_detail_screen.dart';
+import 'paywall_screen.dart';
 import '../l10n/app_localizations.dart';
 
 enum TopicFilter { all, free, premium }
@@ -383,13 +385,30 @@ class _TopicsScreenState extends State<TopicsScreen> {
   Widget _buildTopicCard(Topic topic, AppLocalizations l10n) {
     final locale = Localizations.localeOf(context).languageCode;
     return CustomAnimatedScale(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TopicDetailScreen(topic: topic),
-          ),
-        );
+      onTap: () async {
+        // Check if topic is accessible
+        final subscriptionService = await SubscriptionService.getInstance();
+        final canAccess = await subscriptionService.isTopicAccessible(topic.isFree);
+
+        if (!mounted) return;
+
+        if (canAccess) {
+          // User has access - navigate to topic
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => TopicDetailScreen(topic: topic),
+            ),
+          );
+        } else {
+          // User needs subscription - show paywall
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const PaywallScreen(),
+            ),
+          );
+        }
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 16),

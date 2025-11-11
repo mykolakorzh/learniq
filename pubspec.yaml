@@ -26,6 +26,8 @@ dependencies:
   cloud_firestore: ^5.5.2
   # Google Sign-In for Firebase
   google_sign_in: ^6.2.2
+  # RevenueCat for subscription management
+  purchases_flutter: ^8.2.2
 
 dev_dependencies:
   flutter_test:
