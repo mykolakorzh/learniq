@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../services/subscription_service.dart';
 import '../core/theme/app_theme.dart';
+import '../core/config/app_config.dart';
 import '../l10n/app_localizations.dart';
 
 /// Beautiful paywall screen for premium subscription
@@ -298,6 +300,24 @@ class _PaywallScreenState extends State<PaywallScreen> {
   }
 
   Widget _buildTrialOffer() {
+    // Get pricing from selected package or first available package
+    String pricingText = '7 days free, then subscribe';
+    try {
+      if (_selectedPackage != null) {
+        final product = _selectedPackage!.storeProduct;
+        pricingText = '7 days free, then ${product.priceString}';
+        // Price string already includes period info from App Store
+        // No need to add additional period text
+      } else if (_packages != null && _packages!.isNotEmpty) {
+        final product = _packages!.first.storeProduct;
+        pricingText = '7 days free, then ${product.priceString}';
+        // Price string already includes period info from App Store
+      }
+    } catch (e) {
+      // Fallback if product info is not available
+      pricingText = '7 days free, then subscribe';
+    }
+
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -331,7 +351,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            '7 days free, then \$4.99/month',
+            pricingText,
             style: TextStyle(
               fontSize: 16,
               color: Colors.white.withValues(alpha: 0.9),
@@ -576,8 +596,20 @@ class _PaywallScreenState extends State<PaywallScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextButton(
-          onPressed: () {
-            // TODO: Open terms of service
+          onPressed: () async {
+            final uri = Uri.parse(AppConfig.termsOfServiceUrl);
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri, mode: LaunchMode.externalApplication);
+            } else {
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Unable to open Terms of Service'),
+                    backgroundColor: Colors.red,
+                  ),
+                );
+              }
+            }
           },
           child: Text(
             'Terms',
@@ -592,8 +624,20 @@ class _PaywallScreenState extends State<PaywallScreen> {
           style: TextStyle(color: AppTheme.textSecondary),
         ),
         TextButton(
-          onPressed: () {
-            // TODO: Open privacy policy
+          onPressed: () async {
+            final uri = Uri.parse(AppConfig.privacyPolicyUrl);
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri, mode: LaunchMode.externalApplication);
+            } else {
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Unable to open Privacy Policy'),
+                    backgroundColor: Colors.red,
+                  ),
+                );
+              }
+            }
           },
           child: Text(
             'Privacy',

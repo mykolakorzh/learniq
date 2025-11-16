@@ -4,6 +4,7 @@ import 'l10n/app_localizations.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routing/app_router.dart';
 import 'services/settings_service.dart';
+import 'services/analytics_service.dart';
 
 class LearniqApp extends StatefulWidget {
   const LearniqApp({super.key});
@@ -60,6 +61,10 @@ class _LearniqAppState extends State<LearniqApp> {
         Locale('en', ''),
         Locale('ru', ''),
         Locale('uk', ''),
+      ],
+      navigatorObservers: [
+        // Add analytics observer if available
+        if (AnalyticsService.observer != null) AnalyticsService.observer!,
       ],
       onGenerateRoute: AppRouter.generateRoute,
       initialRoute: '/',

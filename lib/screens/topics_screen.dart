@@ -384,34 +384,44 @@ class _TopicsScreenState extends State<TopicsScreen> {
 
   Widget _buildTopicCard(Topic topic, AppLocalizations l10n) {
     final locale = Localizations.localeOf(context).languageCode;
-    return CustomAnimatedScale(
-      onTap: () async {
-        // Check if topic is accessible
-        final subscriptionService = await SubscriptionService.getInstance();
-        final canAccess = await subscriptionService.isTopicAccessible(topic.isFree);
+    final topicTitle = topic.getTitle(locale);
+    final accessLabel = topic.isFree 
+        ? l10n.topicsFree 
+        : l10n.topicsPremium;
+    return Semantics(
+      label: '$topicTitle, $accessLabel, ${l10n.topicsCardCount(topic.cardCount)}',
+      hint: topic.isFree 
+          ? 'Double tap to open $topicTitle'
+          : 'Double tap to view $topicTitle or subscribe',
+      button: true,
+      child: CustomAnimatedScale(
+        onTap: () async {
+          // Check if topic is accessible
+          final subscriptionService = await SubscriptionService.getInstance();
+          final canAccess = await subscriptionService.isTopicAccessible(topic.isFree);
 
-        if (!mounted) return;
+          if (!mounted) return;
 
-        if (canAccess) {
-          // User has access - navigate to topic
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => TopicDetailScreen(topic: topic),
-            ),
-          );
-        } else {
-          // User needs subscription - show paywall
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const PaywallScreen(),
-            ),
-          );
-        }
-      },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 16),
+          if (canAccess) {
+            // User has access - navigate to topic
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TopicDetailScreen(topic: topic),
+              ),
+            );
+          } else {
+            // User needs subscription - show paywall
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PaywallScreen(),
+              ),
+            );
+          }
+        },
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 16),
         decoration: BoxDecoration(
           color: AppTheme.surfaceLight,
           borderRadius: BorderRadius.circular(20),
@@ -532,6 +542,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
               ),
             ],
           ),
+        ),
         ),
       ),
     );

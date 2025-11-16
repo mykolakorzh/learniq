@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../core/config/app_config.dart';
 
 /// Production-ready subscription service using RevenueCat
 ///
@@ -19,9 +20,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// 4. Configure products in RevenueCat (link to App Store)
 /// 5. Replace API_KEY_IOS below with your RevenueCat API key
 class SubscriptionService {
-  // ⚠️ IMPORTANT: Replace with your actual RevenueCat API key
-  // Get it from: https://app.revenuecat.com/settings/keys
-  static const String _apiKeyIOS = 'YOUR_REVENUECAT_API_KEY_HERE';
+  // RevenueCat API key - loaded from AppConfig
+  // Set via environment variable: --dart-define=REVENUECAT_API_KEY_IOS=your_key_here
+  // Or update AppConfig.revenueCatApiKeyIOS directly
+  static String get _apiKeyIOS => AppConfig.revenueCatApiKeyIOS;
 
   // RevenueCat entitlement identifier (configure in RevenueCat dashboard)
   static const String _entitlementID = 'premium';

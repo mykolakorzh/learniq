@@ -1,7 +1,19 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import '../models/topic.dart';
 import '../models/card_item.dart';
+
+/// Custom exception for data loading errors
+class DataLoadException implements Exception {
+  final String message;
+  final String? file;
+  
+  DataLoadException(this.message, [this.file]);
+  
+  @override
+  String toString() => 'DataLoadException: $message${file != null ? ' (file: $file)' : ''}';
+}
 
 class DataService {
   // Cache for loaded data
@@ -9,28 +21,130 @@ class DataService {
   static List<CardItem>? _cachedCards;
   static Map<String, List<CardItem>> _cachedCardsByTopic = {};
 
-  /// Loads all topics from JSON, with caching
+  /// Loads all topics from JSON, with caching and error handling
   static Future<List<Topic>> loadTopics() async {
     if (_cachedTopics != null) {
       return _cachedTopics!;
     }
 
-    final String response = await rootBundle.loadString('assets/data/topics.json');
-    final List<dynamic> jsonList = json.decode(response);
-    _cachedTopics = jsonList.map((json) => Topic.fromJson(json)).toList();
-    return _cachedTopics!;
+    try {
+      final String response = await rootBundle.loadString('assets/data/topics.json');
+      final dynamic decoded = json.decode(response);
+      
+      // Validate JSON structure
+      if (decoded is! List) {
+        throw DataLoadException('Topics data must be a JSON array', 'topics.json');
+      }
+      
+      final List<Topic> topics = [];
+      for (int i = 0; i < decoded.length; i++) {
+        try {
+          final item = decoded[i];
+          if (item is! Map<String, dynamic>) {
+            continue; // Skip invalid items
+          }
+          topics.add(Topic.fromJson(item));
+        } catch (e) {
+          // Log invalid topic but continue loading others
+          try {
+            FirebaseCrashlytics.instance.recordError(
+              Exception('Invalid topic at index $i: $e'),
+              StackTrace.current,
+              reason: 'Failed to parse topic',
+              fatal: false,
+            );
+          } catch (_) {
+            // Firebase not initialized - ignore
+          }
+        }
+      }
+      
+      if (topics.isEmpty) {
+        throw DataLoadException('No valid topics found in data file', 'topics.json');
+      }
+      
+      _cachedTopics = topics;
+      return topics;
+    } on PlatformException catch (e) {
+      throw DataLoadException('Failed to load topics.json: ${e.message}', 'topics.json');
+    } on FormatException catch (e) {
+      throw DataLoadException('Invalid JSON format in topics.json: ${e.message}', 'topics.json');
+    } catch (e) {
+      try {
+        FirebaseCrashlytics.instance.recordError(
+          e,
+          StackTrace.current,
+          reason: 'Unexpected error loading topics',
+          fatal: false,
+        );
+      } catch (_) {
+        // Firebase not initialized - ignore
+      }
+      throw DataLoadException('Unexpected error loading topics: $e', 'topics.json');
+    }
   }
 
-  /// Loads all cards from JSON, with caching
+  /// Loads all cards from JSON, with caching and error handling
   static Future<List<CardItem>> loadCards() async {
     if (_cachedCards != null) {
       return _cachedCards!;
     }
 
-    final String response = await rootBundle.loadString('assets/data/cards.json');
-    final List<dynamic> jsonList = json.decode(response);
-    _cachedCards = jsonList.map((json) => CardItem.fromJson(json)).toList();
-    return _cachedCards!;
+    try {
+      final String response = await rootBundle.loadString('assets/data/cards.json');
+      final dynamic decoded = json.decode(response);
+      
+      // Validate JSON structure
+      if (decoded is! List) {
+        throw DataLoadException('Cards data must be a JSON array', 'cards.json');
+      }
+      
+      final List<CardItem> cards = [];
+      for (int i = 0; i < decoded.length; i++) {
+        try {
+          final item = decoded[i];
+          if (item is! Map<String, dynamic>) {
+            continue; // Skip invalid items
+          }
+          cards.add(CardItem.fromJson(item));
+        } catch (e) {
+          // Log invalid card but continue loading others
+          try {
+            FirebaseCrashlytics.instance.recordError(
+              Exception('Invalid card at index $i: $e'),
+              StackTrace.current,
+              reason: 'Failed to parse card',
+              fatal: false,
+            );
+          } catch (_) {
+            // Firebase not initialized - ignore
+          }
+        }
+      }
+      
+      if (cards.isEmpty) {
+        throw DataLoadException('No valid cards found in data file', 'cards.json');
+      }
+      
+      _cachedCards = cards;
+      return cards;
+    } on PlatformException catch (e) {
+      throw DataLoadException('Failed to load cards.json: ${e.message}', 'cards.json');
+    } on FormatException catch (e) {
+      throw DataLoadException('Invalid JSON format in cards.json: ${e.message}', 'cards.json');
+    } catch (e) {
+      try {
+        FirebaseCrashlytics.instance.recordError(
+          e,
+          StackTrace.current,
+          reason: 'Unexpected error loading cards',
+          fatal: false,
+        );
+      } catch (_) {
+        // Firebase not initialized - ignore
+      }
+      throw DataLoadException('Unexpected error loading cards: $e', 'cards.json');
+    }
   }
 
   /// Loads cards for a specific topic, with caching
@@ -41,14 +155,19 @@ class DataService {
       return _cachedCardsByTopic[topicId]!;
     }
 
-    // Load all cards once (this will be cached after first call)
-    final List<CardItem> allCards = await loadCards();
+    try {
+      // Load all cards once (this will be cached after first call)
+      final List<CardItem> allCards = await loadCards();
 
-    // Filter and cache for this topic
-    final topicCards = allCards.where((card) => card.topicId == topicId).toList();
-    _cachedCardsByTopic[topicId] = topicCards;
+      // Filter and cache for this topic
+      final topicCards = allCards.where((card) => card.topicId == topicId).toList();
+      _cachedCardsByTopic[topicId] = topicCards;
 
-    return topicCards;
+      return topicCards;
+    } catch (e) {
+      // Re-throw with context
+      throw DataLoadException('Failed to load cards for topic $topicId: $e', 'cards.json');
+    }
   }
 
   /// Clears all cached data (useful for testing or if data changes)

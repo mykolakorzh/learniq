@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../l10n/app_localizations.dart';
 import '../services/settings_service.dart';
 import '../services/subscription_service.dart';
@@ -10,6 +11,7 @@ import '../app.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
 import '../core/theme/app_theme.dart';
+import '../core/config/app_config.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -397,12 +399,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               subtitle: l10n.settingsPrivacyPolicySubtitle,
                               icon: Icons.privacy_tip,
                               iconColor: AppTheme.primaryIndigo,
-                              onTap: () {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(l10n.settingsPrivacyPolicyMessage),
-                                  ),
-                                );
+                              onTap: () async {
+                                final uri = Uri.parse(AppConfig.privacyPolicyUrl);
+                                if (await canLaunchUrl(uri)) {
+                                  await launchUrl(uri, mode: LaunchMode.externalApplication);
+                                } else {
+                                  if (mounted) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text('Unable to open Privacy Policy'),
+                                        backgroundColor: Colors.red,
+                                      ),
+                                    );
+                                  }
+                                }
                               },
                             ),
                             _buildModernInfoTile(

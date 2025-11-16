@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../services/subscription_service.dart';
 import '../core/theme/app_theme.dart';
+import '../core/config/app_config.dart';
 import 'paywall_screen.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -410,16 +412,40 @@ class _AccountScreenState extends State<AccountScreen> {
           _buildActionButton(
             icon: Icons.privacy_tip_outlined,
             label: 'Privacy Policy',
-            onTap: () {
-              // TODO: Open privacy policy
+            onTap: () async {
+              final uri = Uri.parse(AppConfig.privacyPolicyUrl);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              } else {
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Unable to open Privacy Policy'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                }
+              }
             },
           ),
           const SizedBox(height: 12),
           _buildActionButton(
             icon: Icons.description_outlined,
             label: 'Terms of Service',
-            onTap: () {
-              // TODO: Open terms of service
+            onTap: () async {
+              final uri = Uri.parse(AppConfig.termsOfServiceUrl);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              } else {
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Unable to open Terms of Service'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                }
+              }
             },
           ),
           const SizedBox(height: 12),
