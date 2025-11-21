@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'dart:async';
 
 /// Centralized image loading service with caching and preloading support
 class ImageService {
   // Cache for preloaded images
   static final Map<String, ImageProvider> _imageCache = {};
-  
+
   // Track which images are being loaded
   static final Set<String> _loadingImages = {};
 
@@ -23,14 +22,14 @@ class ImageService {
 
     try {
       _loadingImages.add(imagePath);
-      
+
       // Load the image asset
       final assetImage = AssetImage(imagePath);
-      final imageProvider = assetImage.resolve(const ImageConfiguration());
-      
+
       // Wait for the image to be loaded
       final completer = Completer<void>();
-      imageProvider.resolve(const ImageConfiguration()).addListener(
+      final imageStream = assetImage.resolve(const ImageConfiguration());
+      imageStream.addListener(
         ImageStreamListener(
           (ImageInfo info, bool synchronousCall) {
             if (!completer.isCompleted) {

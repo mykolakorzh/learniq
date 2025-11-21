@@ -253,7 +253,6 @@ class _LearnScreenState extends State<LearnScreen> {
                       onPageChanged: _onPageChanged,
                       itemCount: cards.length,
                       physics: const BouncingScrollPhysics(),
-                      cacheExtent: 2, // Limit cache to 2 pages on each side
                       itemBuilder: (context, index) {
                         final currentCard = cards[index];
                         return RepaintBoundary(
@@ -440,21 +439,6 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                   child: Image.asset(
                     widget.card.getImagePathWithFallback(),
                     fit: BoxFit.cover,
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Container(
-                        color: AppTheme.textSecondary.withValues(alpha: 0.05),
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                    loadingProgress.expectedTotalBytes!
-                                : null,
-                            color: AppTheme.primaryIndigo,
-                          ),
-                        ),
-                      );
-                    },
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
                         color: AppTheme.textSecondary.withValues(alpha: 0.1),

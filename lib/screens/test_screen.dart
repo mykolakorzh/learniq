@@ -617,21 +617,6 @@ class _TestScreenState extends State<TestScreen> {
                                 _showResult && _isCorrect ? colorfulImagePath : grayImagePath,
                                 key: ValueKey(_showResult && _isCorrect ? 'color' : 'gray'),
                                 fit: BoxFit.cover,
-                                loadingBuilder: (context, child, loadingProgress) {
-                                  if (loadingProgress == null) return child;
-                                  return Container(
-                                    color: Colors.grey.withValues(alpha: 0.05),
-                                    child: Center(
-                                      child: CircularProgressIndicator(
-                                        value: loadingProgress.expectedTotalBytes != null
-                                            ? loadingProgress.cumulativeBytesLoaded /
-                                                loadingProgress.expectedTotalBytes!
-                                            : null,
-                                        color: AppTheme.primaryIndigo,
-                                      ),
-                                    ),
-                                  );
-                                },
                                 errorBuilder: (context, error, stackTrace) {
                                   return Container(
                                     color: Colors.grey.withValues(alpha: 0.1),
