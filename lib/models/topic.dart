@@ -4,7 +4,7 @@ class Topic {
   final String titleUk;
   final bool isFree;
   final int cardCount;
-  final String iconAsset;
+  final String? iconAsset; // Made optional to handle missing icon files
   final int order;
 
   Topic({
@@ -13,7 +13,7 @@ class Topic {
     required this.titleUk,
     required this.isFree,
     required this.cardCount,
-    required this.iconAsset,
+    this.iconAsset, // No longer required
     required this.order,
   });
 
@@ -24,7 +24,7 @@ class Topic {
       titleUk: json['title_uk'] as String,
       isFree: json['is_free'] as bool,
       cardCount: json['card_count'] as int,
-      iconAsset: json['icon_asset'] as String,
+      iconAsset: json['icon_asset'] as String?, // Made optional
       order: json['order'] as int,
     );
   }

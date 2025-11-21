@@ -5,7 +5,6 @@
     "title_uk": "Квартира",
     "is_free": true,
     "card_count": 33,
-    "icon_asset": "assets/images/wohnung_icon.png",
     "order": 1
   },
   {
@@ -14,7 +13,6 @@
     "title_uk": "Транспорт",
     "is_free": false,
     "card_count": 27,
-    "icon_asset": "assets/images/fahrzeug_icon.png",
     "order": 2
   },
   {
@@ -23,7 +21,6 @@
     "title_uk": "Одяг",
     "is_free": false,
     "card_count": 27,
-    "icon_asset": "assets/images/kleidung_icon.png",
     "order": 3
   },
   {
@@ -32,7 +29,6 @@
     "title_uk": "Природа",
     "is_free": false,
     "card_count": 29,
-    "icon_asset": "assets/images/natur_icon.png",
     "order": 4
   },
   {
@@ -41,7 +37,6 @@
     "title_uk": "Місто",
     "is_free": false,
     "card_count": 30,
-    "icon_asset": "assets/images/stadt_icon.png",
     "order": 5
   },
   {
@@ -50,7 +45,6 @@
     "title_uk": "Тварини",
     "is_free": false,
     "card_count": 17,
-    "icon_asset": "assets/images/tiere_icon.png",
     "order": 6
   },
   {
@@ -58,8 +52,7 @@
     "title_ru": "Тело",
     "title_uk": "Тіло",
     "is_free": false,
-    "card_count": 27,
-    "icon_asset": "assets/images/korper_icon.png",
+    "card_count": 28,
     "order": 7
   }
 ]
