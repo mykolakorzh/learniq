@@ -5,6 +5,7 @@ import '../services/subscription_service.dart';
 import '../core/theme/app_theme.dart';
 import '../core/config/app_config.dart';
 import '../l10n/app_localizations.dart';
+import '../core/routing/app_router.dart';
 
 /// Beautiful paywall screen for premium subscription
 ///
@@ -76,7 +77,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
 
       if (success) {
         // Show success and return to previous screen
-        Navigator.pop(context, true);
+        SafeNavigation.pop(context, result: true);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Welcome to Premium!'),
@@ -116,7 +117,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
       if (!mounted) return;
 
       if (restored) {
-        Navigator.pop(context, true);
+        SafeNavigation.pop(context, result: true);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Purchases restored successfully!'),
@@ -157,16 +158,16 @@ class _PaywallScreenState extends State<PaywallScreen> {
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => SafeNavigation.pop(context),
             child: Text('Cancel'),
           ),
           TextButton(
             onPressed: () async {
-              Navigator.pop(context);
+              SafeNavigation.pop(context);
               final subscriptionService = await SubscriptionService.getInstance();
               await subscriptionService.startTrial();
               if (mounted) {
-                Navigator.pop(context, true);
+                SafeNavigation.pop(context, result: true);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Demo trial activated!'),
@@ -268,7 +269,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
         children: [
           IconButton(
             icon: Icon(Icons.close, color: AppTheme.textPrimary),
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => SafeNavigation.pop(context),
           ),
           Spacer(),
         ],

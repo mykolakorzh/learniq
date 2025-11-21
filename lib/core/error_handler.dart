@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'routing/app_router.dart';
 
 /// Global error handler for the app
 class AppErrorHandler {
@@ -74,13 +75,13 @@ class AppErrorHandler {
           if (onRetry != null)
             TextButton(
               onPressed: () {
-                Navigator.pop(context);
+                SafeNavigation.pop(context);
                 onRetry();
               },
               child: const Text('Retry'),
             ),
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => SafeNavigation.pop(context),
             child: const Text('OK'),
           ),
         ],

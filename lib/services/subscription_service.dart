@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -54,7 +55,9 @@ class SubscriptionService {
 
     try {
       // Configure RevenueCat
-      await Purchases.setLogLevel(LogLevel.debug); // Set to .info in production
+      await Purchases.setLogLevel(
+        kDebugMode ? LogLevel.debug : LogLevel.info,
+      );
 
       final configuration = PurchasesConfiguration(_apiKeyIOS);
       await Purchases.configure(configuration);

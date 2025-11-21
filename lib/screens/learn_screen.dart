@@ -3,11 +3,14 @@ import 'package:flutter/services.dart';
 import '../models/card_item.dart';
 import '../services/data_service.dart';
 import '../services/audio/tts_service.dart';
+import '../services/image_service.dart';
+import '../services/streak_service.dart';
 import '../widgets/skeleton_loader.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
 import '../core/theme/app_theme.dart';
 import '../l10n/app_localizations.dart';
+import '../core/routing/app_router.dart';
 
 class LearnScreen extends StatefulWidget {
   final String topicId;
@@ -22,6 +25,7 @@ class _LearnScreenState extends State<LearnScreen> {
   late Future<List<CardItem>> _cardsFuture;
   late PageController _pageController;
   int _currentIndex = 0;
+  final Set<String> _reviewedCardIds = {}; // Track which cards have been reviewed for streak
 
   @override
   void initState() {
@@ -36,9 +40,45 @@ class _LearnScreenState extends State<LearnScreen> {
     super.dispose();
   }
 
-  void _onPageChanged(int index) {
+  void _onPageChanged(int index) async {
     setState(() {
       _currentIndex = index;
+    });
+    
+    // Preload next 2-3 images for smooth scrolling
+    _preloadNextImages(index);
+    
+    // Record streak when user views a new card (only once per card per session)
+    _cardsFuture.then((cards) {
+      if (index < cards.length) {
+        final cardId = cards[index].id;
+        if (!_reviewedCardIds.contains(cardId)) {
+          _reviewedCardIds.add(cardId);
+          // Record review for streak tracking (only once per card)
+          StreakService.recordReview().catchError((e) {
+            // Silently handle errors - streak is not critical
+            debugPrint('Failed to record streak: $e');
+          });
+        }
+      }
+    });
+  }
+
+  void _preloadNextImages(int currentIndex) {
+    _cardsFuture.then((cards) {
+      if (cards.isEmpty) return;
+      
+      final imagesToPreload = <String>[];
+      for (int i = currentIndex + 1; i <= currentIndex + 3 && i < cards.length; i++) {
+        final imagePath = cards[i].getImagePathWithFallback();
+        if (imagePath.isNotEmpty) {
+          imagesToPreload.add(imagePath);
+        }
+      }
+      
+      if (imagesToPreload.isNotEmpty) {
+        ImageService.preloadImages(imagesToPreload);
+      }
     });
   }
 
@@ -84,12 +124,32 @@ class _LearnScreenState extends State<LearnScreen> {
 
               final cards = snapshot.data!;
 
+              // Preload first few images
+              if (cards.isNotEmpty && _currentIndex == 0) {
+                final imagesToPreload = cards
+                    .take(3)
+                    .map((card) => card.getImagePathWithFallback())
+                    .where((path) => path.isNotEmpty)
+                    .toList();
+                if (imagesToPreload.isNotEmpty) {
+                  ImageService.preloadImages(imagesToPreload);
+                }
+                
+                // Record first card for streak (if not already recorded)
+                if (cards.isNotEmpty && !_reviewedCardIds.contains(cards[0].id)) {
+                  _reviewedCardIds.add(cards[0].id);
+                  StreakService.recordReview().catchError((e) {
+                    debugPrint('Failed to record streak: $e');
+                  });
+                }
+              }
+
               if (cards.isEmpty) {
                 return ModernSuccessWidget(
                   title: l10n.learnNoCardsTitle,
                   message: l10n.learnNoCardsMessage,
                   icon: Icons.inbox_outlined,
-                  onContinue: () => Navigator.pop(context),
+                  onContinue: () => SafeNavigation.pop(context),
                 );
               }
 
@@ -114,7 +174,7 @@ class _LearnScreenState extends State<LearnScreen> {
                     child: Row(
                       children: [
                             CustomAnimatedScale(
-                          onTap: () => Navigator.pop(context),
+                          onTap: () => SafeNavigation.pop(context),
                           child: Container(
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
@@ -193,15 +253,18 @@ class _LearnScreenState extends State<LearnScreen> {
                       onPageChanged: _onPageChanged,
                       itemCount: cards.length,
                       physics: const BouncingScrollPhysics(),
+                      cacheExtent: 2, // Limit cache to 2 pages on each side
                       itemBuilder: (context, index) {
                         final currentCard = cards[index];
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: _ModernFlashcard(
-                            card: currentCard,
-                            onFlip: () {
-                              // Card flip is handled internally
-                            },
+                        return RepaintBoundary(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: _ModernFlashcard(
+                              card: currentCard,
+                              onFlip: () {
+                                // Card flip is handled internally
+                              },
+                            ),
                           ),
                         );
                       },
@@ -375,15 +438,43 @@ class _ModernFlashcardState extends State<_ModernFlashcard>
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Image.asset(
-                    widget.card.imageAsset,
+                    widget.card.getImagePathWithFallback(),
                     fit: BoxFit.cover,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Container(
+                        color: AppTheme.textSecondary.withValues(alpha: 0.05),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded /
+                                    loadingProgress.expectedTotalBytes!
+                                : null,
+                            color: AppTheme.primaryIndigo,
+                          ),
+                        ),
+                      );
+                    },
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
                         color: AppTheme.textSecondary.withValues(alpha: 0.1),
-                        child: const Icon(
-                          Icons.image_not_supported,
-                          size: 64,
-                          color: AppTheme.textSecondary,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.image_not_supported,
+                              size: 64,
+                              color: AppTheme.textSecondary,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Image not found',
+                              style: TextStyle(
+                                color: AppTheme.textSecondary,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     },

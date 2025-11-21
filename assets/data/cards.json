@@ -7,7 +7,7 @@
     "phonetic": "",
     "translation_ru": "Ampel",
     "translation_uk": "Ampel",
-    "image_asset": "assets/images/fahrzeug/ampel.png"
+    "image_asset": "assets/images/fahrzeug/ampel.jpg"
   },
   {
     "id": "fahrzeug_02",
@@ -17,7 +17,7 @@
     "phonetic": "",
     "translation_ru": "Auto",
     "translation_uk": "Auto",
-    "image_asset": "assets/images/fahrzeug/auto.png"
+    "image_asset": "assets/images/fahrzeug/auto.jpg"
   },
   {
     "id": "fahrzeug_03",
@@ -27,7 +27,7 @@
     "phonetic": "",
     "translation_ru": "Autobahn",
     "translation_uk": "Autobahn",
-    "image_asset": "assets/images/fahrzeug/autobahn.png"
+    "image_asset": "assets/images/fahrzeug/autobahn.jpg"
   },
   {
     "id": "fahrzeug_04",
@@ -37,7 +37,7 @@
     "phonetic": "",
     "translation_ru": "Bahnhof",
     "translation_uk": "Bahnhof",
-    "image_asset": "assets/images/fahrzeug/bahnhof.png"
+    "image_asset": "assets/images/fahrzeug/bahnhof.jpg"
   },
   {
     "id": "fahrzeug_05",
@@ -47,7 +47,7 @@
     "phonetic": "",
     "translation_ru": "Boot",
     "translation_uk": "Boot",
-    "image_asset": "assets/images/fahrzeug/boot.png"
+    "image_asset": "assets/images/fahrzeug/boot.jpg"
   },
   {
     "id": "fahrzeug_06",
@@ -57,7 +57,7 @@
     "phonetic": "",
     "translation_ru": "Buergersteig",
     "translation_uk": "Buergersteig",
-    "image_asset": "assets/images/fahrzeug/buergersteig.png"
+    "image_asset": "assets/images/fahrzeug/buergersteig.jpg"
   },
   {
     "id": "fahrzeug_07",
@@ -67,7 +67,7 @@
     "phonetic": "",
     "translation_ru": "Bus",
     "translation_uk": "Bus",
-    "image_asset": "assets/images/fahrzeug/bus.png"
+    "image_asset": "assets/images/fahrzeug/bus.jpg"
   },
   {
     "id": "fahrzeug_08",
@@ -77,7 +77,7 @@
     "phonetic": "",
     "translation_ru": "Fahrkarte",
     "translation_uk": "Fahrkarte",
-    "image_asset": "assets/images/fahrzeug/fahrkarte.png"
+    "image_asset": "assets/images/fahrzeug/fahrkarte.jpg"
   },
   {
     "id": "fahrzeug_09",
@@ -87,7 +87,7 @@
     "phonetic": "",
     "translation_ru": "Fahrkartenautomat",
     "translation_uk": "Fahrkartenautomat",
-    "image_asset": "assets/images/fahrzeug/fahrkartenautomat.png"
+    "image_asset": "assets/images/fahrzeug/fahrkartenautomat.jpg"
   },
   {
     "id": "fahrzeug_10",
@@ -97,7 +97,7 @@
     "phonetic": "",
     "translation_ru": "Fahrrad",
     "translation_uk": "Fahrrad",
-    "image_asset": "assets/images/fahrzeug/fahrrad.png"
+    "image_asset": "assets/images/fahrzeug/fahrrad.jpg"
   },
   {
     "id": "fahrzeug_11",
@@ -107,7 +107,7 @@
     "phonetic": "",
     "translation_ru": "Flugzeug",
     "translation_uk": "Flugzeug",
-    "image_asset": "assets/images/fahrzeug/flugzeug.png"
+    "image_asset": "assets/images/fahrzeug/flugzeug.jpg"
   },
   {
     "id": "fahrzeug_12",
@@ -117,7 +117,7 @@
     "phonetic": "",
     "translation_ru": "Fuehre",
     "translation_uk": "Fuehre",
-    "image_asset": "assets/images/fahrzeug/fuehre.png"
+    "image_asset": "assets/images/fahrzeug/fuehre.jpg"
   },
   {
     "id": "fahrzeug_13",
@@ -127,7 +127,7 @@
     "phonetic": "",
     "translation_ru": "Fusguenger",
     "translation_uk": "Fusguenger",
-    "image_asset": "assets/images/fahrzeug/fusguenger.png"
+    "image_asset": "assets/images/fahrzeug/fusguenger.jpg"
   },
   {
     "id": "fahrzeug_14",
@@ -137,7 +137,7 @@
     "phonetic": "",
     "translation_ru": "Gepuek",
     "translation_uk": "Gepuek",
-    "image_asset": "assets/images/fahrzeug/gepuek.png"
+    "image_asset": "assets/images/fahrzeug/gepuek.jpg"
   },
   {
     "id": "fahrzeug_15",
@@ -147,7 +147,7 @@
     "phonetic": "",
     "translation_ru": "Haltestelle",
     "translation_uk": "Haltestelle",
-    "image_asset": "assets/images/fahrzeug/haltestelle.png"
+    "image_asset": "assets/images/fahrzeug/haltestelle.jpg"
   },
   {
     "id": "fahrzeug_16",
@@ -157,7 +157,7 @@
     "phonetic": "",
     "translation_ru": "Koffer",
     "translation_uk": "Koffer",
-    "image_asset": "assets/images/fahrzeug/koffer.png"
+    "image_asset": "assets/images/fahrzeug/koffer.jpg"
   },
   {
     "id": "fahrzeug_17",
@@ -167,7 +167,7 @@
     "phonetic": "",
     "translation_ru": "Kreuzung",
     "translation_uk": "Kreuzung",
-    "image_asset": "assets/images/fahrzeug/kreuzung.png"
+    "image_asset": "assets/images/fahrzeug/kreuzung.jpg"
   },
   {
     "id": "fahrzeug_18",
@@ -177,7 +177,7 @@
     "phonetic": "",
     "translation_ru": "Lastwagen",
     "translation_uk": "Lastwagen",
-    "image_asset": "assets/images/fahrzeug/lastwagen.png"
+    "image_asset": "assets/images/fahrzeug/lastwagen.jpg"
   },
   {
     "id": "fahrzeug_19",
@@ -187,7 +187,7 @@
     "phonetic": "",
     "translation_ru": "Motorrad",
     "translation_uk": "Motorrad",
-    "image_asset": "assets/images/fahrzeug/motorrad.png"
+    "image_asset": "assets/images/fahrzeug/motorrad.jpg"
   },
   {
     "id": "fahrzeug_20",
@@ -197,7 +197,7 @@
     "phonetic": "",
     "translation_ru": "Parkplatz",
     "translation_uk": "Parkplatz",
-    "image_asset": "assets/images/fahrzeug/parkplatz.png"
+    "image_asset": "assets/images/fahrzeug/parkplatz.jpg"
   },
   {
     "id": "fahrzeug_21",
@@ -207,7 +207,7 @@
     "phonetic": "",
     "translation_ru": "Schiff",
     "translation_uk": "Schiff",
-    "image_asset": "assets/images/fahrzeug/schiff.png"
+    "image_asset": "assets/images/fahrzeug/schiff.jpg"
   },
   {
     "id": "fahrzeug_22",
@@ -217,7 +217,7 @@
     "phonetic": "",
     "translation_ru": "Strase",
     "translation_uk": "Strase",
-    "image_asset": "assets/images/fahrzeug/strase.png"
+    "image_asset": "assets/images/fahrzeug/strase.jpg"
   },
   {
     "id": "fahrzeug_23",
@@ -227,7 +227,7 @@
     "phonetic": "",
     "translation_ru": "Strasenbahn",
     "translation_uk": "Strasenbahn",
-    "image_asset": "assets/images/fahrzeug/strasenbahn.png"
+    "image_asset": "assets/images/fahrzeug/strasenbahn.jpg"
   },
   {
     "id": "fahrzeug_24",
@@ -237,7 +237,7 @@
     "phonetic": "",
     "translation_ru": "Taxi",
     "translation_uk": "Taxi",
-    "image_asset": "assets/images/fahrzeug/taxi.png"
+    "image_asset": "assets/images/fahrzeug/taxi.jpg"
   },
   {
     "id": "fahrzeug_25",
@@ -247,7 +247,7 @@
     "phonetic": "",
     "translation_ru": "Tunnel",
     "translation_uk": "Tunnel",
-    "image_asset": "assets/images/fahrzeug/tunnel.png"
+    "image_asset": "assets/images/fahrzeug/tunnel.jpg"
   },
   {
     "id": "fahrzeug_26",
@@ -257,7 +257,7 @@
     "phonetic": "",
     "translation_ru": "U-bahn",
     "translation_uk": "U-bahn",
-    "image_asset": "assets/images/fahrzeug/u-bahn.png"
+    "image_asset": "assets/images/fahrzeug/u-bahn.jpg"
   },
   {
     "id": "fahrzeug_27",
@@ -267,7 +267,7 @@
     "phonetic": "",
     "translation_ru": "Zug",
     "translation_uk": "Zug",
-    "image_asset": "assets/images/fahrzeug/zug.png"
+    "image_asset": "assets/images/fahrzeug/zug.jpg"
   },
   {
     "id": "kleidung_28",
@@ -437,7 +437,7 @@
     "phonetic": "",
     "translation_ru": "Kleidrock",
     "translation_uk": "Kleidrock",
-    "image_asset": "assets/images/kleidung/kleidrock.png"
+    "image_asset": "assets/images/kleidung/kleidrock.jpg"
   },
   {
     "id": "kleidung_45",
@@ -717,7 +717,7 @@
     "phonetic": "",
     "translation_ru": "Naturregenbogen",
     "translation_uk": "Naturregenbogen",
-    "image_asset": "assets/images/natur/naturregenbogen.png"
+    "image_asset": "assets/images/natur/naturregenbogen.jpg"
   },
   {
     "id": "natur_73",
@@ -837,7 +837,7 @@
     "phonetic": "",
     "translation_ru": "Apotheke",
     "translation_uk": "Apotheke",
-    "image_asset": "assets/images/stadt/apotheke.png"
+    "image_asset": "assets/images/stadt/apotheke.jpg"
   },
   {
     "id": "stadt_85",
@@ -847,7 +847,7 @@
     "phonetic": "",
     "translation_ru": "Bahnhof",
     "translation_uk": "Bahnhof",
-    "image_asset": "assets/images/stadt/bahnhof.png"
+    "image_asset": "assets/images/fahrzeug/bahnhof.jpg"
   },
   {
     "id": "stadt_86",
@@ -857,7 +857,7 @@
     "phonetic": "",
     "translation_ru": "Bank",
     "translation_uk": "Bank",
-    "image_asset": "assets/images/stadt/bank.png"
+    "image_asset": "assets/images/stadt/bank.jpg"
   },
   {
     "id": "stadt_87",
@@ -867,7 +867,7 @@
     "phonetic": "",
     "translation_ru": "Bibliothek",
     "translation_uk": "Bibliothek",
-    "image_asset": "assets/images/stadt/bibliothek.png"
+    "image_asset": "assets/images/stadt/bibliothek.jpg"
   },
   {
     "id": "stadt_88",
@@ -877,7 +877,7 @@
     "phonetic": "",
     "translation_ru": "Bruecke",
     "translation_uk": "Bruecke",
-    "image_asset": "assets/images/stadt/bruecke.png"
+    "image_asset": "assets/images/stadt/bruecke.jpg"
   },
   {
     "id": "stadt_89",
@@ -887,7 +887,7 @@
     "phonetic": "",
     "translation_ru": "Brunnen",
     "translation_uk": "Brunnen",
-    "image_asset": "assets/images/stadt/brunnen.png"
+    "image_asset": "assets/images/stadt/brunnen.jpg"
   },
   {
     "id": "stadt_90",
@@ -897,7 +897,7 @@
     "phonetic": "",
     "translation_ru": "Cafe",
     "translation_uk": "Cafe",
-    "image_asset": "assets/images/stadt/cafe.png"
+    "image_asset": "assets/images/stadt/cafe.jpg"
   },
   {
     "id": "stadt_91",
@@ -907,7 +907,7 @@
     "phonetic": "",
     "translation_ru": "Denkmal",
     "translation_uk": "Denkmal",
-    "image_asset": "assets/images/stadt/denkmal.png"
+    "image_asset": "assets/images/stadt/denkmal.jpg"
   },
   {
     "id": "stadt_92",
@@ -917,7 +917,7 @@
     "phonetic": "",
     "translation_ru": "Gebueude",
     "translation_uk": "Gebueude",
-    "image_asset": "assets/images/stadt/gebueude.png"
+    "image_asset": "assets/images/stadt/gebueude.jpg"
   },
   {
     "id": "stadt_93",
@@ -927,7 +927,7 @@
     "phonetic": "",
     "translation_ru": "Geschueft",
     "translation_uk": "Geschueft",
-    "image_asset": "assets/images/stadt/geschueft.png"
+    "image_asset": "assets/images/stadt/geschueft.jpg"
   },
   {
     "id": "stadt_94",
@@ -937,7 +937,7 @@
     "phonetic": "",
     "translation_ru": "Haus",
     "translation_uk": "Haus",
-    "image_asset": "assets/images/stadt/haus.png"
+    "image_asset": "assets/images/stadt/haus.jpg"
   },
   {
     "id": "stadt_95",
@@ -947,7 +947,7 @@
     "phonetic": "",
     "translation_ru": "Hotel",
     "translation_uk": "Hotel",
-    "image_asset": "assets/images/stadt/hotel.png"
+    "image_asset": "assets/images/stadt/hotel.jpg"
   },
   {
     "id": "stadt_96",
@@ -957,7 +957,7 @@
     "phonetic": "",
     "translation_ru": "Kino",
     "translation_uk": "Kino",
-    "image_asset": "assets/images/stadt/kino.png"
+    "image_asset": "assets/images/stadt/kino.jpg"
   },
   {
     "id": "stadt_97",
@@ -967,7 +967,7 @@
     "phonetic": "",
     "translation_ru": "Kirche",
     "translation_uk": "Kirche",
-    "image_asset": "assets/images/stadt/kirche.png"
+    "image_asset": "assets/images/stadt/kirche.jpg"
   },
   {
     "id": "stadt_98",
@@ -977,7 +977,7 @@
     "phonetic": "",
     "translation_ru": "Krankenhaus",
     "translation_uk": "Krankenhaus",
-    "image_asset": "assets/images/stadt/krankenhaus.png"
+    "image_asset": "assets/images/stadt/krankenhaus.jpg"
   },
   {
     "id": "stadt_99",
@@ -987,7 +987,7 @@
     "phonetic": "",
     "translation_ru": "Krankenhaus_grau",
     "translation_uk": "Krankenhaus_grau",
-    "image_asset": "assets/images/stadt/krankenhaus_grau.png"
+    "image_asset": "assets/images/stadt/krankenhaus_grau.jpg"
   },
   {
     "id": "stadt_100",
@@ -997,7 +997,7 @@
     "phonetic": "",
     "translation_ru": "Markt",
     "translation_uk": "Markt",
-    "image_asset": "assets/images/stadt/markt.png"
+    "image_asset": "assets/images/stadt/markt.jpg"
   },
   {
     "id": "stadt_101",
@@ -1007,7 +1007,7 @@
     "phonetic": "",
     "translation_ru": "Museum",
     "translation_uk": "Museum",
-    "image_asset": "assets/images/stadt/museum.png"
+    "image_asset": "assets/images/stadt/museum.jpg"
   },
   {
     "id": "stadt_102",
@@ -1017,7 +1017,7 @@
     "phonetic": "",
     "translation_ru": "Park",
     "translation_uk": "Park",
-    "image_asset": "assets/images/stadt/park.png"
+    "image_asset": "assets/images/stadt/park.jpg"
   },
   {
     "id": "stadt_103",
@@ -1027,7 +1027,7 @@
     "phonetic": "",
     "translation_ru": "Platz",
     "translation_uk": "Platz",
-    "image_asset": "assets/images/stadt/platz.png"
+    "image_asset": "assets/images/stadt/platz.jpg"
   },
   {
     "id": "stadt_104",
@@ -1037,7 +1037,7 @@
     "phonetic": "",
     "translation_ru": "Post",
     "translation_uk": "Post",
-    "image_asset": "assets/images/stadt/post.png"
+    "image_asset": "assets/images/stadt/post.jpg"
   },
   {
     "id": "stadt_105",
@@ -1047,7 +1047,7 @@
     "phonetic": "",
     "translation_ru": "Restaurant",
     "translation_uk": "Restaurant",
-    "image_asset": "assets/images/stadt/restaurant.png"
+    "image_asset": "assets/images/stadt/restaurant.jpg"
   },
   {
     "id": "stadt_106",
@@ -1057,7 +1057,7 @@
     "phonetic": "",
     "translation_ru": "Schloss",
     "translation_uk": "Schloss",
-    "image_asset": "assets/images/stadt/schloss.png"
+    "image_asset": "assets/images/stadt/schloss.jpg"
   },
   {
     "id": "stadt_107",
@@ -1067,7 +1067,7 @@
     "phonetic": "",
     "translation_ru": "Schule",
     "translation_uk": "Schule",
-    "image_asset": "assets/images/stadt/schule.png"
+    "image_asset": "assets/images/stadt/schule.jpg"
   },
   {
     "id": "stadt_108",
@@ -1077,7 +1077,7 @@
     "phonetic": "",
     "translation_ru": "Stadt",
     "translation_uk": "Stadt",
-    "image_asset": "assets/images/stadt/stadt.png"
+    "image_asset": "assets/images/stadt/stadt.jpg"
   },
   {
     "id": "stadt_109",
@@ -1087,7 +1087,7 @@
     "phonetic": "",
     "translation_ru": "Strase",
     "translation_uk": "Strase",
-    "image_asset": "assets/images/stadt/strase.png"
+    "image_asset": "assets/images/fahrzeug/strase.jpg"
   },
   {
     "id": "stadt_110",
@@ -1097,7 +1097,7 @@
     "phonetic": "",
     "translation_ru": "Supermarkt",
     "translation_uk": "Supermarkt",
-    "image_asset": "assets/images/stadt/supermarkt.png"
+    "image_asset": "assets/images/stadt/supermarkt.jpg"
   },
   {
     "id": "stadt_111",
@@ -1107,7 +1107,7 @@
     "phonetic": "",
     "translation_ru": "Theater",
     "translation_uk": "Theater",
-    "image_asset": "assets/images/stadt/theater.png"
+    "image_asset": "assets/images/stadt/theater.jpg"
   },
   {
     "id": "stadt_112",
@@ -1117,7 +1117,7 @@
     "phonetic": "",
     "translation_ru": "Turm",
     "translation_uk": "Turm",
-    "image_asset": "assets/images/stadt/turm.png"
+    "image_asset": "assets/images/stadt/turm.jpg"
   },
   {
     "id": "stadt_113",
@@ -1127,7 +1127,7 @@
     "phonetic": "",
     "translation_ru": "Zentrum",
     "translation_uk": "Zentrum",
-    "image_asset": "assets/images/stadt/zentrum.png"
+    "image_asset": "assets/images/stadt/zentrum.jpg"
   },
   {
     "id": "tiere_114",
@@ -1137,7 +1137,7 @@
     "phonetic": "",
     "translation_ru": "Affe",
     "translation_uk": "Affe",
-    "image_asset": "assets/images/tiere/affe.png"
+    "image_asset": "assets/images/tiere/affe.jpg"
   },
   {
     "id": "tiere_115",
@@ -1147,7 +1147,7 @@
     "phonetic": "",
     "translation_ru": "Buer",
     "translation_uk": "Buer",
-    "image_asset": "assets/images/tiere/buer.png"
+    "image_asset": "assets/images/tiere/buer.jpg"
   },
   {
     "id": "tiere_116",
@@ -1157,7 +1157,7 @@
     "phonetic": "",
     "translation_ru": "Delfin",
     "translation_uk": "Delfin",
-    "image_asset": "assets/images/tiere/delfin.png"
+    "image_asset": "assets/images/tiere/delfin.jpg"
   },
   {
     "id": "tiere_117",
@@ -1167,7 +1167,7 @@
     "phonetic": "",
     "translation_ru": "Eichheurnchen",
     "translation_uk": "Eichheurnchen",
-    "image_asset": "assets/images/tiere/eichheurnchen.png"
+    "image_asset": "assets/images/tiere/eichheurnchen.jpg"
   },
   {
     "id": "tiere_118",
@@ -1177,7 +1177,7 @@
     "phonetic": "",
     "translation_ru": "Elefant",
     "translation_uk": "Elefant",
-    "image_asset": "assets/images/tiere/elefant.png"
+    "image_asset": "assets/images/tiere/elefant.jpg"
   },
   {
     "id": "tiere_119",
@@ -1187,7 +1187,7 @@
     "phonetic": "",
     "translation_ru": "Ente",
     "translation_uk": "Ente",
-    "image_asset": "assets/images/tiere/ente.png"
+    "image_asset": "assets/images/tiere/ente.jpg"
   },
   {
     "id": "tiere_120",
@@ -1197,7 +1197,7 @@
     "phonetic": "",
     "translation_ru": "Gans",
     "translation_uk": "Gans",
-    "image_asset": "assets/images/tiere/gans.png"
+    "image_asset": "assets/images/tiere/gans.jpg"
   },
   {
     "id": "tiere_121",
@@ -1207,7 +1207,7 @@
     "phonetic": "",
     "translation_ru": "Giraffe",
     "translation_uk": "Giraffe",
-    "image_asset": "assets/images/tiere/giraffe.png"
+    "image_asset": "assets/images/tiere/giraffe.jpg"
   },
   {
     "id": "tiere_122",
@@ -1217,7 +1217,7 @@
     "phonetic": "",
     "translation_ru": "Hahn",
     "translation_uk": "Hahn",
-    "image_asset": "assets/images/tiere/hahn.png"
+    "image_asset": "assets/images/tiere/hahn.jpg"
   },
   {
     "id": "tiere_123",
@@ -1227,7 +1227,7 @@
     "phonetic": "",
     "translation_ru": "Hase",
     "translation_uk": "Hase",
-    "image_asset": "assets/images/tiere/hase.png"
+    "image_asset": "assets/images/tiere/hase.jpg"
   },
   {
     "id": "tiere_124",
@@ -1237,7 +1237,7 @@
     "phonetic": "",
     "translation_ru": "Huhn",
     "translation_uk": "Huhn",
-    "image_asset": "assets/images/tiere/huhn.png"
+    "image_asset": "assets/images/tiere/huhn.jpg"
   },
   {
     "id": "tiere_125",
@@ -1247,7 +1247,7 @@
     "phonetic": "",
     "translation_ru": "Hund",
     "translation_uk": "Hund",
-    "image_asset": "assets/images/tiere/hund.png"
+    "image_asset": "assets/images/tiere/hund.jpg"
   },
   {
     "id": "tiere_126",
@@ -1257,7 +1257,7 @@
     "phonetic": "",
     "translation_ru": "Igel",
     "translation_uk": "Igel",
-    "image_asset": "assets/images/tiere/igel.png"
+    "image_asset": "assets/images/tiere/igel.jpg"
   },
   {
     "id": "tiere_127",
@@ -1267,7 +1267,7 @@
     "phonetic": "",
     "translation_ru": "Kamel",
     "translation_uk": "Kamel",
-    "image_asset": "assets/images/tiere/kamel.png"
+    "image_asset": "assets/images/tiere/kamel.jpg"
   },
   {
     "id": "tiere_128",
@@ -1277,7 +1277,7 @@
     "phonetic": "",
     "translation_ru": "Kaninchen",
     "translation_uk": "Kaninchen",
-    "image_asset": "assets/images/tiere/kaninchen.png"
+    "image_asset": "assets/images/tiere/kaninchen.jpg"
   },
   {
     "id": "tiere_129",
@@ -1287,7 +1287,7 @@
     "phonetic": "",
     "translation_ru": "Katze",
     "translation_uk": "Katze",
-    "image_asset": "assets/images/tiere/katze.png"
+    "image_asset": "assets/images/tiere/katze.jpg"
   },
   {
     "id": "tiere_130",
@@ -1297,7 +1297,7 @@
     "phonetic": "",
     "translation_ru": "Kuenguru",
     "translation_uk": "Kuenguru",
-    "image_asset": "assets/images/tiere/kuenguru.png"
+    "image_asset": "assets/images/tiere/kuenguru.jpg"
   },
   {
     "id": "korper_131",
@@ -1317,7 +1317,7 @@
     "phonetic": "",
     "translation_ru": "глаз",
     "translation_uk": "глаз",
-    "image_asset": "assets/images/korper/auge.png"
+    "image_asset": "assets/images/korper/auge.jpg"
   },
   {
     "id": "korper_133",
@@ -1377,7 +1377,7 @@
     "phonetic": "",
     "translation_ru": "лицо",
     "translation_uk": "лицо",
-    "image_asset": "assets/images/korper/gesicht.png"
+    "image_asset": "assets/images/korper/gesicht.jpg"
   },
   {
     "id": "korper_139",
@@ -1387,7 +1387,7 @@
     "phonetic": "",
     "translation_ru": "волосы",
     "translation_uk": "волосы",
-    "image_asset": "assets/images/korper/haare.png"
+    "image_asset": "assets/images/korper/haare.jpg"
   },
   {
     "id": "korper_140",
@@ -1417,7 +1417,7 @@
     "phonetic": "",
     "translation_ru": "голова",
     "translation_uk": "голова",
-    "image_asset": "assets/images/korper/kopf.png"
+    "image_asset": "assets/images/korper/kopf.jpg"
   },
   {
     "id": "korper_143",
@@ -1427,7 +1427,7 @@
     "phonetic": "",
     "translation_ru": "рот",
     "translation_uk": "рот",
-    "image_asset": "assets/images/korper/mund.png"
+    "image_asset": "assets/images/korper/mund.jpg"
   },
   {
     "id": "korper_144",
@@ -1437,7 +1437,7 @@
     "phonetic": "",
     "translation_ru": "нос",
     "translation_uk": "нос",
-    "image_asset": "assets/images/korper/nase.png"
+    "image_asset": "assets/images/korper/nase.jpg"
   },
   {
     "id": "korper_145",
@@ -1457,7 +1457,7 @@
     "phonetic": "",
     "translation_ru": "ухо",
     "translation_uk": "ухо",
-    "image_asset": "assets/images/korper/ohr.png"
+    "image_asset": "assets/images/korper/ohr.jpg"
   },
   {
     "id": "korper_147",
@@ -1497,7 +1497,7 @@
     "phonetic": "",
     "translation_ru": "зуб",
     "translation_uk": "зуб",
-    "image_asset": "assets/images/korper/zahn.png"
+    "image_asset": "assets/images/korper/zahn.jpg"
   },
   {
     "id": "korper_151",
@@ -1577,7 +1577,7 @@
     "phonetic": "",
     "translation_ru": "лифт",
     "translation_uk": "лифт",
-    "image_asset": "assets/images/wohnung/aufzug.png"
+    "image_asset": "assets/images/wohnung/aufzug.jpg"
   },
   {
     "id": "wohnung_159",
@@ -1587,7 +1587,7 @@
     "phonetic": "",
     "translation_ru": "ванна",
     "translation_uk": "ванна",
-    "image_asset": "assets/images/wohnung/badewanne.png"
+    "image_asset": "assets/images/wohnung/badewanne.jpg"
   },
   {
     "id": "wohnung_160",
@@ -1597,7 +1597,7 @@
     "phonetic": "",
     "translation_ru": "Badewanneя_комната",
     "translation_uk": "Badewanneя_комната",
-    "image_asset": "assets/images/wohnung/badewanneя_комната.png"
+    "image_asset": "assets/images/wohnung/badewanneя_комната.jpg"
   },
   {
     "id": "wohnung_161",
@@ -1607,7 +1607,7 @@
     "phonetic": "",
     "translation_ru": "балкон",
     "translation_uk": "балкон",
-    "image_asset": "assets/images/wohnung/balkon.png"
+    "image_asset": "assets/images/wohnung/balkon.jpg"
   },
   {
     "id": "wohnung_162",
@@ -1617,7 +1617,7 @@
     "phonetic": "",
     "translation_ru": "кровать",
     "translation_uk": "кровать",
-    "image_asset": "assets/images/wohnung/bett.png"
+    "image_asset": "assets/images/wohnung/bett.jpg"
   },
   {
     "id": "wohnung_163",
@@ -1627,7 +1627,7 @@
     "phonetic": "",
     "translation_ru": "пол",
     "translation_uk": "пол",
-    "image_asset": "assets/images/wohnung/boden.png"
+    "image_asset": "assets/images/wohnung/boden.jpg"
   },
   {
     "id": "wohnung_164",
@@ -1637,7 +1637,7 @@
     "phonetic": "",
     "translation_ru": "чердак",
     "translation_uk": "чердак",
-    "image_asset": "assets/images/wohnung/dachboden.png"
+    "image_asset": "assets/images/wohnung/dachboden.jpg"
   },
   {
     "id": "wohnung_165",
@@ -1647,7 +1647,7 @@
     "phonetic": "",
     "translation_ru": "потолок",
     "translation_uk": "потолок",
-    "image_asset": "assets/images/wohnung/decke.png"
+    "image_asset": "assets/images/wohnung/decke.jpg"
   },
   {
     "id": "wohnung_166",
@@ -1657,7 +1657,7 @@
     "phonetic": "",
     "translation_ru": "душ",
     "translation_uk": "душ",
-    "image_asset": "assets/images/wohnung/dusche.png"
+    "image_asset": "assets/images/wohnung/dusche.jpg"
   },
   {
     "id": "wohnung_167",
@@ -1667,7 +1667,7 @@
     "phonetic": "",
     "translation_ru": "окно",
     "translation_uk": "окно",
-    "image_asset": "assets/images/wohnung/fenster.png"
+    "image_asset": "assets/images/wohnung/fenster.jpg"
   },
   {
     "id": "wohnung_168",
@@ -1677,7 +1677,7 @@
     "phonetic": "",
     "translation_ru": "телевизор",
     "translation_uk": "телевизор",
-    "image_asset": "assets/images/wohnung/fernseher.png"
+    "image_asset": "assets/images/wohnung/fernseher.jpg"
   },
   {
     "id": "wohnung_169",
@@ -1687,7 +1687,7 @@
     "phonetic": "",
     "translation_ru": "коридор",
     "translation_uk": "коридор",
-    "image_asset": "assets/images/wohnung/flur.png"
+    "image_asset": "assets/images/wohnung/flur.jpg"
   },
   {
     "id": "wohnung_170",
@@ -1697,7 +1697,7 @@
     "phonetic": "",
     "translation_ru": "подвал",
     "translation_uk": "подвал",
-    "image_asset": "assets/images/wohnung/keller.png"
+    "image_asset": "assets/images/wohnung/keller.jpg"
   },
   {
     "id": "wohnung_171",
@@ -1707,7 +1707,7 @@
     "phonetic": "",
     "translation_ru": "кухня",
     "translation_uk": "кухня",
-    "image_asset": "assets/images/wohnung/kueche.png"
+    "image_asset": "assets/images/wohnung/kueche.jpg"
   },
   {
     "id": "wohnung_172",
@@ -1717,7 +1717,7 @@
     "phonetic": "",
     "translation_ru": "холодильник",
     "translation_uk": "холодильник",
-    "image_asset": "assets/images/wohnung/kuehlschrank.png"
+    "image_asset": "assets/images/wohnung/kuehlschrank.jpg"
   },
   {
     "id": "wohnung_173",
@@ -1727,7 +1727,7 @@
     "phonetic": "",
     "translation_ru": "спальня",
     "translation_uk": "спальня",
-    "image_asset": "assets/images/wohnung/schlafzimmer.png"
+    "image_asset": "assets/images/wohnung/schlafzimmer.jpg"
   },
   {
     "id": "wohnung_174",
@@ -1737,7 +1737,7 @@
     "phonetic": "",
     "translation_ru": "шкаф",
     "translation_uk": "шкаф",
-    "image_asset": "assets/images/wohnung/schrank.png"
+    "image_asset": "assets/images/wohnung/schrank.jpg"
   },
   {
     "id": "wohnung_175",
@@ -1747,7 +1747,7 @@
     "phonetic": "",
     "translation_ru": "кресло",
     "translation_uk": "кресло",
-    "image_asset": "assets/images/wohnung/sessel.png"
+    "image_asset": "assets/images/wohnung/sessel.jpg"
   },
   {
     "id": "wohnung_176",
@@ -1757,7 +1757,7 @@
     "phonetic": "",
     "translation_ru": "диван",
     "translation_uk": "диван",
-    "image_asset": "assets/images/wohnung/sofa.png"
+    "image_asset": "assets/images/wohnung/sofa.jpg"
   },
   {
     "id": "wohnung_177",
@@ -1767,7 +1767,7 @@
     "phonetic": "",
     "translation_ru": "зеркало",
     "translation_uk": "зеркало",
-    "image_asset": "assets/images/wohnung/spiegel.png"
+    "image_asset": "assets/images/wohnung/spiegel.jpg"
   },
   {
     "id": "wohnung_178",
@@ -1777,7 +1777,7 @@
     "phonetic": "",
     "translation_ru": "розетка",
     "translation_uk": "розетка",
-    "image_asset": "assets/images/wohnung/steckdose.png"
+    "image_asset": "assets/images/wohnung/steckdose.jpg"
   },
   {
     "id": "wohnung_179",
@@ -1787,7 +1787,7 @@
     "phonetic": "",
     "translation_ru": "стул",
     "translation_uk": "стул",
-    "image_asset": "assets/images/wohnung/stuhl.png"
+    "image_asset": "assets/images/wohnung/stuhl.jpg"
   },
   {
     "id": "wohnung_180",
@@ -1797,7 +1797,7 @@
     "phonetic": "",
     "translation_ru": "стол",
     "translation_uk": "стол",
-    "image_asset": "assets/images/wohnung/tisch.png"
+    "image_asset": "assets/images/wohnung/tisch.jpg"
   },
   {
     "id": "wohnung_181",
@@ -1807,7 +1807,7 @@
     "phonetic": "",
     "translation_ru": "Toiletteт",
     "translation_uk": "Toiletteт",
-    "image_asset": "assets/images/wohnung/toiletteт.png"
+    "image_asset": "assets/images/wohnung/toiletteт.jpg"
   },
   {
     "id": "wohnung_182",
@@ -1817,7 +1817,7 @@
     "phonetic": "",
     "translation_ru": "лестница",
     "translation_uk": "лестница",
-    "image_asset": "assets/images/wohnung/treppe.png"
+    "image_asset": "assets/images/wohnung/treppe.jpg"
   },
   {
     "id": "wohnung_183",
@@ -1827,7 +1827,7 @@
     "phonetic": "",
     "translation_ru": "дверь",
     "translation_uk": "дверь",
-    "image_asset": "assets/images/wohnung/tuer.png"
+    "image_asset": "assets/images/wohnung/tuer.jpg"
   },
   {
     "id": "wohnung_184",
@@ -1837,7 +1837,7 @@
     "phonetic": "",
     "translation_ru": "стена",
     "translation_uk": "стена",
-    "image_asset": "assets/images/wohnung/wand.png"
+    "image_asset": "assets/images/wohnung/wand.jpg"
   },
   {
     "id": "wohnung_185",
@@ -1847,7 +1847,7 @@
     "phonetic": "",
     "translation_ru": "квартира",
     "translation_uk": "квартира",
-    "image_asset": "assets/images/wohnung/wohnung.png"
+    "image_asset": "assets/images/wohnung/wohnung.jpg"
   },
   {
     "id": "wohnung_186",
@@ -1857,7 +1857,7 @@
     "phonetic": "",
     "translation_ru": "Гостинная",
     "translation_uk": "Гостинна",
-    "image_asset": "assets/images/wohnung/гостинная.png"
+    "image_asset": "assets/images/wohnung/гостинная.jpg"
   },
   {
     "id": "wohnung_187",
@@ -1867,7 +1867,7 @@
     "phonetic": "",
     "translation_ru": "Ковер",
     "translation_uk": "Ковер",
-    "image_asset": "assets/images/wohnung/ковер.png"
+    "image_asset": "assets/images/wohnung/ковер.jpg"
   },
   {
     "id": "wohnung_188",
@@ -1877,7 +1877,7 @@
     "phonetic": "",
     "translation_ru": "Отопление",
     "translation_uk": "Отопление",
-    "image_asset": "assets/images/wohnung/отопление.png"
+    "image_asset": "assets/images/wohnung/отопление.jpg"
   },
   {
     "id": "wohnung_189",
@@ -1887,7 +1887,7 @@
     "phonetic": "",
     "translation_ru": "Плита",
     "translation_uk": "Плита",
-    "image_asset": "assets/images/wohnung/плита.png"
+    "image_asset": "assets/images/wohnung/плита.jpg"
   },
   {
     "id": "wohnung_190",
@@ -1897,6 +1897,6 @@
     "phonetic": "",
     "translation_ru": "Штора",
     "translation_uk": "Штора",
-    "image_asset": "assets/images/wohnung/штора.png"
+    "image_asset": "assets/images/wohnung/штора.jpg"
   }
 ]

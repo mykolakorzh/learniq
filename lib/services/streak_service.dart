@@ -58,8 +58,11 @@ class StreakService {
   static Future<DailyStreak> recordReview() async {
     var streak = await getStreak();
 
-    // Check if this is first review of the day
+    // Check if this is first review of the day BEFORE updating the date
     final isFirstReviewToday = !streak.hasActivityToday;
+    
+    // Store the OLD lastActivityDate for streak calculation
+    final oldLastActivityDate = streak.lastActivityDate;
 
     // Update counters
     streak = streak.copyWith(
@@ -69,8 +72,9 @@ class StreakService {
     );
 
     // Update streak if first review of the day
+    // Pass the OLD date for comparison
     if (isFirstReviewToday) {
-      streak = _updateStreakCount(streak);
+      streak = _updateStreakCount(streak, oldLastActivityDate);
     }
 
     await _saveStreak(streak);
@@ -78,9 +82,12 @@ class StreakService {
   }
 
   /// Update streak count based on last activity date
-  static DailyStreak _updateStreakCount(DailyStreak streak) {
+  /// 
+  /// [previousLastActivity] is the last activity date BEFORE the current update
+  /// This allows us to compare yesterday's activity correctly
+  static DailyStreak _updateStreakCount(DailyStreak streak, DateTime previousLastActivity) {
     final today = _dateOnly(DateTime.now());
-    final lastActivity = _dateOnly(streak.lastActivityDate);
+    final lastActivity = _dateOnly(previousLastActivity);
     final yesterday = today.subtract(const Duration(days: 1));
 
     int newStreak;
@@ -88,12 +95,20 @@ class StreakService {
     if (lastActivity.isAtSameMomentAs(yesterday)) {
       // Consecutive day - increment streak
       newStreak = streak.currentStreak + 1;
+    } else if (lastActivity.isAtSameMomentAs(today)) {
+      // Same day - keep current streak (shouldn't happen if called correctly, but safe)
+      newStreak = streak.currentStreak;
     } else if (lastActivity.isBefore(yesterday)) {
       // Missed day(s) - reset streak to 1 (starting fresh today)
       newStreak = 1;
     } else {
-      // Same day or future (shouldn't happen) - keep current
+      // Future date (shouldn't happen) - keep current
       newStreak = streak.currentStreak;
+    }
+    
+    // Ensure streak starts at 1 if it was 0 (first time user)
+    if (newStreak == 0 && lastActivity.isBefore(today)) {
+      newStreak = 1;
     }
 
     // Update longest streak if needed

@@ -100,13 +100,34 @@ class DataService {
       }
       
       final List<CardItem> cards = [];
+      final List<String> invalidCards = [];
+      
       for (int i = 0; i < decoded.length; i++) {
         try {
           final item = decoded[i];
           if (item is! Map<String, dynamic>) {
             continue; // Skip invalid items
           }
-          cards.add(CardItem.fromJson(item));
+          
+          final card = CardItem.fromJson(item);
+          
+          // Validate card has required fields
+          if (!card.isValid()) {
+            invalidCards.add(card.id);
+            try {
+              FirebaseCrashlytics.instance.recordError(
+                Exception('Card ${card.id} has invalid image path: ${card.imageAsset}'),
+                StackTrace.current,
+                reason: 'Card validation failed',
+                fatal: false,
+              );
+            } catch (_) {
+              // Firebase not initialized - ignore
+            }
+            continue; // Skip invalid cards
+          }
+          
+          cards.add(card);
         } catch (e) {
           // Log invalid card but continue loading others
           try {
@@ -119,6 +140,17 @@ class DataService {
           } catch (_) {
             // Firebase not initialized - ignore
           }
+        }
+      }
+      
+      // Log summary of invalid cards
+      if (invalidCards.isNotEmpty) {
+        try {
+          FirebaseCrashlytics.instance.log(
+            'Loaded ${cards.length} valid cards, ${invalidCards.length} invalid cards skipped: ${invalidCards.join(", ")}',
+          );
+        } catch (_) {
+          // Firebase not initialized - ignore
         }
       }
       
@@ -175,5 +207,48 @@ class DataService {
     _cachedTopics = null;
     _cachedCards = null;
     _cachedCardsByTopic.clear();
+  }
+
+  /// Validates data integrity - checks for common issues
+  /// Returns a list of validation errors (empty if all valid)
+  static Future<List<String>> validateDataIntegrity() async {
+    final errors = <String>[];
+    
+    try {
+      final topics = await loadTopics();
+      final cards = await loadCards();
+      
+      // Check topic counts match
+      for (final topic in topics) {
+        final topicCards = cards.where((c) => c.topicId == topic.id).toList();
+        if (topicCards.length != topic.cardCount) {
+          errors.add(
+            'Topic ${topic.id}: Expected ${topic.cardCount} cards, found ${topicCards.length}',
+          );
+        }
+      }
+      
+      // Check for cards with invalid image paths
+      final invalidCards = cards.where((c) => !c.isValid()).toList();
+      if (invalidCards.isNotEmpty) {
+        errors.add(
+          'Found ${invalidCards.length} cards with invalid image paths: ${invalidCards.map((c) => c.id).join(", ")}',
+        );
+      }
+      
+      // Check for orphaned cards (cards without matching topic)
+      final topicIds = topics.map((t) => t.id).toSet();
+      final orphanedCards = cards.where((c) => !topicIds.contains(c.topicId)).toList();
+      if (orphanedCards.isNotEmpty) {
+        errors.add(
+          'Found ${orphanedCards.length} orphaned cards: ${orphanedCards.map((c) => c.id).join(", ")}',
+        );
+      }
+      
+    } catch (e) {
+      errors.add('Failed to validate data: $e');
+    }
+    
+    return errors;
   }
 }

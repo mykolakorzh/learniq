@@ -10,6 +10,27 @@ import '../../screens/account_screen.dart';
 import '../../screens/main_navigation_screen.dart';
 import '../../widgets/animations.dart';
 
+/// Safe navigation utilities to prevent crashes
+class SafeNavigation {
+  /// Safely pops the current route, or navigates to home if can't pop
+  static void pop(BuildContext context, {dynamic result}) {
+    if (Navigator.canPop(context)) {
+      Navigator.pop(context, result);
+    } else {
+      Navigator.of(context).pushReplacementNamed('/home');
+    }
+  }
+
+  /// Safely pops until the first route
+  static void popUntilFirst(BuildContext context) {
+    if (Navigator.canPop(context)) {
+      Navigator.of(context).popUntil((route) => route.isFirst);
+    } else {
+      Navigator.of(context).pushReplacementNamed('/home');
+    }
+  }
+}
+
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {

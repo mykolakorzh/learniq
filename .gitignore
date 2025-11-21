@@ -43,3 +43,19 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Firebase configuration (contains sensitive keys)
+**/GoogleService-Info.plist
+**/google-services.json
+
+# Environment variables and secrets
+.env
+.env.local
+*.key
+*.pem
+
+# RevenueCat API key (contains sensitive key)
+**/revenuecat_key.dart
+
+# RevenueCat API key
+**/revenuecat_key.dart

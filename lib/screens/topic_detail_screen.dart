@@ -11,6 +11,7 @@ import '../l10n/app_localizations.dart';
 import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
 import '../core/theme/app_theme.dart';
+import '../core/routing/app_router.dart';
 
 class TopicDetailScreen extends StatefulWidget {
   final Topic topic;
@@ -86,7 +87,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
                         child: Row(
                           children: [
                             CustomAnimatedScale(
-                              onTap: () => Navigator.pop(context),
+                              onTap: () => SafeNavigation.pop(context),
                               child: Container(
                                 padding: const EdgeInsets.all(12),
                                 decoration: BoxDecoration(

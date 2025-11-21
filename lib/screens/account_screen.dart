@@ -368,13 +368,20 @@ class _AccountScreenState extends State<AccountScreen> {
             icon: Icons.receipt_long,
             label: 'Manage Subscription',
             subtitle: 'Opens App Store',
-            onTap: () {
-              // TODO: Open App Store subscription management
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Please manage your subscription in the App Store'),
-                ),
-              );
+            onTap: () async {
+              final uri = Uri.parse(AppConfig.appStoreSubscriptionManagement);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              } else {
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Unable to open App Store'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                }
+              }
             },
           ),
         ],
@@ -452,8 +459,26 @@ class _AccountScreenState extends State<AccountScreen> {
           _buildActionButton(
             icon: Icons.help_outline,
             label: 'Help & Support',
-            onTap: () {
-              // TODO: Open support
+            onTap: () async {
+              final uri = Uri(
+                scheme: 'mailto',
+                path: AppConfig.supportEmail,
+                queryParameters: {
+                  'subject': 'Learniq App Support',
+                },
+              );
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              } else {
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Unable to open email client'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                }
+              }
             },
           ),
         ],

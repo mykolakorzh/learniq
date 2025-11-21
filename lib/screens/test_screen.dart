@@ -13,6 +13,7 @@ import '../widgets/modern_components.dart';
 import '../widgets/animations.dart';
 import '../core/theme/app_theme.dart';
 import '../l10n/app_localizations.dart';
+import '../core/routing/app_router.dart';
 
 class TestScreen extends StatefulWidget {
   final String topicId;
@@ -286,7 +287,7 @@ class _TestScreenState extends State<TestScreen> {
                   Row(
                     children: [
                       CustomAnimatedScale(
-                        onTap: () => Navigator.of(context).popUntil((route) => route.isFirst),
+                        onTap: () => SafeNavigation.popUntilFirst(context),
                         child: Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
@@ -401,7 +402,7 @@ class _TestScreenState extends State<TestScreen> {
                       ModernButton(
                         text: l10n.testGoHome,
                         onPressed: () {
-                          Navigator.of(context).popUntil((route) => route.isFirst);
+                          SafeNavigation.popUntilFirst(context);
                         },
                         isPrimary: false,
                         icon: Icons.home,
@@ -466,8 +467,9 @@ class _TestScreenState extends State<TestScreen> {
     }
 
     final currentCard = _quizCards[_currentQuestionIndex];
-    final grayImagePath = _getGrayImagePath(currentCard.imageAsset);
-    final colorfulImagePath = currentCard.imageAsset;
+    final baseImagePath = currentCard.getImagePathWithFallback();
+    final grayImagePath = _getGrayImagePath(baseImagePath);
+    final colorfulImagePath = baseImagePath;
 
     return Scaffold(
       body: Stack(
@@ -492,7 +494,7 @@ class _TestScreenState extends State<TestScreen> {
                     child: Row(
                       children: [
                         CustomAnimatedScale(
-                          onTap: () => Navigator.pop(context),
+                          onTap: () => SafeNavigation.pop(context),
                           child: Container(
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
@@ -615,13 +617,41 @@ class _TestScreenState extends State<TestScreen> {
                                 _showResult && _isCorrect ? colorfulImagePath : grayImagePath,
                                 key: ValueKey(_showResult && _isCorrect ? 'color' : 'gray'),
                                 fit: BoxFit.cover,
+                                loadingBuilder: (context, child, loadingProgress) {
+                                  if (loadingProgress == null) return child;
+                                  return Container(
+                                    color: Colors.grey.withValues(alpha: 0.05),
+                                    child: Center(
+                                      child: CircularProgressIndicator(
+                                        value: loadingProgress.expectedTotalBytes != null
+                                            ? loadingProgress.cumulativeBytesLoaded /
+                                                loadingProgress.expectedTotalBytes!
+                                            : null,
+                                        color: AppTheme.primaryIndigo,
+                                      ),
+                                    ),
+                                  );
+                                },
                                 errorBuilder: (context, error, stackTrace) {
                                   return Container(
                                     color: Colors.grey.withValues(alpha: 0.1),
-                                    child: Icon(
-                                      Icons.image_not_supported,
-                                      size: 64,
-                                      color: Colors.grey.withValues(alpha: 0.4),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.image_not_supported,
+                                          size: 64,
+                                          color: Colors.grey.withValues(alpha: 0.4),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          'Image not found',
+                                          style: TextStyle(
+                                            color: Colors.grey.withValues(alpha: 0.6),
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   );
                                 },
