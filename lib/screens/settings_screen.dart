@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../l10n/app_localizations.dart';
 import '../services/settings_service.dart';
@@ -244,34 +245,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           icon: Icons.workspace_premium,
                           children: [
                             _buildPremiumStatusCard(),
-                            _buildModernSwitchTile(
-                              title: 'Testing Mode: Premium Access',
-                              subtitle: 'Toggle premium subscription for testing',
-                              icon: Icons.bug_report,
-                              value: _hasPremium,
-                              onChanged: (value) async {
-                                HapticFeedback.lightImpact();
-                                final subscriptionService = await SubscriptionService.getInstance();
-                                if (value) {
-                                  await subscriptionService.activateSubscription();
-                                } else {
-                                  await subscriptionService.deactivateSubscription();
-                                }
-                                await _loadSettings();
-                                if (mounted) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        value
-                                            ? 'Premium activated! All topics unlocked.'
-                                            : 'Premium deactivated. Only free topics available.',
+                            // Testing mode toggle - only visible in debug builds
+                            if (kDebugMode)
+                              _buildModernSwitchTile(
+                                title: 'Testing Mode: Premium Access',
+                                subtitle: 'Toggle premium subscription for testing',
+                                icon: Icons.bug_report,
+                                value: _hasPremium,
+                                onChanged: (value) async {
+                                  HapticFeedback.lightImpact();
+                                  final subscriptionService = await SubscriptionService.getInstance();
+                                  if (value) {
+                                    await subscriptionService.activateSubscription();
+                                  } else {
+                                    await subscriptionService.deactivateSubscription();
+                                  }
+                                  await _loadSettings();
+                                  if (mounted) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          value
+                                              ? 'Premium activated! All topics unlocked.'
+                                              : 'Premium deactivated. Only free topics available.',
+                                        ),
+                                        backgroundColor: value ? AppTheme.accentGreen : Colors.orange,
                                       ),
-                                      backgroundColor: value ? AppTheme.accentGreen : Colors.orange,
-                                    ),
-                                  );
-                                }
-                              },
-                            ),
+                                    );
+                                  }
+                                },
+                              ),
                             _buildModernActionTile(
                               title: 'Manage Subscription',
                               subtitle: 'View premium features and benefits',
